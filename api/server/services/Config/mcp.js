@@ -1,4 +1,4 @@
-const { createMCPToolCacheService } = require('@librechat/api');
+const { createMCPToolCacheService } = require('api');
 const { getCachedTools, setCachedTools } = require('./getCachedTools');
 
 const { mergeAppTools, cacheMCPServerTools, updateMCPServerTools } = createMCPToolCacheService({

@@ -4,7 +4,7 @@ import {
   PrincipalType,
   PrincipalModel,
   PermissionBits,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import type * as t from '~/types';
 import { createAclEntryMethods, permissionBitSupersets } from './aclEntry';

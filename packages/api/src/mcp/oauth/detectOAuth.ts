@@ -39,7 +39,7 @@ export async function detectOAuthRequirement(serverUrl: string): Promise<OAuthDe
    * The `resource_metadata` URL is attacker-controlled (it's echoed from the MCP
    * server's own 401 challenge). Reject hints pointing at private/loopback/metadata
    * addresses before the SDK fetches them, so a malicious server cannot weaponize
-   * detection as an SSRF vector against the LibreChat host or its internal network.
+   * detection as an SSRF vector against the AgentChat host or its internal network.
    */
   const safeHintUrl = hint?.resourceMetadataUrl
     ? await validateHintUrl(hint.resourceMetadataUrl)

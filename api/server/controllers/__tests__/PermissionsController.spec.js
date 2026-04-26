@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 
 const mockLogger = { error: jest.fn(), warn: jest.fn(), info: jest.fn(), debug: jest.fn() };
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: mockLogger,
 }));
 
-const { ResourceType, PrincipalType } = jest.requireActual('librechat-data-provider');
+const { ResourceType, PrincipalType } = jest.requireActual('agentchat-data-provider');
 
-jest.mock('librechat-data-provider', () => ({
-  ...jest.requireActual('librechat-data-provider'),
+jest.mock('agentchat-data-provider', () => ({
+  ...jest.requireActual('agentchat-data-provider'),
 }));
 
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   enrichRemoteAgentPrincipals: jest.fn(),
   backfillRemoteAgentPermissions: jest.fn(),
 }));

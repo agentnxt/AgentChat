@@ -282,7 +282,7 @@ export interface FunctionTool {
 
 /** Hosted tool (provider-specific) */
 export interface HostedTool {
-  type: string; // e.g., 'librechat:web_search'
+  type: string; // e.g., 'agentchat:web_search'
   [key: string]: unknown;
 }
 
@@ -689,14 +689,14 @@ export interface ErrorEvent extends BaseEvent {
 }
 
 /* =============================================================================
- * LIBRECHAT EXTENSION TYPES
+ * AGENTCHAT EXTENSION TYPES
  * Per Open Responses spec, custom types MUST be prefixed with implementor slug
  * @see https://openresponses.org/specification#extending-streaming-events
  * ============================================================================= */
 
-/** Attachment content types for LibreChat extensions */
-export interface LibreChatAttachmentContent {
-  /** File ID in LibreChat storage */
+/** Attachment content types for AgentChat extensions */
+export interface AgentChatAttachmentContent {
+  /** File ID in AgentChat storage */
   file_id?: string;
   /** Original filename */
   filename?: string;
@@ -717,20 +717,20 @@ export interface LibreChatAttachmentContent {
 }
 
 /**
- * LibreChat attachment event - custom streaming event for file/image attachments
- * Follows Open Responses extension pattern with librechat: prefix
+ * AgentChat attachment event - custom streaming event for file/image attachments
+ * Follows Open Responses extension pattern with agentchat: prefix
  */
-export interface LibreChatAttachmentEvent extends BaseEvent {
-  type: 'librechat:attachment';
+export interface AgentChatAttachmentEvent extends BaseEvent {
+  type: 'agentchat:attachment';
   /** The attachment data */
-  attachment: LibreChatAttachmentContent;
+  attachment: AgentChatAttachmentContent;
   /** Associated message ID */
   message_id?: string;
   /** Associated conversation ID */
   conversation_id?: string;
 }
 
-/** Union of all streaming events (including LibreChat extensions) */
+/** Union of all streaming events (including AgentChat extensions) */
 export type ResponseEvent =
   | ResponseCreatedEvent
   | ResponseInProgressEvent
@@ -750,8 +750,8 @@ export type ResponseEvent =
   | ReasoningDeltaEvent
   | ReasoningDoneEvent
   | ErrorEvent
-  // LibreChat extensions (prefixed per Open Responses spec)
-  | LibreChatAttachmentEvent;
+  // AgentChat extensions (prefixed per Open Responses spec)
+  | AgentChatAttachmentEvent;
 
 /* =============================================================================
  * INTERNAL TYPES

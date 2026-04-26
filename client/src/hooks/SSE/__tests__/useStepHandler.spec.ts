@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import { StepTypes, StepEvents, ContentTypes, ToolCallTypes } from 'librechat-data-provider';
+import { StepTypes, StepEvents, ContentTypes, ToolCallTypes } from 'agentchat-data-provider';
 import type {
   TMessageContentParts,
   SummaryContentPart,
@@ -8,7 +8,7 @@ import type {
   TConversation,
   TMessage,
   Agents,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import useStepHandler from '~/hooks/SSE/useStepHandler';
 
 type TSubmissionForTest = {

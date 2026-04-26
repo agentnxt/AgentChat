@@ -4,8 +4,8 @@ import {
   PrincipalType,
   PermissionBits,
   AccessRoleIds,
-} from 'librechat-data-provider';
-import { permissionBitSupersets } from '@librechat/data-schemas';
+} from 'agentchat-data-provider';
+import { permissionBitSupersets } from 'data-schemas';
 import { enrichRemoteAgentPrincipals } from './permissions';
 import type { EnricherDependencies, Principal } from './permissions';
 

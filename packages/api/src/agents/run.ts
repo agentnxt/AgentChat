@@ -1,11 +1,11 @@
-import { logger } from '@librechat/data-schemas';
-import { Run, Providers, Constants } from '@librechat/agents';
+import { logger } from 'data-schemas';
+import { Run, Providers, Constants } from 'agents';
 import {
   KnownEndpoints,
   extractEnvVariable,
   providerEndpointMap,
   normalizeEndpointName,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type {
   SummarizationConfig as AgentSummarizationConfig,
   MultiAgentGraphConfig,
@@ -18,10 +18,10 @@ import type {
   RunConfig,
   IState,
   LCTool,
-} from '@librechat/agents';
-import type { Agent, SummarizationConfig } from 'librechat-data-provider';
+} from 'agents';
+import type { Agent, SummarizationConfig } from 'agentchat-data-provider';
 import type { BaseMessage } from '@langchain/core/messages';
-import type { AppConfig, IUser } from '@librechat/data-schemas';
+import type { AppConfig, IUser } from 'data-schemas';
 import type * as t from '~/types';
 import { getProviderConfig } from '~/endpoints/config/providers';
 import { getOpenAIConfig } from '~/endpoints/openai/config';
@@ -241,7 +241,7 @@ interface SummarizationClientOverrides {
  * overrides required to talk to that endpoint.
  *
  * Without this step, a `summarization.provider: "Ollama"` entry in
- * `librechat.yaml` flows verbatim to the agents SDK, which only knows a fixed
+ * `agentchat.yaml` flows verbatim to the agents SDK, which only knows a fixed
  * set of provider names and throws "Unsupported LLM provider: Ollama".
  */
 function resolveSummarizationProvider(
@@ -294,7 +294,7 @@ function resolveSummarizationProvider(
     }
     /**
      * Resolve templated header values (e.g. `${PORTKEY_API_KEY}`,
-     * `{{LIBRECHAT_BODY_PARENTMESSAGEID}}`) before handing them to
+     * `{{AGENTCHAT_BODY_PARENTMESSAGEID}}`) before handing them to
      * `getOpenAIConfig`, matching the agent main flow where `resolveHeaders`
      * runs on `llmConfig.configuration.defaultHeaders`.
      */

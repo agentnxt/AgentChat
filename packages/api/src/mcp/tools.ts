@@ -1,6 +1,6 @@
-import { logger } from '@librechat/data-schemas';
-import { Constants } from 'librechat-data-provider';
-import type { JsonSchemaType } from '@librechat/agents';
+import { logger } from 'data-schemas';
+import { Constants } from 'agentchat-data-provider';
+import type { JsonSchemaType } from 'agents';
 import type { LCAvailableTools, LCFunctionTool } from './types';
 
 export interface MCPToolInput {

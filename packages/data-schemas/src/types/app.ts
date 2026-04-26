@@ -12,7 +12,7 @@ import type {
   TAssistantEndpoint,
   TAnthropicEndpoint,
   SummarizationConfig,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 
 export type JsonSchemaType = {
   type: 'string' | 'number' | 'integer' | 'float' | 'boolean' | 'array' | 'object';

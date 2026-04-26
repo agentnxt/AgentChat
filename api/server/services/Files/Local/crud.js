@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
-const { deleteRagFile } = require('@librechat/api');
-const { logger } = require('@librechat/data-schemas');
-const { EModelEndpoint } = require('librechat-data-provider');
+const { deleteRagFile } = require('api');
+const { logger } = require('data-schemas');
+const { EModelEndpoint } = require('agentchat-data-provider');
 const { resizeImageBuffer } = require('~/server/services/Files/images/resize');
 const { getBufferMetadata } = require('~/server/utils');
 const paths = require('~/config/paths');

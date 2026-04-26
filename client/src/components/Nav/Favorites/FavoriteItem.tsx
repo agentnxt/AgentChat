@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import * as Menu from '@ariakit/react/menu';
 import { Ellipsis, PinOff } from 'lucide-react';
-import { DropdownPopup } from '@librechat/client';
-import { EModelEndpoint } from 'librechat-data-provider';
-import type { Agent, TModelSpec, TEndpointsConfig } from 'librechat-data-provider';
+import { DropdownPopup } from 'client';
+import { EModelEndpoint } from 'agentchat-data-provider';
+import type { Agent, TModelSpec, TEndpointsConfig } from 'agentchat-data-provider';
 import type { FavoriteModel } from '~/store/favorites';
 import SpecIcon from '~/components/Chat/Menus/Endpoints/components/SpecIcon';
 import MinimalIcon from '~/components/Endpoints/MinimalIcon';

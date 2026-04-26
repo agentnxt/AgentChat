@@ -1,4 +1,4 @@
-const { logger, ResourceCapabilityMap } = require('@librechat/data-schemas');
+const { logger, ResourceCapabilityMap } = require('data-schemas');
 const { hasCapability } = require('~/server/middleware/roles/capabilities');
 const { checkPermission } = require('~/server/services/PermissionService');
 

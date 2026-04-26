@@ -1,5 +1,5 @@
-import { Providers } from '@librechat/agents';
-import { AuthKeys, ThinkingLevel } from 'librechat-data-provider';
+import { Providers } from 'agents';
+import { AuthKeys, ThinkingLevel } from 'agentchat-data-provider';
 import type * as t from '~/types';
 import { getGoogleConfig, getSafetySettings, knownGoogleParams } from './llm';
 

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import type { TMessage } from 'librechat-data-provider';
-import { buildTree } from 'librechat-data-provider';
+import type { TMessage } from 'agentchat-data-provider';
+import { buildTree } from 'agentchat-data-provider';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { createModels } from '~/models';
 import { createMessageMethods } from './message';

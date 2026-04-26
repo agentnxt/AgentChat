@@ -3,7 +3,7 @@ jest.mock('fs');
 jest.mock('path');
 jest.mock('node-fetch');
 jest.mock('@node-saml/passport-saml');
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     info: jest.fn(),
     debug: jest.fn(),
@@ -24,7 +24,7 @@ jest.mock('~/server/services/Config', () => ({
   },
   getAppConfig: jest.fn().mockResolvedValue({}),
 }));
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   isEmailDomainAllowed: jest.fn(() => true),
   getBalanceConfig: jest.fn(() => ({
     tokenCredits: 1000,
@@ -49,7 +49,7 @@ const path = require('path');
 const fetch = require('node-fetch');
 const { Strategy: SamlStrategy } = require('@node-saml/passport-saml');
 const { findUser } = require('~/models');
-const { resolveAppConfigForUser } = require('@librechat/api');
+const { resolveAppConfigForUser } = require('api');
 const { getAppConfig } = require('~/server/services/Config');
 const { setupSaml, getCertificateContent } = require('./samlStrategy');
 
@@ -430,7 +430,7 @@ u7wlOSk+oFzDIO/UILIA
     const result = await validate(profile);
 
     expect(result.user).toBe(false);
-    expect(result.details.message).toBe(require('librechat-data-provider').ErrorTypes.AUTH_FAILED);
+    expect(result.details.message).toBe(require('agentchat-data-provider').ErrorTypes.AUTH_FAILED);
   });
 
   it('should attempt to download and save the avatar if picture is provided', async () => {
@@ -477,7 +477,7 @@ u7wlOSk+oFzDIO/UILIA
   });
 
   it('should block login when tenant config restricts the domain', async () => {
-    const { isEmailDomainAllowed } = require('@librechat/api');
+    const { isEmailDomainAllowed } = require('api');
     const existingUser = {
       _id: 'tenant-blocked',
       provider: 'saml',

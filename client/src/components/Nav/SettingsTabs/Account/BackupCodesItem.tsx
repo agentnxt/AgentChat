@@ -8,7 +8,7 @@ import type {
   TRegenerateBackupCodesRequest,
   TBackupCode,
   TUser,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import {
   InputOTPSeparator,
   InputOTPGroup,
@@ -23,7 +23,7 @@ import {
   Spinner,
   TooltipAnchor,
   useToastContext,
-} from '@librechat/client';
+} from 'client';
 import { useRegenerateBackupCodesMutation } from '~/data-provider';
 import { useAuthContext, useLocalize } from '~/hooks';
 import store from '~/store';

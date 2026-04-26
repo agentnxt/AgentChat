@@ -1,4 +1,4 @@
-const { Constants } = require('librechat-data-provider');
+const { Constants } = require('agentchat-data-provider');
 const { initializeFakeClient } = require('./FakeClient');
 
 jest.mock('~/db/connect');
@@ -40,8 +40,8 @@ jest.mock('~/models', () => ({
 
 const { getConvo, saveConvo, saveMessage } = require('~/models');
 
-jest.mock('@librechat/agents', () => {
-  const actual = jest.requireActual('@librechat/agents');
+jest.mock('agents', () => {
+  const actual = jest.requireActual('agents');
   return {
     ...actual,
     ChatOpenAI: jest.fn().mockImplementation(() => {

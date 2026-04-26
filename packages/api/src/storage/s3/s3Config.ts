@@ -1,4 +1,4 @@
-import { logger } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
 import { isEnabled } from '~/utils/common';
 
 const MAX_EXPIRY_SECONDS = 7 * 24 * 60 * 60; // 7 days
@@ -38,7 +38,7 @@ const parseRefreshExpiry = (): number | null => {
   return parsed;
 };
 
-// Internal module config — not part of the public @librechat/api surface
+// Internal module config — not part of the public api surface
 export const s3Config = {
   /** AWS region for S3 */
   AWS_REGION: process.env.AWS_REGION ?? '',

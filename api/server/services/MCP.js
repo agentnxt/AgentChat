@@ -1,11 +1,11 @@
 const { tool } = require('@langchain/core/tools');
-const { logger, getTenantId } = require('@librechat/data-schemas');
+const { logger, getTenantId } = require('data-schemas');
 const {
   Providers,
   StepTypes,
   GraphEvents,
   Constants: AgentConstants,
-} = require('@librechat/agents');
+} = require('agents');
 const {
   sendEvent,
   MCPOAuthHandler,
@@ -15,8 +15,8 @@ const {
   GenerationJobManager,
   resolveJsonSchemaRefs,
   buildOAuthToolCallName,
-} = require('@librechat/api');
-const { Time, CacheKeys, Constants, isAssistantsEndpoint } = require('librechat-data-provider');
+} = require('api');
+const { Time, CacheKeys, Constants, isAssistantsEndpoint } = require('agentchat-data-provider');
 const {
   getOAuthReconnectionManager,
   getMCPServersRegistry,
@@ -58,7 +58,7 @@ const unavailableMsg =
  * Resolves config-source MCP servers from admin Config overrides for the current
  * request context. Returns the parsed configs keyed by server name.
  * @param {import('express').Request} req - Express request with user context
- * @returns {Promise<Record<string, import('@librechat/api').ParsedServerConfig>>}
+ * @returns {Promise<Record<string, import('api').ParsedServerConfig>>}
  */
 async function resolveConfigServers(req) {
   try {
@@ -84,7 +84,7 @@ async function resolveConfigServers(req) {
  * for the given user context. Shared helper for controllers needing the full merged config.
  * @param {string} userId
  * @param {{ id?: string, role?: string }} [user]
- * @returns {Promise<Record<string, import('@librechat/api').ParsedServerConfig>>}
+ * @returns {Promise<Record<string, import('api').ParsedServerConfig>>}
  */
 async function resolveAllMcpConfigs(userId, user) {
   const registry = getMCPServersRegistry();
@@ -179,7 +179,7 @@ function createRunStepDeltaEmitter({ res, stepId, toolCall, streamId = null }) {
  */
 function createRunStepEmitter({ res, runId, stepId, toolCall, index, streamId = null }) {
   return async function () {
-    /** @type {import('@librechat/agents').RunStep} */
+    /** @type {import('agents').RunStep} */
     const data = {
       runId: runId ?? Constants.USE_PRELIM_RESPONSE_MESSAGE_ID,
       id: stepId,
@@ -396,7 +396,7 @@ async function reconnectServer({
  * @param {number} [params.index]
  * @param {AbortSignal} [params.signal]
  * @param {string | null} [params.streamId] - The stream ID for resumable mode.
- * @param {import('@librechat/api').ParsedServerConfig} [params.config]
+ * @param {import('api').ParsedServerConfig} [params.config]
  * @param {Record<string, Record<string, string>>} [params.userMCPAuthMap]
  * @returns { Promise<Array<typeof tool | { _call: (toolInput: Object | string) => unknown}>> } An object with `_call` method to execute the tool input.
  */
@@ -477,7 +477,7 @@ async function createMCPTools({
  * @param {Providers | EModelEndpoint} params.provider - The provider for the tool.
  * @param {LCAvailableTools} [params.availableTools]
  * @param {Record<string, Record<string, string>>} [params.userMCPAuthMap]
- * @param {import('@librechat/api').ParsedServerConfig} [params.config]
+ * @param {import('api').ParsedServerConfig} [params.config]
  * @returns { Promise<typeof tool | { _call: (toolInput: Object | string) => unknown}> } An object with `_call` method to execute the tool input.
  */
 async function createMCPTool({
@@ -712,12 +712,12 @@ async function getMCPSetupData(userId, options = {}) {
   const configServers = await registry.ensureConfigServers(appConfig?.mcpConfig || {});
   const mcpConfig = await registry.getAllServerConfigs(userId, configServers);
   const mcpManager = getMCPManager(userId);
-  /** @type {Map<string, import('@librechat/api').MCPConnection>} */
+  /** @type {Map<string, import('api').MCPConnection>} */
   let appConnections = new Map();
   try {
     // Use getLoaded() instead of getAll() to avoid forcing connection creation.
     // getAll() creates connections for all servers, which is problematic for servers
-    // that require user context (e.g., those with {{LIBRECHAT_USER_ID}} placeholders).
+    // that require user context (e.g., those with {{AGENTCHAT_USER_ID}} placeholders).
     appConnections = (await mcpManager.appConnections?.getLoaded()) || new Map();
   } catch (error) {
     logger.error(`[MCP][User: ${userId}] Error getting app connections:`, error);
@@ -800,9 +800,9 @@ async function checkOAuthFlowStatus(userId, serverName) {
  * Get connection status for a specific MCP server
  * @param {string} userId - The user ID
  * @param {string} serverName - The server name
- * @param {import('@librechat/api').ParsedServerConfig} config - The server configuration
- * @param {Map<string, import('@librechat/api').MCPConnection>} appConnections - App-level connections
- * @param {Map<string, import('@librechat/api').MCPConnection>} userConnections - User-level connections
+ * @param {import('api').ParsedServerConfig} config - The server configuration
+ * @param {Map<string, import('api').MCPConnection>} appConnections - App-level connections
+ * @param {Map<string, import('api').MCPConnection>} userConnections - User-level connections
  * @param {Set} oauthServers - Set of OAuth servers
  * @returns {Object} Object containing requiresOAuth and connectionState
  */

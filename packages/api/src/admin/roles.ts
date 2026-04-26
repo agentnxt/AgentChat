@@ -1,6 +1,6 @@
-import { PrincipalType, SystemRoles } from 'librechat-data-provider';
-import { logger, isValidObjectIdString, RoleConflictError } from '@librechat/data-schemas';
-import type { IRole, IUser, IConfig, AdminMember } from '@librechat/data-schemas';
+import { PrincipalType, SystemRoles } from 'agentchat-data-provider';
+import { logger, isValidObjectIdString, RoleConflictError } from 'data-schemas';
+import type { IRole, IUser, IConfig, AdminMember } from 'data-schemas';
 import type { FilterQuery, Types } from 'mongoose';
 import type { Response } from 'express';
 import type { ServerRequest } from '~/types/http';

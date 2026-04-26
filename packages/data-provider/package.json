@@ -1,7 +1,7 @@
 {
-  "name": "librechat-data-provider",
+  "name": "@agnxxt/agentchat-data-provider",
   "version": "0.8.501",
-  "description": "data services for librechat apps",
+  "description": "data services for agentchat apps",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "./dist/types/index.d.ts",
@@ -34,14 +34,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/danny-avila/LibreChat"
+    "url": "https://github.com/danny-avila/AgentChat"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danny-avila/LibreChat/issues"
+    "url": "https://github.com/danny-avila/AgentChat/issues"
   },
-  "homepage": "https://librechat.ai",
+  "homepage": "https://agentchat.ai",
   "dependencies": {
     "axios": "^1.15.0",
     "dayjs": "^1.11.13",

@@ -9,8 +9,8 @@ import {
   useToastContext,
   OGDialogTrigger,
   OGDialogTemplate,
-} from '@librechat/client';
-import type { Agent, AgentCreateParams } from 'librechat-data-provider';
+} from 'client';
+import type { Agent, AgentCreateParams } from 'agentchat-data-provider';
 import type { UseMutationResult } from '@tanstack/react-query';
 import { logger, getDefaultAgentFormValues } from '~/utils';
 import { useDeleteAgentMutation } from '~/data-provider';

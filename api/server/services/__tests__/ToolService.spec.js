@@ -6,7 +6,7 @@ const {
   actionDelimiter,
   AgentCapabilities,
   defaultAgentCapabilities,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 
 const mockGetEndpointsConfig = jest.fn();
 const mockGetMCPServerTools = jest.fn();
@@ -19,8 +19,8 @@ jest.mock('~/server/services/Config', () => ({
 
 const mockLoadToolDefinitions = jest.fn();
 const mockGetUserMCPAuthMap = jest.fn();
-jest.mock('@librechat/api', () => ({
-  ...jest.requireActual('@librechat/api'),
+jest.mock('api', () => ({
+  ...jest.requireActual('api'),
   loadToolDefinitions: (...args) => mockLoadToolDefinitions(...args),
   getUserMCPAuthMap: (...args) => mockGetUserMCPAuthMap(...args),
 }));

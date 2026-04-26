@@ -6,7 +6,7 @@ import {
   ContentTypes,
   ToolCallTypes,
   getNonEmptyValue,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type {
   Agents,
   TMessage,
@@ -15,7 +15,7 @@ import type {
   EventSubmission,
   SummaryContentPart,
   TMessageContentParts,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type { SetterOrUpdater } from 'recoil';
 import type { AnnounceOptions } from '~/common';
 import { MESSAGE_UPDATE_INTERVAL } from '~/common';

@@ -1,5 +1,5 @@
-import { Constants, ContentTypes, ToolCallTypes } from 'librechat-data-provider';
-import type { TMessageContentParts, Agents } from 'librechat-data-provider';
+import { Constants, ContentTypes, ToolCallTypes } from 'agentchat-data-provider';
+import type { TMessageContentParts, Agents } from 'agentchat-data-provider';
 import type { PartWithIndex } from '~/components/Chat/Messages/Content/ParallelContent';
 
 export type GroupedPart =

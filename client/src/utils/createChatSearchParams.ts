@@ -3,8 +3,8 @@ import {
   isAgentsEndpoint,
   tQueryParamsSchema,
   isAssistantsEndpoint,
-} from 'librechat-data-provider';
-import type { TPreset, TConversation } from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type { TPreset, TConversation } from 'agentchat-data-provider';
 import type { ZodAny } from 'zod';
 import { isEphemeralAgent } from '~/common';
 

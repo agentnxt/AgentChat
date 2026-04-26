@@ -15,7 +15,7 @@ type ThinkingConfig =
  *
  * Starting with Claude Opus 4.7, the Messages API returns empty `thinking`
  * blocks unless the request sets `thinking.display`. This helper encodes the
- * three user-facing modes — `'auto'` (LibreChat decides), `'summarized'`, and
+ * three user-facing modes — `'auto'` (AgentChat decides), `'summarized'`, and
  * `'omitted'` — into the wire value (or `undefined` when the field should be
  * left off).
  *
@@ -179,7 +179,7 @@ function getBedrockAnthropicBetaHeaders(model: string): string[] {
 
 export const bedrockInputSchema = s.tConversationSchema
   .pick({
-    /* LibreChat params; optionType: 'conversation' */
+    /* AgentChat params; optionType: 'conversation' */
     modelLabel: true,
     promptPrefix: true,
     resendFiles: true,
@@ -235,7 +235,7 @@ export type BedrockConverseInput = z.infer<typeof bedrockInputSchema>;
 
 export const bedrockInputParser = s.tConversationSchema
   .pick({
-    /* LibreChat params; optionType: 'conversation' */
+    /* AgentChat params; optionType: 'conversation' */
     modelLabel: true,
     promptPrefix: true,
     resendFiles: true,

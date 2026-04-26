@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
-import { PermissionTypes, Permissions, isAssistantsEndpoint } from 'librechat-data-provider';
+import { PermissionTypes, Permissions, isAssistantsEndpoint } from 'agentchat-data-provider';
 import useHasAccess from '~/hooks/Roles/useHasAccess';
 import store from '~/store';
 

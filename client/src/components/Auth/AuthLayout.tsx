@@ -1,5 +1,5 @@
-import { ThemeSelector } from '@librechat/client';
-import { TStartupConfig } from 'librechat-data-provider';
+import { ThemeSelector } from 'client';
+import { TStartupConfig } from 'agentchat-data-provider';
 import { ErrorMessage } from '~/components/Auth/ErrorMessage';
 import { TranslationKeys, useLocalize } from '~/hooks';
 import SocialLoginRender from './SocialLoginRender';
@@ -64,7 +64,7 @@ function AuthLayout({
           <img
             src="assets/logo.svg"
             className="h-full w-full object-contain"
-            alt={localize('com_ui_logo', { 0: startupConfig?.appTitle ?? 'LibreChat' })}
+            alt={localize('com_ui_logo', { 0: startupConfig?.appTitle ?? 'AgentChat' })}
           />
         </div>
       </BlinkAnimation>

@@ -1,5 +1,5 @@
-import { logger } from '@librechat/data-schemas';
-import type { TokenMethods, IUser } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
+import type { TokenMethods, IUser } from 'data-schemas';
 import type { FlowStateManager } from '~/flow/manager';
 import type { MCPOAuthTokens } from '~/mcp/oauth';
 import type * as t from '~/mcp/types';
@@ -11,7 +11,7 @@ import { processMCPEnv } from '~/utils';
 jest.mock('~/mcp/connection');
 jest.mock('~/mcp/oauth');
 jest.mock('~/utils');
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     info: jest.fn(),
     warn: jest.fn(),
@@ -242,7 +242,7 @@ describe('MCPConnectionFactory', () => {
         },
       };
 
-      const { getTenantId } = require('@librechat/data-schemas');
+      const { getTenantId } = require('data-schemas');
       (getTenantId as jest.Mock).mockReturnValue('test-tenant');
 
       mockMCPOAuthHandler.initiateOAuthFlow.mockResolvedValue(mockFlowData);

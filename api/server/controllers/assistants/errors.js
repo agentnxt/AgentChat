@@ -1,6 +1,6 @@
 // errorHandler.js
-const { logger } = require('@librechat/data-schemas');
-const { CacheKeys, ViolationTypes, ContentTypes } = require('librechat-data-provider');
+const { logger } = require('data-schemas');
+const { CacheKeys, ViolationTypes, ContentTypes } = require('agentchat-data-provider');
 const { recordUsage, checkMessageGaps } = require('~/server/services/Threads');
 const { sendResponse } = require('~/server/middleware/error');
 const getLogStores = require('~/cache/getLogStores');

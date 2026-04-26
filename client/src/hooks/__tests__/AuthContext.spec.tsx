@@ -20,8 +20,8 @@ jest.mock('react-router-dom', () => ({
 
 const mockApiBaseUrl = jest.fn(() => '');
 
-jest.mock('librechat-data-provider', () => ({
-  ...jest.requireActual('librechat-data-provider'),
+jest.mock('agentchat-data-provider', () => ({
+  ...jest.requireActual('agentchat-data-provider'),
   setTokenHeader: jest.fn(),
   apiBaseUrl: () => mockApiBaseUrl(),
 }));
@@ -192,7 +192,7 @@ describe('AuthContextProvider — login onError redirect handling', () => {
 });
 
 describe('AuthContextProvider — logout onSuccess/onError handling', () => {
-  const mockSetTokenHeader = jest.requireMock('librechat-data-provider').setTokenHeader;
+  const mockSetTokenHeader = jest.requireMock('agentchat-data-provider').setTokenHeader;
 
   beforeEach(() => {
     jest.clearAllMocks();

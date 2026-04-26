@@ -16,7 +16,7 @@ jest.mock('nanoid', () => ({
   nanoid: jest.fn(() => 'mock-nanoid-123'),
 }));
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     debug: jest.fn(),
     error: jest.fn(),
@@ -24,7 +24,7 @@ jest.mock('@librechat/data-schemas', () => ({
   },
 }));
 
-jest.mock('@librechat/agents', () => ({
+jest.mock('agents', () => ({
   Callback: { TOOL_ERROR: 'TOOL_ERROR' },
   ToolEndHandler: jest.fn(),
   formatAgentMessages: jest.fn().mockReturnValue({
@@ -33,7 +33,7 @@ jest.mock('@librechat/agents', () => ({
   }),
 }));
 
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   writeSSE: jest.fn(),
   createRun: jest.fn().mockResolvedValue({
     processStream: mockProcessStream,
@@ -180,7 +180,7 @@ describe('OpenAIChatCompletionController', () => {
     });
 
     it('should return 400 when conversation_id is not a string', async () => {
-      const { validateRequest } = require('@librechat/api');
+      const { validateRequest } = require('api');
       validateRequest.mockReturnValueOnce({
         request: { model: 'agent-123', messages: [], stream: false, conversation_id: { $gt: '' } },
       });
@@ -190,7 +190,7 @@ describe('OpenAIChatCompletionController', () => {
     });
 
     it('should return 404 when conversation is not owned by user', async () => {
-      const { validateRequest } = require('@librechat/api');
+      const { validateRequest } = require('api');
       const { getConvo } = require('~/models');
       validateRequest.mockReturnValueOnce({
         request: {
@@ -208,7 +208,7 @@ describe('OpenAIChatCompletionController', () => {
     });
 
     it('should proceed when conversation is owned by user', async () => {
-      const { validateRequest } = require('@librechat/api');
+      const { validateRequest } = require('api');
       const { getConvo } = require('~/models');
       validateRequest.mockReturnValueOnce({
         request: {
@@ -226,7 +226,7 @@ describe('OpenAIChatCompletionController', () => {
     });
 
     it('should return 500 when getConvo throws a DB error', async () => {
-      const { validateRequest } = require('@librechat/api');
+      const { validateRequest } = require('api');
       const { getConvo } = require('~/models');
       validateRequest.mockReturnValueOnce({
         request: {
@@ -312,7 +312,7 @@ describe('OpenAIChatCompletionController', () => {
 
   describe('recursionLimit resolution', () => {
     it('should pass resolveRecursionLimit result to processStream config', async () => {
-      const { resolveRecursionLimit } = require('@librechat/api');
+      const { resolveRecursionLimit } = require('api');
       resolveRecursionLimit.mockReturnValueOnce(75);
 
       await OpenAIChatCompletionController(req, res);
@@ -325,7 +325,7 @@ describe('OpenAIChatCompletionController', () => {
     });
 
     it('should call resolveRecursionLimit with agentsEConfig and agent', async () => {
-      const { resolveRecursionLimit } = require('@librechat/api');
+      const { resolveRecursionLimit } = require('api');
       const { getAgent } = require('~/models');
       const mockAgent = { id: 'agent-123', name: 'Test', recursion_limit: 200 };
       getAgent.mockResolvedValueOnce(mockAgent);

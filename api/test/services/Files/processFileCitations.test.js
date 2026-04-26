@@ -1,4 +1,4 @@
-const { Tools } = require('librechat-data-provider');
+const { Tools } = require('agentchat-data-provider');
 const {
   processFileCitations,
   applyCitationLimits,
@@ -11,7 +11,7 @@ jest.mock('~/models', () => ({
   getRoleByName: jest.fn(),
 }));
 
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   checkAccess: jest.fn().mockResolvedValue(true),
 }));
 

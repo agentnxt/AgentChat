@@ -150,10 +150,10 @@ jobs:
       - name: Type check data-schemas
         run: npx tsc --noEmit -p packages/data-schemas/tsconfig.json
 
-      - name: Type check @librechat/api
+      - name: Type check @agentchat/api
         run: npx tsc --noEmit -p packages/api/tsconfig.json
 
-      - name: Type check @librechat/client
+      - name: Type check @agentchat/client
         run: npx tsc --noEmit -p packages/client/tsconfig.json
 
   circular-deps:
@@ -197,12 +197,12 @@ jobs:
           name: build-data-schemas
           path: packages/data-schemas/dist
 
-      - name: Rebuild @librechat/api and check for circular dependencies
+      - name: Rebuild @agentchat/api and check for circular dependencies
         run: |
           output=$(npm run build:api 2>&1)
           echo "$output"
           if echo "$output" | grep -q "Circular depend"; then
-            echo "Error: Circular dependency detected in @librechat/api!"
+            echo "Error: Circular dependency detected in @agentchat/api!"
             exit 1
           fi
 
@@ -366,7 +366,7 @@ jobs:
         run: cd packages/data-schemas && npm run test:ci
 
   test-packages-api:
-    name: 'Tests: @librechat/api'
+    name: 'Tests: @agentchat/api'
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10

@@ -7,7 +7,7 @@ import {
   StdioOptionsSchema,
   WebSocketOptionsSchema,
   StreamableHTTPOptionsSchema,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type {
   EmbeddedResource,
   ListToolsResult,
@@ -16,9 +16,9 @@ import type {
   TextContent,
   Tool,
 } from '@modelcontextprotocol/sdk/types.js';
-import type { SearchResultData, UIResource, TPlugin } from 'librechat-data-provider';
-import type { TokenMethods, IUser } from '@librechat/data-schemas';
-import type { LCTool } from '@librechat/agents';
+import type { SearchResultData, UIResource, TPlugin } from 'agentchat-data-provider';
+import type { TokenMethods, IUser } from 'data-schemas';
+import type { LCTool } from 'agents';
 import type { FlowStateManager } from '~/flow/manager';
 import type { RequestBody } from '~/types/http';
 import type * as o from '~/mcp/oauth/types';
@@ -146,7 +146,7 @@ export type FormattedToolResponse = FormattedContentResult;
 
 /**
  * Origin of an MCP server definition.
- * - `'yaml'`   — operator-defined in librechat.yaml, full trust, boot-time init
+ * - `'yaml'`   — operator-defined in agentchat.yaml, full trust, boot-time init
  * - `'config'` — admin-defined via Config override, full trust, lazy init
  * - `'user'`   — user-provided via UI, sandboxed (restricted placeholder resolution)
  */

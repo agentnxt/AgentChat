@@ -1,6 +1,6 @@
-import { Providers } from '@librechat/agents';
-import { EModelEndpoint } from 'librechat-data-provider';
-import type { Agent } from 'librechat-data-provider';
+import { Providers } from 'agents';
+import { EModelEndpoint } from 'agentchat-data-provider';
+import type { Agent } from 'agentchat-data-provider';
 import type { ServerRequest, InitializeResultBase, EndpointTokenConfig } from '~/types';
 import type { InitializeAgentDbMethods } from '../initialize';
 import { DEFAULT_MAX_CONTEXT_TOKENS } from '../initialize';
@@ -22,13 +22,13 @@ jest.mock('winston', () => ({
   },
 }));
 
-const mockExtractLibreChatParams = jest.fn();
+const mockExtractAgentChatParams = jest.fn();
 const mockGetModelMaxTokens = jest.fn();
 const mockOptionalChainWithEmptyCheck = jest.fn();
 const mockGetThreadData = jest.fn();
 
 jest.mock('~/utils', () => ({
-  extractLibreChatParams: (...args: unknown[]) => mockExtractLibreChatParams(...args),
+  extractAgentChatParams: (...args: unknown[]) => mockExtractAgentChatParams(...args),
   getModelMaxTokens: (...args: unknown[]) => mockGetModelMaxTokens(...args),
   optionalChainWithEmptyCheck: (...args: unknown[]) => mockOptionalChainWithEmptyCheck(...args),
   getThreadData: (...args: unknown[]) => mockGetThreadData(...args),
@@ -117,7 +117,7 @@ function createMocks(overrides?: {
     overrideProvider: resolvedOverrideProvider,
   });
 
-  mockExtractLibreChatParams.mockReturnValue({
+  mockExtractAgentChatParams.mockReturnValue({
     resendFiles: false,
     maxContextTokens,
     modelOptions: { model },

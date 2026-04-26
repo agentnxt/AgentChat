@@ -1,5 +1,5 @@
 const express = require('express');
-const { logger, SystemCapabilities } = require('@librechat/data-schemas');
+const { logger, SystemCapabilities } = require('data-schemas');
 const {
   SystemRoles,
   roleDefaults,
@@ -11,7 +11,7 @@ const {
   marketplacePermissionsSchema,
   peoplePickerPermissionsSchema,
   remoteAgentsPermissionsSchema,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { hasCapability, requireCapability } = require('~/server/middleware/roles/capabilities');
 const { updateRoleByName, getRoleByName } = require('~/models');
 const { requireJwtAuth } = require('~/server/middleware');

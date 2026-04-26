@@ -8,7 +8,7 @@
  * If the chaining is removed, these tests fail.
  */
 
-const { getTenantId } = require('@librechat/data-schemas');
+const { getTenantId } = require('data-schemas');
 
 // ── Mocks ──────────────────────────────────────────────────────────────
 
@@ -28,12 +28,12 @@ jest.mock('passport', () => ({
   }),
 }));
 
-// Mock @librechat/api — the real tenantContextMiddleware is TS and cannot be
+// Mock api — the real tenantContextMiddleware is TS and cannot be
 // required directly from CJS tests. This thin wrapper mirrors the real logic
 // (read req.user.tenantId, call tenantStorage.run) using the same data-schemas
 // primitives. The real implementation is covered by packages/api tenant.spec.ts.
-jest.mock('@librechat/api', () => {
-  const { tenantStorage } = require('@librechat/data-schemas');
+jest.mock('api', () => {
+  const { tenantStorage } = require('data-schemas');
   return {
     isEnabled: jest.fn(() => false),
     tenantContextMiddleware: (req, res, next) => {

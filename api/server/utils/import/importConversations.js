@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
-const { resolveImportMaxFileSize } = require('@librechat/api');
-const { logger } = require('@librechat/data-schemas');
+const { resolveImportMaxFileSize } = require('api');
+const { logger } = require('data-schemas');
 const { getImporter } = require('./importers');
 
 const maxFileSize = resolveImportMaxFileSize();

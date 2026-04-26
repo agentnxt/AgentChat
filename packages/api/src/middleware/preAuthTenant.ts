@@ -1,4 +1,4 @@
-import { tenantStorage, logger, SYSTEM_TENANT_ID } from '@librechat/data-schemas';
+import { tenantStorage, logger, SYSTEM_TENANT_ID } from 'data-schemas';
 import type { Request, Response, NextFunction } from 'express';
 
 /**

@@ -2,11 +2,11 @@ import React, { useRef, useCallback, useMemo, useEffect } from 'react';
 import { LayoutGrid } from 'lucide-react';
 import { useRecoilValue } from 'recoil';
 import { useDrag, useDrop } from 'react-dnd';
-import { Skeleton } from '@librechat/client';
+import { Skeleton } from 'client';
 import { useNavigate } from 'react-router-dom';
 import { useQueries } from '@tanstack/react-query';
-import { QueryKeys, dataService } from 'librechat-data-provider';
-import type { Agent, TEndpointsConfig, TModelSpec } from 'librechat-data-provider';
+import { QueryKeys, dataService } from 'agentchat-data-provider';
+import type { Agent, TEndpointsConfig, TModelSpec } from 'agentchat-data-provider';
 import type { AgentQueryResult } from '~/common';
 import {
   useGetConversation,

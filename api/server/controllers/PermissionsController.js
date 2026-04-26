@@ -1,11 +1,11 @@
 /**
- * @import { TUpdateResourcePermissionsRequest, TUpdateResourcePermissionsResponse } from 'librechat-data-provider'
+ * @import { TUpdateResourcePermissionsRequest, TUpdateResourcePermissionsResponse } from 'agentchat-data-provider'
  */
 
 const mongoose = require('mongoose');
-const { logger } = require('@librechat/data-schemas');
-const { ResourceType, PrincipalType, PermissionBits } = require('librechat-data-provider');
-const { enrichRemoteAgentPrincipals, backfillRemoteAgentPermissions } = require('@librechat/api');
+const { logger } = require('data-schemas');
+const { ResourceType, PrincipalType, PermissionBits } = require('agentchat-data-provider');
+const { enrichRemoteAgentPrincipals, backfillRemoteAgentPermissions } = require('api');
 const {
   bulkUpdateResourcePermissions,
   ensureGroupPrincipalExists,

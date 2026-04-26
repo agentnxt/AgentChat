@@ -1,6 +1,6 @@
 const cookies = require('cookie');
 const passport = require('passport');
-const { isEnabled, tenantContextMiddleware } = require('@librechat/api');
+const { isEnabled, tenantContextMiddleware } = require('api');
 
 // This middleware does not require authentication,
 // but if the user is authenticated, it will set the user object

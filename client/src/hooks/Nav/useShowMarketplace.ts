@@ -1,5 +1,5 @@
 import { useContext, useMemo } from 'react';
-import { PermissionTypes, Permissions } from 'librechat-data-provider';
+import { PermissionTypes, Permissions } from 'agentchat-data-provider';
 import { useHasAccess, AuthContext } from '~/hooks';
 
 /**

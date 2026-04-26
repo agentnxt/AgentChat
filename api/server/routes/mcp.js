@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const { logger, getTenantId, tenantStorage } = require('@librechat/data-schemas');
+const { logger, getTenantId, tenantStorage } = require('data-schemas');
 const {
   CacheKeys,
   Constants,
   PermissionBits,
   PermissionTypes,
   Permissions,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const {
   getBasePath,
   createSafeUser,
@@ -21,7 +21,7 @@ const {
   generateCheckAccess,
   validateOAuthSession,
   OAUTH_SESSION_COOKIE,
-} = require('@librechat/api');
+} = require('api');
 const {
   createMCPServerController,
   updateMCPServerController,
@@ -66,7 +66,7 @@ const checkMCPCreate = generateCheckAccess({
 
 /**
  * Get all MCP tools available to the user
- * Returns only MCP tools, completely decoupled from regular LibreChat tools
+ * Returns only MCP tools, completely decoupled from regular AgentChat tools
  */
 router.get('/tools', requireJwtAuth, async (req, res) => {
   return getMCPTools(req, res);

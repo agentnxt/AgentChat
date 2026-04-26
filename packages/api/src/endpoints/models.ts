@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import axios from 'axios';
-import { logger } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import {
   Time,
@@ -8,8 +8,8 @@ import {
   KnownEndpoints,
   EModelEndpoint,
   defaultModels,
-} from 'librechat-data-provider';
-import type { IUser } from '@librechat/data-schemas';
+} from 'agentchat-data-provider';
+import type { IUser } from 'data-schemas';
 import {
   processModelData,
   extractBaseURL,

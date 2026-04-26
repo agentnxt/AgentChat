@@ -1,4 +1,4 @@
-const { getInvite: getInviteFn } = require('@librechat/api');
+const { getInvite: getInviteFn } = require('api');
 const { createToken, findToken, deleteTokens } = require('~/models');
 
 const getInvite = (encodedToken, email) =>

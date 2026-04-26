@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react';
-import { ThemeContext, isDark } from '@librechat/client';
-import { removeNullishValues } from 'librechat-data-provider';
+import { ThemeContext, isDark } from 'client';
+import { removeNullishValues } from 'agentchat-data-provider';
 import type { Artifact } from '~/common';
 import { getKey, getProps, getTemplate, getArtifactFilename } from '~/utils/artifacts';
 import { getMarkdownFiles } from '~/utils/markdown';

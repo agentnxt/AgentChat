@@ -1,7 +1,7 @@
 import React, { useEffect, memo } from 'react';
 import TagManager from 'react-gtm-module';
 import ReactMarkdown from 'react-markdown';
-import { Constants } from 'librechat-data-provider';
+import { Constants } from 'agentchat-data-provider';
 import { useGetStartupConfig } from '~/data-provider';
 import { useLocalize } from '~/hooks';
 
@@ -27,9 +27,9 @@ function Footer({ className }: { className?: string }) {
   const mainContentParts = (
     typeof config?.customFooter === 'string'
       ? config.customFooter
-      : '[LibreChat ' +
+      : '[AgentChat ' +
         Constants.VERSION +
-        '](https://librechat.ai) - ' +
+        '](https://agentchat.ai) - ' +
         localize('com_ui_latest_footer')
   ).split('|');
 

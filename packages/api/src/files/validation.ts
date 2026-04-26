@@ -1,5 +1,5 @@
-import { Providers } from '@librechat/agents';
-import { mbToBytes, isOpenAILikeProvider } from 'librechat-data-provider';
+import { Providers } from 'agents';
+import { mbToBytes, isOpenAILikeProvider } from 'agentchat-data-provider';
 
 export interface ValidationResult {
   isValid: boolean;

@@ -1,4 +1,4 @@
-const { logger } = require('@librechat/data-schemas');
+const { logger } = require('data-schemas');
 const {
   Constants,
   Permissions,
@@ -7,7 +7,7 @@ const {
   PermissionTypes,
   isAgentsEndpoint,
   isEphemeralAgentId,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { checkPermission } = require('~/server/services/PermissionService');
 const { canAccessResource } = require('./canAccessResource');
 const db = require('~/models');

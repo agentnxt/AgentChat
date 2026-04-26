@@ -1,5 +1,5 @@
-import { Spinner, FileIcon } from '@librechat/client';
-import type { TFile } from 'librechat-data-provider';
+import { Spinner, FileIcon } from 'client';
+import type { TFile } from 'agentchat-data-provider';
 import type { ExtendedFile } from '~/common';
 import SourceIcon from './SourceIcon';
 import { cn } from '~/utils';

@@ -4,7 +4,7 @@ const {
   SystemRoles,
   PrincipalType,
   PrincipalModel,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const { canAccessAgentFromBody } = require('./canAccessAgentFromBody');
 const { User, Role, AclEntry } = require('~/db/models');

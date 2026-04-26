@@ -9,7 +9,7 @@ const passport = require('passport');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const mongoSanitize = require('express-mongo-sanitize');
-const { logger, runAsSystem } = require('@librechat/data-schemas');
+const { logger, runAsSystem } = require('data-schemas');
 const {
   isEnabled,
   apiNotFound,
@@ -22,7 +22,7 @@ const {
   initializeFileStorage,
   updateInterfacePermissions,
   preAuthTenantMiddleware,
-} = require('@librechat/api');
+} = require('api');
 const { connectDb, indexSync } = require('~/db');
 const initializeOAuthReconnectManager = require('./services/initializeOAuthReconnectManager');
 const { getRoleByName, updateAccessPermissions, seedDatabase } = require('~/models');
@@ -300,7 +300,7 @@ process.on('uncaughtException', (err) => {
     return;
   }
 
-  if (err.stack && err.stack.includes('@librechat/agents')) {
+  if (err.stack && err.stack.includes('agents')) {
     logger.error(
       '\n\nAn error occurred in the agents system. The error has been logged and the app will continue running.',
       {

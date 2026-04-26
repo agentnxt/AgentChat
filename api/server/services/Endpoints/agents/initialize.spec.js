@@ -4,22 +4,22 @@ const {
   PermissionBits,
   PrincipalType,
   PrincipalModel,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
 const mockInitializeAgent = jest.fn();
 const mockValidateAgentModel = jest.fn();
 
-jest.mock('@librechat/agents', () => ({
-  ...jest.requireActual('@librechat/agents'),
+jest.mock('agents', () => ({
+  ...jest.requireActual('agents'),
   createContentAggregator: jest.fn(() => ({
     contentParts: [],
     aggregateContent: jest.fn(),
   })),
 }));
 
-jest.mock('@librechat/api', () => ({
-  ...jest.requireActual('@librechat/api'),
+jest.mock('api', () => ({
+  ...jest.requireActual('api'),
   initializeAgent: (...args) => mockInitializeAgent(...args),
   validateAgentModel: (...args) => mockValidateAgentModel(...args),
   GenerationJobManager: { setCollectedUsage: jest.fn() },

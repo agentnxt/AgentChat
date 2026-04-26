@@ -10,7 +10,7 @@ jest.mock('~/config', () => ({
   getOAuthReconnectionManager: jest.fn(),
 }));
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   getTenantId: jest.fn(() => 'tenant-1'),
   logger: { debug: jest.fn(), info: jest.fn(), warn: jest.fn(), error: jest.fn() },
 }));

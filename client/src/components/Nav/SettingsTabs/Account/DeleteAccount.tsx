@@ -15,8 +15,8 @@ import {
   Button,
   Label,
   Input,
-} from '@librechat/client';
-import type { TDeleteUserRequest } from 'librechat-data-provider';
+} from 'client';
+import type { TDeleteUserRequest } from 'agentchat-data-provider';
 import { useDeleteUserMutation } from '~/data-provider';
 import { useAuthContext } from '~/hooks/AuthContext';
 import { LocalizeFunction } from '~/common';

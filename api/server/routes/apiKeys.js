@@ -1,6 +1,6 @@
 const express = require('express');
-const { generateCheckAccess, createApiKeyHandlers } = require('@librechat/api');
-const { PermissionTypes, Permissions } = require('librechat-data-provider');
+const { generateCheckAccess, createApiKeyHandlers } = require('api');
+const { PermissionTypes, Permissions } = require('agentchat-data-provider');
 const {
   getAgentApiKeyById,
   createAgentApiKey,

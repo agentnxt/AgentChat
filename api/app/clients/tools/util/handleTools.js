@@ -1,10 +1,10 @@
-const { logger } = require('@librechat/data-schemas');
+const { logger } = require('data-schemas');
 const {
   EnvVar,
   Calculator,
   createSearchTool,
   createCodeExecutionTool,
-} = require('@librechat/agents');
+} = require('agents');
 const {
   checkAccess,
   toolkitParent,
@@ -13,14 +13,14 @@ const {
   loadWebSearchAuth,
   buildImageToolContext,
   buildWebSearchContext,
-} = require('@librechat/api');
+} = require('api');
 const {
   Tools,
   Constants,
   Permissions,
   EToolResources,
   PermissionTypes,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const {
   availableTools,
   manifestToolMap,

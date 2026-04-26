@@ -1,12 +1,12 @@
 const { nanoid } = require('nanoid');
-const { logger } = require('@librechat/data-schemas');
-const { Callback, ToolEndHandler, formatAgentMessages } = require('@librechat/agents');
+const { logger } = require('data-schemas');
+const { Callback, ToolEndHandler, formatAgentMessages } = require('agents');
 const {
   EModelEndpoint,
   ResourceType,
   PermissionBits,
   hasPermissions,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const {
   writeSSE,
   createRun,
@@ -28,7 +28,7 @@ const {
   isChatCompletionValidationFailure,
   discoverConnectedAgents,
   getRemoteAgentPermissions,
-} = require('@librechat/api');
+} = require('api');
 const {
   buildSummarizationHandlers,
   markSummarizationUsage,
@@ -167,7 +167,7 @@ const OpenAIChatCompletionController = async (req, res) => {
   const responseId = `chatcmpl-${nanoid()}`;
   const created = Math.floor(Date.now() / 1000);
 
-  /** @type {import('@librechat/api').OpenAIResponseContext} — key must be `requestId` to match the type used by createChunk/buildNonStreamingResponse */
+  /** @type {import('api').OpenAIResponseContext} — key must be `requestId` to match the type used by createChunk/buildNonStreamingResponse */
   const context = {
     created,
     requestId: responseId,
@@ -259,7 +259,7 @@ const OpenAIChatCompletionController = async (req, res) => {
      * to the correct toolRegistry / userMCPAuthMap / tool_resources.
      * @type {Map<string, {
      *   agent: object,
-     *   toolRegistry?: import('@librechat/agents').LCToolRegistry,
+     *   toolRegistry?: import('agents').LCToolRegistry,
      *   userMCPAuthMap?: Record<string, Record<string, string>>,
      *   tool_resources?: object,
      *   actionsEnabled?: boolean,
@@ -367,7 +367,7 @@ const OpenAIChatCompletionController = async (req, res) => {
       : null;
 
     const collectedUsage = [];
-    /** @type {Promise<import('librechat-data-provider').TAttachment | null>[]} */
+    /** @type {Promise<import('agentchat-data-provider').TAttachment | null>[]} */
     const artifactPromises = [];
 
     const toolEndCallback = createToolEndCallback({ req, res, artifactPromises, streamId: null });
@@ -752,11 +752,11 @@ const ListModelsController = async (req, res) => {
       id: agent.id,
       object: 'model',
       created: Math.floor(new Date(agent.createdAt || Date.now()).getTime() / 1000),
-      owned_by: 'librechat',
+      owned_by: 'agentchat',
       permission: [],
       root: agent.id,
       parent: null,
-      // LibreChat extensions
+      // AgentChat extensions
       name: agent.name,
       description: agent.description,
       provider: agent.provider,
@@ -824,11 +824,11 @@ const GetModelController = async (req, res) => {
       id: agent.id,
       object: 'model',
       created: Math.floor(new Date(agent.createdAt || Date.now()).getTime() / 1000),
-      owned_by: 'librechat',
+      owned_by: 'agentchat',
       permission: [],
       root: agent.id,
       parent: null,
-      // LibreChat extensions
+      // AgentChat extensions
       name: agent.name,
       description: agent.description,
       provider: agent.provider,

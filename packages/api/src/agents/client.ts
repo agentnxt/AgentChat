@@ -1,14 +1,14 @@
-import { logger } from '@librechat/data-schemas';
-import { ContentTypes, isAgentsEndpoint } from 'librechat-data-provider';
+import { logger } from 'data-schemas';
+import { ContentTypes, isAgentsEndpoint } from 'agentchat-data-provider';
 import {
   labelContentByAgent,
   extractImageDimensions,
   getTokenCountForMessage,
   estimateOpenAIImageTokens,
   estimateAnthropicImageTokens,
-} from '@librechat/agents';
-import type { MessageContentComplex } from '@librechat/agents';
-import type { Agent, TMessage } from 'librechat-data-provider';
+} from 'agents';
+import type { MessageContentComplex } from 'agents';
+import type { Agent, TMessage } from 'agentchat-data-provider';
 import type { BaseMessage } from '@langchain/core/messages';
 import type { ServerRequest } from '~/types';
 import Tokenizer from '~/utils/tokenizer';

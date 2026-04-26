@@ -2,7 +2,7 @@ import fs from 'fs';
 import { Readable } from 'stream';
 import { mockClient } from 'aws-sdk-client-mock';
 import { sdkStreamMixin } from '@smithy/util-stream';
-import { FileSources } from 'librechat-data-provider';
+import { FileSources } from 'agentchat-data-provider';
 import {
   S3Client,
   PutObjectCommand,
@@ -10,7 +10,7 @@ import {
   HeadObjectCommand,
   DeleteObjectCommand,
 } from '@aws-sdk/client-s3';
-import type { TFile } from 'librechat-data-provider';
+import type { TFile } from 'agentchat-data-provider';
 import type { S3FileRef } from '~/storage/types';
 import type { ServerRequest } from '~/types';
 
@@ -33,7 +33,7 @@ jest.mock('~/files', () => ({
   deleteRagFile: jest.fn().mockResolvedValue(undefined),
 }));
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     debug: jest.fn(),
     info: jest.fn(),
@@ -44,7 +44,7 @@ jest.mock('@librechat/data-schemas', () => ({
 
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { deleteRagFile } from '~/files';
-import { logger } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
 
 describe('S3 CRUD', () => {
   let originalEnv: NodeJS.ProcessEnv;

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
-jest.mock('@librechat/data-schemas', () => {
-  const actual = jest.requireActual('@librechat/data-schemas');
+jest.mock('data-schemas', () => {
+  const actual = jest.requireActual('data-schemas');
   return {
     ...actual,
     logger: {
@@ -67,8 +67,8 @@ jest.mock('sharp', () =>
   })),
 );
 
-jest.mock('@librechat/api', () => ({
-  ...jest.requireActual('@librechat/api'),
+jest.mock('api', () => ({
+  ...jest.requireActual('api'),
   needsRefresh: jest.fn(),
   getNewS3URL: jest.fn(),
 }));

@@ -1,5 +1,5 @@
-import { logger } from '@librechat/data-schemas';
-import type { TCustomConfig, TTransactionsConfig } from 'librechat-data-provider';
+import { logger } from 'data-schemas';
+import type { TCustomConfig, TTransactionsConfig } from 'agentchat-data-provider';
 import type {
   StructuredTokenUsage,
   BulkWriteDeps,

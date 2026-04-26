@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useMemo, useState } from 'react';
 import { v4 } from 'uuid';
 import { useSetRecoilState } from 'recoil';
-import { useToastContext } from '@librechat/client';
+import { useToastContext } from 'client';
 import { useQueryClient } from '@tanstack/react-query';
 import {
   QueryKeys,
@@ -11,11 +11,11 @@ import {
   isAssistantsEndpoint,
   getEndpointFileConfig,
   defaultAssistantsVersion,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import debounce from 'lodash/debounce';
-import type { EModelEndpoint, TEndpointsConfig, TError } from 'librechat-data-provider';
+import type { EModelEndpoint, TEndpointsConfig, TError } from 'agentchat-data-provider';
 import type { ExtendedFile, FileSetter } from '~/common';
-import type { TConversation } from 'librechat-data-provider';
+import type { TConversation } from 'agentchat-data-provider';
 import { logger, validateFiles, cachePreview, getCachedPreview, removePreviewEntry } from '~/utils';
 import { useGetFileConfig, useUploadFileMutation } from '~/data-provider';
 import useLocalize, { TranslationKeys } from '~/hooks/useLocalize';

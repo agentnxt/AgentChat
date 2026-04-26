@@ -4,17 +4,17 @@ const request = require('supertest');
 const { v4: uuidv4 } = require('uuid');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
-jest.mock('@librechat/agents', () => ({
+jest.mock('agents', () => ({
   sleep: jest.fn(),
 }));
 
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   unescapeLaTeX: jest.fn((x) => x),
   countTokens: jest.fn().mockResolvedValue(10),
 }));
 
-jest.mock('@librechat/data-schemas', () => ({
-  ...jest.requireActual('@librechat/data-schemas'),
+jest.mock('data-schemas', () => ({
+  ...jest.requireActual('data-schemas'),
   logger: {
     debug: jest.fn(),
     info: jest.fn(),
@@ -23,8 +23,8 @@ jest.mock('@librechat/data-schemas', () => ({
   },
 }));
 
-jest.mock('librechat-data-provider', () => ({
-  ...jest.requireActual('librechat-data-provider'),
+jest.mock('agentchat-data-provider', () => ({
+  ...jest.requireActual('agentchat-data-provider'),
 }));
 
 jest.mock('~/models', () => ({
@@ -61,7 +61,7 @@ jest.mock('~/db/models', () => ({
 
 /* ─── Model-level tests: real MongoDB, proves cross-user deletion is prevented ─── */
 
-const { messageSchema } = require('@librechat/data-schemas');
+const { messageSchema } = require('data-schemas');
 
 describe('deleteMessages – model-level IDOR prevention', () => {
   let mongoServer;

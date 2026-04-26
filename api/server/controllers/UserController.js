@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { logger, webSearchKeys } = require('@librechat/data-schemas');
+const { logger, webSearchKeys } = require('data-schemas');
 const {
   getNewS3URL,
   needsRefresh,
@@ -7,14 +7,14 @@ const {
   MCPTokenStorage,
   normalizeHttpError,
   extractWebSearchEnvVars,
-} = require('@librechat/api');
+} = require('api');
 const {
   Tools,
   CacheKeys,
   Constants,
   FileSources,
   ResourceType,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { updateUserPluginAuth, deleteUserPluginAuth } = require('~/server/services/PluginService');
 const { verifyOTPOrBackupCode } = require('~/server/services/twoFactorService');
 const { verifyEmail, resendVerificationEmail } = require('~/server/services/AuthService');

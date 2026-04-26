@@ -1,5 +1,5 @@
 import { memo, useState, useContext, useCallback } from 'react';
-import { Button } from '@librechat/client';
+import { Button } from 'client';
 import { ChevronLeft, ChevronRight, FileText } from 'lucide-react';
 import type { CitationProps } from './types';
 import { SourceHovercard, FaviconImage, getCleanDomain } from '~/components/Web/SourceHovercard';

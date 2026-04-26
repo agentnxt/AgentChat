@@ -1,5 +1,5 @@
-import { Constants } from 'librechat-data-provider';
-import type { TFile, TMessage } from 'librechat-data-provider';
+import { Constants } from 'agentchat-data-provider';
+import type { TFile, TMessage } from 'agentchat-data-provider';
 
 /** Minimal shape for request file entries (from `req.body.files`) */
 type RequestFile = { file_id?: string };

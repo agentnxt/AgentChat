@@ -13,8 +13,8 @@ import {
   createPayload,
   ViolationTypes,
   removeNullishValues,
-} from 'librechat-data-provider';
-import type { TMessage, TPayload, TSubmission, EventSubmission } from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type { TMessage, TPayload, TSubmission, EventSubmission } from 'agentchat-data-provider';
 import type { EventHandlerParams } from './useEventHandlers';
 import {
   useGetUserBalance,

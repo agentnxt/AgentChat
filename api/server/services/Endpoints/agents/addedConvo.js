@@ -1,10 +1,10 @@
-const { logger } = require('@librechat/data-schemas');
+const { logger } = require('data-schemas');
 const {
   ADDED_AGENT_ID,
   initializeAgent,
   validateAgentModel,
   loadAddedAgent: loadAddedAgentFn,
-} = require('@librechat/api');
+} = require('api');
 const { filterFilesByAgentAccess } = require('~/server/services/Files/permissions');
 const { getMCPServerTools } = require('~/server/services/Config');
 const db = require('~/models');

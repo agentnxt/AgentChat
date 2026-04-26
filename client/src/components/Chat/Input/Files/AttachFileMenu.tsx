@@ -14,7 +14,7 @@ import {
   DropdownPopup,
   AttachmentIcon,
   SharePointIcon,
-} from '@librechat/client';
+} from 'client';
 import {
   Providers,
   EToolResources,
@@ -23,8 +23,8 @@ import {
   defaultAgentCapabilities,
   bedrockDocumentExtensions,
   isDocumentSupportedProvider,
-} from 'librechat-data-provider';
-import type { EndpointFileConfig, TConversation } from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type { EndpointFileConfig, TConversation } from 'agentchat-data-provider';
 import type { ExtendedFile, FileSetter } from '~/common';
 import {
   useAgentToolPermissions,

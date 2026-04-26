@@ -1,5 +1,5 @@
-const { logger } = require('@librechat/data-schemas');
-const { isAssistantsEndpoint, ErrorTypes } = require('librechat-data-provider');
+const { logger } = require('data-schemas');
+const { isAssistantsEndpoint, ErrorTypes } = require('agentchat-data-provider');
 const {
   isEnabled,
   sendEvent,
@@ -7,7 +7,7 @@ const {
   GenerationJobManager,
   recordCollectedUsage,
   sanitizeMessageForTransmit,
-} = require('@librechat/api');
+} = require('api');
 const { truncateText, smartTruncateText } = require('~/app/clients/prompts');
 const clearPendingReq = require('~/cache/clearPendingReq');
 const { sendError } = require('~/server/middleware/error');

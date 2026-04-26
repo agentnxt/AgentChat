@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
-import { OGDialog, OGDialogTemplate } from '@librechat/client';
+import { OGDialog, OGDialogTemplate } from 'client';
 import {
   ImageUpIcon,
   FileSearch,
@@ -16,7 +16,7 @@ import {
   isBedrockDocumentType,
   defaultAgentCapabilities,
   isDocumentSupportedProvider,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import {
   useAgentToolPermissions,
   useAgentCapabilities,

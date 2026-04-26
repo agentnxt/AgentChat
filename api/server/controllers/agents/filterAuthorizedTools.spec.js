@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { v4: uuidv4 } = require('uuid');
-const { Constants } = require('librechat-data-provider');
-const { agentSchema } = require('@librechat/data-schemas');
+const { Constants } = require('agentchat-data-provider');
+const { agentSchema } = require('data-schemas');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
 const d = Constants.mcp_delimiter;
@@ -48,7 +48,7 @@ jest.mock('~/server/services/PermissionService', () => ({
 
 jest.mock('~/models', () => {
   const mongoose = require('mongoose');
-  const { createModels, createMethods } = require('@librechat/data-schemas');
+  const { createModels, createMethods } = require('data-schemas');
   createModels(mongoose);
   const methods = createMethods(mongoose);
   return {

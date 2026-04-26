@@ -1,10 +1,10 @@
 import { Types } from 'mongoose';
-import { decryptV2 } from '@librechat/data-schemas';
-import type { TokenMethods, IToken } from '@librechat/data-schemas';
+import { decryptV2 } from 'data-schemas';
+import type { TokenMethods, IToken } from 'data-schemas';
 import { MCPTokenStorage } from '~/mcp/oauth/tokens';
 
-jest.mock('@librechat/data-schemas', () => ({
-  ...jest.requireActual('@librechat/data-schemas'),
+jest.mock('data-schemas', () => ({
+  ...jest.requireActual('data-schemas'),
   decryptV2: jest.fn(),
 }));
 

@@ -1,19 +1,19 @@
 /**
  * MCP Tools Controller
- * Handles MCP-specific tool endpoints, decoupled from regular LibreChat tools
+ * Handles MCP-specific tool endpoints, decoupled from regular AgentChat tools
  *
- * @import { MCPServerRegistry } from '@librechat/api'
- * @import { MCPServerDocument } from 'librechat-data-provider'
+ * @import { MCPServerRegistry } from 'api'
+ * @import { MCPServerDocument } from 'agentchat-data-provider'
  */
-const { logger } = require('@librechat/data-schemas');
+const { logger } = require('data-schemas');
 const {
   MCPErrorCodes,
   redactServerSecrets,
   redactAllServerSecrets,
   isMCPDomainNotAllowedError,
   isMCPInspectionFailedError,
-} = require('@librechat/api');
-const { Constants, MCPServerUserInputSchema } = require('librechat-data-provider');
+} = require('api');
+const { Constants, MCPServerUserInputSchema } = require('agentchat-data-provider');
 const { resolveConfigServers, resolveAllMcpConfigs } = require('~/server/services/MCP');
 const { cacheMCPServerTools, getMCPServerTools } = require('~/server/services/Config');
 const { getMCPManager, getMCPServersRegistry } = require('~/config');

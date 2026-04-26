@@ -1,5 +1,5 @@
-import { Permissions, PermissionTypes } from 'librechat-data-provider';
-import { useToastContext } from '@librechat/client';
+import { Permissions, PermissionTypes } from 'agentchat-data-provider';
+import { useToastContext } from 'client';
 import { AdminSettingsDialog } from '~/components/ui';
 import { useUpdateAgentPermissionsMutation } from '~/data-provider';
 import { useLocalize } from '~/hooks';

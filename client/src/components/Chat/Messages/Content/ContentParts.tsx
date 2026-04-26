@@ -1,11 +1,11 @@
 import { memo, useMemo, useCallback } from 'react';
-import { ContentTypes } from 'librechat-data-provider';
+import { ContentTypes } from 'agentchat-data-provider';
 import type {
   TMessageContentParts,
   SearchResultData,
   TAttachment,
   Agents,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import { ParallelContentRenderer, type PartWithIndex } from './ParallelContent';
 import { mapAttachments, groupSequentialToolCalls } from '~/utils';
 import { MessageContext, SearchContext } from '~/Providers';

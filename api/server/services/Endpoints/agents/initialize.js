@@ -1,18 +1,18 @@
-const { logger } = require('@librechat/data-schemas');
-const { createContentAggregator } = require('@librechat/agents');
+const { logger } = require('data-schemas');
+const { createContentAggregator } = require('agents');
 const {
   initializeAgent,
   validateAgentModel,
   GenerationJobManager,
   getCustomEndpointConfig,
   discoverConnectedAgents,
-} = require('@librechat/api');
+} = require('api');
 const {
   EModelEndpoint,
   isAgentsEndpoint,
   getResponseSender,
   isEphemeralAgentId,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const {
   createToolEndCallback,
   getDefaultHandlers,
@@ -46,9 +46,9 @@ function createToolLoader(signal, streamId = null, definitionsOnly = false) {
    * @returns {Promise<{
    *   tools?: StructuredTool[],
    *   toolContextMap: Record<string, unknown>,
-   *   toolDefinitions?: import('@librechat/agents').LCTool[],
+   *   toolDefinitions?: import('agents').LCTool[],
    *   userMCPAuthMap?: Record<string, Record<string, string>>,
-   *   toolRegistry?: import('@librechat/agents').LCToolRegistry
+   *   toolRegistry?: import('agents').LCToolRegistry
    * } | undefined>}
    */
   return async function loadTools({
@@ -109,7 +109,7 @@ const initializeClient = async ({ req, res, signal, endpointOption }) => {
    *   userMCPAuthMap?: Record<string, Record<string, string>>,
    *   agent?: object,
    *   tool_resources?: object,
-   *   toolRegistry?: import('@librechat/agents').LCToolRegistry,
+   *   toolRegistry?: import('agents').LCToolRegistry,
    *   openAIApiKey?: string
    * }>}
    */
@@ -275,8 +275,8 @@ const initializeClient = async ({ req, res, signal, endpointOption }) => {
           actionsEnabled: config.actionsEnabled,
         });
       },
-      // Pass through the `@librechat/api` exports so that tests which
-      // `jest.mock('@librechat/api')` can override the initializer/validator.
+      // Pass through the `api` exports so that tests which
+      // `jest.mock('api')` can override the initializer/validator.
       initializeAgent,
       validateAgentModel,
     },

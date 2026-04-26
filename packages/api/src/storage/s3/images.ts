@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
-import { logger } from '@librechat/data-schemas';
-import type { IUser } from '@librechat/data-schemas';
-import type { TFile } from 'librechat-data-provider';
+import { logger } from 'data-schemas';
+import type { IUser } from 'data-schemas';
+import type { TFile } from 'agentchat-data-provider';
 import type { FormatEnum } from 'sharp';
 import type { UploadImageParams, ImageUploadResult, ProcessAvatarParams } from '~/storage/types';
 import { saveBufferToS3 } from './crud';

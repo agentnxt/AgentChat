@@ -1,7 +1,7 @@
 const express = require('express');
 const { nanoid } = require('nanoid');
-const { logger } = require('@librechat/data-schemas');
-const { generateCheckAccess, isActionDomainAllowed } = require('@librechat/api');
+const { logger } = require('data-schemas');
+const { generateCheckAccess, isActionDomainAllowed } = require('api');
 const {
   Permissions,
   ResourceType,
@@ -11,7 +11,7 @@ const {
   removeNullishValues,
   validateActionDomain,
   validateAndParseOpenAPISpec,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const {
   legacyDomainEncode,
   encryptMetadata,

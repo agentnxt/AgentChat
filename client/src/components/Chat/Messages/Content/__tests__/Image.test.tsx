@@ -10,11 +10,11 @@ jest.mock('~/utils', () => ({
       .join(' '),
 }));
 
-jest.mock('librechat-data-provider', () => ({
+jest.mock('agentchat-data-provider', () => ({
   apiBaseUrl: () => '',
 }));
 
-jest.mock('@librechat/client', () => ({
+jest.mock('client', () => ({
   Skeleton: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
     <div data-testid="skeleton" className={className} {...props} />
   ),

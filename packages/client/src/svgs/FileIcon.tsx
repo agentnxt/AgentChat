@@ -1,4 +1,4 @@
-import type { TFile } from 'librechat-data-provider';
+import type { TFile } from 'agentchat-data-provider';
 
 export default function FileIcon({
   file,

@@ -1,4 +1,4 @@
-const { logger } = require('@librechat/data-schemas');
+const { logger } = require('data-schemas');
 const { loadDefaultModels, loadConfigModels } = require('~/server/services/Config');
 
 const getModelsConfig = (req) => loadModels(req);

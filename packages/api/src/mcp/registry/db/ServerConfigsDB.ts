@@ -4,9 +4,9 @@ import {
   AccessRoleIds,
   PrincipalType,
   PermissionBits,
-} from 'librechat-data-provider';
-import { logger, encryptV2, decryptV2, createMethods } from '@librechat/data-schemas';
-import type { AllMethods, MCPServerDocument } from '@librechat/data-schemas';
+} from 'agentchat-data-provider';
+import { logger, encryptV2, decryptV2, createMethods } from 'data-schemas';
+import type { AllMethods, MCPServerDocument } from 'data-schemas';
 import type { IServerConfigsRepositoryInterface } from '~/mcp/registry/ServerConfigsRepositoryInterface';
 import type { ParsedServerConfig, AddServerResult } from '~/mcp/types';
 import { AccessControlService } from '~/acl/accessControlService';
@@ -20,10 +20,10 @@ import { AccessControlService } from '~/acl/accessControlService';
  */
 const DANGEROUS_CREDENTIAL_PATTERNS = [
   /\$\{[^}]+\}/g,
-  /\{\{LIBRECHAT_OPENID_[^}]+\}\}/g,
-  /\{\{LIBRECHAT_USER_[^}]+\}\}/g,
-  /\{\{LIBRECHAT_GRAPH_[^}]+\}\}/g,
-  /\{\{LIBRECHAT_BODY_[^}]+\}\}/g,
+  /\{\{AGENTCHAT_OPENID_[^}]+\}\}/g,
+  /\{\{AGENTCHAT_USER_[^}]+\}\}/g,
+  /\{\{AGENTCHAT_GRAPH_[^}]+\}\}/g,
+  /\{\{AGENTCHAT_BODY_[^}]+\}\}/g,
 ];
 
 /**

@@ -2,7 +2,7 @@ import {
   WebSearchToolDefinition,
   CalculatorToolDefinition,
   CodeExecutionToolDefinition,
-} from '@librechat/agents';
+} from 'agents';
 import { geminiToolkit } from '~/tools/toolkits/gemini';
 import { oaiToolkit } from '~/tools/toolkits/oai';
 
@@ -451,7 +451,7 @@ export const toolDefinitions: Record<string, ToolRegistryDefinition> = {
   },
 };
 
-/** Tool definitions from @librechat/agents */
+/** Tool definitions from agents */
 const agentToolDefinitions: Record<string, ToolRegistryDefinition> = {
   [CalculatorToolDefinition.name]: {
     name: CalculatorToolDefinition.name,

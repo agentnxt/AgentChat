@@ -2,9 +2,9 @@
 jest.mock('axios');
 jest.mock('form-data');
 jest.mock('https-proxy-agent');
-jest.mock('@librechat/data-schemas', () => ({ logger: { warn: jest.fn(), error: jest.fn() } }));
-jest.mock('@librechat/api', () => ({ genAzureEndpoint: jest.fn(), logAxiosError: jest.fn() }));
-jest.mock('librechat-data-provider', () => ({
+jest.mock('data-schemas', () => ({ logger: { warn: jest.fn(), error: jest.fn() } }));
+jest.mock('api', () => ({ genAzureEndpoint: jest.fn(), logAxiosError: jest.fn() }));
+jest.mock('agentchat-data-provider', () => ({
   extractEnvVariable: jest.fn(),
   STTProviders: {},
 }));

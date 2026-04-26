@@ -2,9 +2,9 @@ import {
   AgentCapabilities,
   EModelEndpoint,
   defaultAgentCapabilities,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import { createEndpointsConfigService } from './endpoints';
-import type { AppConfig } from '@librechat/data-schemas';
+import type { AppConfig } from 'data-schemas';
 import type { EndpointsConfigDeps } from './endpoints';
 import type { ServerRequest } from '~/types';
 

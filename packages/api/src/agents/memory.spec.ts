@@ -1,6 +1,6 @@
 import { Types } from 'mongoose';
-import { Run, Providers } from '@librechat/agents';
-import type { IUser } from '@librechat/data-schemas';
+import { Run, Providers } from 'agents';
+import type { IUser } from 'data-schemas';
 import type { Response } from 'express';
 import { processMemory } from './memory';
 
@@ -20,8 +20,8 @@ const mockResolveHeaders = jest.fn((opts) => {
   for (const [key, value] of Object.entries(headers)) {
     let resolved = value as string;
     resolved = resolved.replace(/\$\{(\w+)\}/g, (_match, envVar) => process.env[envVar] || '');
-    resolved = resolved.replace(/\{\{LIBRECHAT_USER_EMAIL\}\}/g, user.email || '');
-    resolved = resolved.replace(/\{\{LIBRECHAT_USER_ID\}\}/g, user.id || '');
+    resolved = resolved.replace(/\{\{AGENTCHAT_USER_EMAIL\}\}/g, user.email || '');
+    resolved = resolved.replace(/\{\{AGENTCHAT_USER_ID\}\}/g, user.id || '');
     result[key] = resolved;
   }
   return result;
@@ -37,8 +37,8 @@ jest.mock('~/utils', () => ({
 
 const { createSafeUser } = jest.requireMock('~/utils');
 
-jest.mock('@librechat/agents', () => {
-  const actual = jest.requireActual('@librechat/agents');
+jest.mock('agents', () => {
+  const actual = jest.requireActual('agents');
   return {
     Run: {
       create: jest.fn(() => ({
@@ -152,8 +152,8 @@ describe('Memory Agent Header Resolution', () => {
       model: 'gpt-4o-mini',
       configuration: {
         defaultHeaders: {
-          'X-User-Identifier': '{{LIBRECHAT_USER_EMAIL}}',
-          'X-User-ID': '{{LIBRECHAT_USER_ID}}',
+          'X-User-Identifier': '{{AGENTCHAT_USER_EMAIL}}',
+          'X-User-ID': '{{AGENTCHAT_USER_ID}}',
         },
       },
     };
@@ -188,8 +188,8 @@ describe('Memory Agent Header Resolution', () => {
       configuration: {
         defaultHeaders: {
           'x-custom-api-key': '${CUSTOM_API_KEY}',
-          'X-User-Identifier': '{{LIBRECHAT_USER_EMAIL}}',
-          'X-Application-Identifier': 'LibreChat - Test',
+          'X-User-Identifier': '{{AGENTCHAT_USER_EMAIL}}',
+          'X-Application-Identifier': 'AgentChat - Test',
         },
       },
     };
@@ -214,7 +214,7 @@ describe('Memory Agent Header Resolution', () => {
     expect(runConfig.graphConfig.llmConfig.configuration.defaultHeaders).toEqual({
       'x-custom-api-key': 'sk-custom-test-key',
       'X-User-Identifier': 'test@example.com',
-      'X-Application-Identifier': 'LibreChat - Test',
+      'X-Application-Identifier': 'AgentChat - Test',
     });
   });
 
@@ -290,7 +290,7 @@ describe('Memory Agent Header Resolution', () => {
       model: 'gpt-4o-mini',
       configuration: {
         defaultHeaders: {
-          'X-User-ID': '{{LIBRECHAT_USER_ID}}',
+          'X-User-ID': '{{AGENTCHAT_USER_ID}}',
         },
       },
     };

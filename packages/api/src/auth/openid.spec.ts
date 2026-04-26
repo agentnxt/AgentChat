@@ -1,15 +1,15 @@
 import { Types } from 'mongoose';
-import { ErrorTypes } from 'librechat-data-provider';
-import { logger } from '@librechat/data-schemas';
-import type { IUser, UserMethods } from '@librechat/data-schemas';
+import { ErrorTypes } from 'agentchat-data-provider';
+import { logger } from 'data-schemas';
+import type { IUser, UserMethods } from 'data-schemas';
 import { findOpenIDUser } from './openid';
 
 function newId() {
   return new Types.ObjectId();
 }
 
-jest.mock('@librechat/data-schemas', () => ({
-  ...jest.requireActual('@librechat/data-schemas'),
+jest.mock('data-schemas', () => ({
+  ...jest.requireActual('data-schemas'),
   logger: {
     warn: jest.fn(),
     info: jest.fn(),

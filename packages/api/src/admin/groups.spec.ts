@@ -1,13 +1,13 @@
 import { Types } from 'mongoose';
-import { PrincipalType } from 'librechat-data-provider';
-import type { IGroup, IUser } from '@librechat/data-schemas';
+import { PrincipalType } from 'agentchat-data-provider';
+import type { IGroup, IUser } from 'data-schemas';
 import type { Response } from 'express';
 import type { ServerRequest } from '~/types/http';
 import type { AdminGroupsDeps } from './groups';
 import { createAdminGroupsHandlers } from './groups';
 
-jest.mock('@librechat/data-schemas', () => ({
-  ...jest.requireActual('@librechat/data-schemas'),
+jest.mock('data-schemas', () => ({
+  ...jest.requireActual('data-schemas'),
   logger: { error: jest.fn(), warn: jest.fn(), info: jest.fn(), debug: jest.fn() },
 }));
 
@@ -284,7 +284,7 @@ describe('createAdminGroupsHandlers', () => {
     });
 
     it('logs warning when memberIds contain non-existent user ObjectIds', async () => {
-      const { logger } = jest.requireMock('@librechat/data-schemas');
+      const { logger } = jest.requireMock('data-schemas');
       const unknownId = new Types.ObjectId().toString();
       const group = mockGroup();
       const deps = createDeps({

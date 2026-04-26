@@ -16,8 +16,8 @@ import {
   setTokenHeader,
   isSystemRoleName,
   buildLoginRedirectUrl,
-} from 'librechat-data-provider';
-import type * as t from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type * as t from 'agentchat-data-provider';
 import type { ReactNode } from 'react';
 import {
   useGetRole,

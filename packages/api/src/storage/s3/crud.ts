@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { Readable } from 'stream';
-import { logger } from '@librechat/data-schemas';
-import { FileSources } from 'librechat-data-provider';
+import { logger } from 'data-schemas';
+import { FileSources } from 'agentchat-data-provider';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import {
   PutObjectCommand,
@@ -10,7 +10,7 @@ import {
   DeleteObjectCommand,
 } from '@aws-sdk/client-s3';
 import type { GetObjectCommandInput } from '@aws-sdk/client-s3';
-import type { TFile } from 'librechat-data-provider';
+import type { TFile } from 'agentchat-data-provider';
 import type { ServerRequest } from '~/types';
 import type {
   UploadFileParams,

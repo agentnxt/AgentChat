@@ -1,6 +1,6 @@
-import { logger, encryptV2, decryptV2 } from '@librechat/data-schemas';
+import { logger, encryptV2, decryptV2 } from 'data-schemas';
 import type { OAuthTokens, OAuthClientInformation } from '@modelcontextprotocol/sdk/shared/auth.js';
-import type { TokenMethods, IToken } from '@librechat/data-schemas';
+import type { TokenMethods, IToken } from 'data-schemas';
 import type { MCPOAuthTokens, ExtendedOAuthTokens, OAuthMetadata } from './types';
 import { isInvalidClientMessage } from '~/mcp/utils';
 import { isSystemUserId } from '~/mcp/enum';

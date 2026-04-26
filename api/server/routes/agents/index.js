@@ -1,6 +1,6 @@
 const express = require('express');
-const { isEnabled, GenerationJobManager } = require('@librechat/api');
-const { logger } = require('@librechat/data-schemas');
+const { isEnabled, GenerationJobManager } = require('api');
+const { logger } = require('data-schemas');
 const {
   uaParser,
   checkBan,

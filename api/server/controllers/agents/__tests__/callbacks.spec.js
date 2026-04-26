@@ -1,22 +1,22 @@
-const { Tools } = require('librechat-data-provider');
+const { Tools } = require('agentchat-data-provider');
 
 // Mock all dependencies before requiring the module
 jest.mock('nanoid', () => ({
   nanoid: jest.fn(() => 'mock-id'),
 }));
 
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   sendEvent: jest.fn(),
 }));
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     error: jest.fn(),
   },
 }));
 
-jest.mock('@librechat/agents', () => ({
-  ...jest.requireActual('@librechat/agents'),
+jest.mock('agents', () => ({
+  ...jest.requireActual('agents'),
   getMessageId: jest.fn(),
   ToolEndHandler: jest.fn(),
   handleToolCalls: jest.fn(),
@@ -46,7 +46,7 @@ describe('createToolEndCallback', () => {
     jest.clearAllMocks();
 
     // Get the mocked logger
-    logger = require('@librechat/data-schemas').logger;
+    logger = require('data-schemas').logger;
 
     // Now require the module after all mocks are set up
     const callbacks = require('../callbacks');

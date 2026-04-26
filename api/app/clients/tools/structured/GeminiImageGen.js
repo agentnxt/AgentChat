@@ -4,14 +4,14 @@ const { v4 } = require('uuid');
 const { ProxyAgent } = require('undici');
 const { GoogleGenAI } = require('@google/genai');
 const { tool } = require('@langchain/core/tools');
-const { logger } = require('@librechat/data-schemas');
-const { ContentTypes, EImageOutputType } = require('librechat-data-provider');
+const { logger } = require('data-schemas');
+const { ContentTypes, EImageOutputType } = require('agentchat-data-provider');
 const {
   geminiToolkit,
   loadServiceKey,
   getBalanceConfig,
   getTransactionsConfig,
-} = require('@librechat/api');
+} = require('api');
 const { getStrategyFunctions } = require('~/server/services/Files/strategies');
 const { spendTokens, getFiles } = require('~/models');
 

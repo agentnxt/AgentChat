@@ -2,12 +2,12 @@
  * OpenAI-compatible chat completions service for agents.
  *
  * This service provides an OpenAI v1/chat/completions compatible API for
- * interacting with LibreChat agents. The agent_id is passed as the "model"
+ * interacting with AgentChat agents. The agent_id is passed as the "model"
  * parameter per OpenAI spec.
  *
  * Usage:
  * ```typescript
- * import { createAgentChatCompletion } from '@librechat/api';
+ * import { createAgentChatCompletion } from 'api';
  *
  * // In your Express route handler:
  * app.post('/v1/chat/completions', async (req, res) => {
@@ -73,7 +73,7 @@ export interface ChatCompletionDependencies {
 }
 
 /**
- * Agent type from librechat-data-provider
+ * Agent type from agentchat-data-provider
  */
 interface Agent {
   id: string;
@@ -173,7 +173,7 @@ interface AppConfig {
 }
 
 /**
- * Convert OpenAI messages to LibreChat format
+ * Convert OpenAI messages to AgentChat format
  */
 export function convertMessages(messages: ChatMessage[]): unknown[] {
   return messages.map((msg) => {
@@ -548,7 +548,7 @@ export async function listAgentModels(
       id: agent.id,
       object: 'model',
       created: Math.floor(Date.now() / 1000),
-      owned_by: 'librechat',
+      owned_by: 'agentchat',
       permission: [],
       root: agent.id,
       parent: null,

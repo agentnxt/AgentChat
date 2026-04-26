@@ -2,8 +2,8 @@ import {
   EModelEndpoint,
   getConfigDefaults,
   summarizationConfigSchema,
-} from 'librechat-data-provider';
-import type { TCustomConfig, FileSources, DeepPartial } from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type { TCustomConfig, FileSources, DeepPartial } from 'agentchat-data-provider';
 import type { AppConfig, FunctionTool } from '~/types/app';
 import { loadDefaultInterface } from './interface';
 import { loadTurnstileConfig } from './turnstile';

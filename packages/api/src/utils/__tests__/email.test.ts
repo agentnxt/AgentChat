@@ -1,7 +1,7 @@
-import { logger } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
 import { checkEmailConfig } from '../email';
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: { warn: jest.fn() },
 }));
 

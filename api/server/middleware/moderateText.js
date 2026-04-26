@@ -1,7 +1,7 @@
 const axios = require('axios');
-const { isEnabled } = require('@librechat/api');
-const { logger } = require('@librechat/data-schemas');
-const { ErrorTypes } = require('librechat-data-provider');
+const { isEnabled } = require('api');
+const { logger } = require('data-schemas');
+const { ErrorTypes } = require('agentchat-data-provider');
 const denyRequest = require('./denyRequest');
 
 async function moderateText(req, res, next) {

@@ -1,5 +1,5 @@
-const { logger } = require('@librechat/data-schemas');
-const { Constants } = require('librechat-data-provider');
+const { logger } = require('data-schemas');
+const { Constants } = require('agentchat-data-provider');
 const { ImportBatchBuilder } = require('./importBatchBuilder');
 const { getImporter } = require('./importers');
 
@@ -20,9 +20,9 @@ describe('Import Timestamp Ordering', () => {
     mockGetEndpointsConfig.mockResolvedValue(null);
   });
 
-  describe('LibreChat Import - Timestamp Issues', () => {
+  describe('AgentChat Import - Timestamp Issues', () => {
     test('should maintain proper timestamp order between parent and child messages', async () => {
-      // Create a LibreChat export with out-of-order timestamps
+      // Create a AgentChat export with out-of-order timestamps
       const jsonData = {
         conversationId: 'test-convo-123',
         title: 'Test Conversation',
@@ -167,7 +167,7 @@ describe('Import Timestamp Ordering', () => {
     });
 
     test('recursive format should NOW have timestamp protection', async () => {
-      // Create a recursive LibreChat export with out-of-order timestamps
+      // Create a recursive AgentChat export with out-of-order timestamps
       const jsonData = {
         conversationId: 'recursive-test-123',
         title: 'Recursive Test',

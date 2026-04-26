@@ -1,6 +1,6 @@
 import { Keyv } from 'keyv';
 import { createHash } from 'crypto';
-import { logger } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
 import type { IServerConfigsRepositoryInterface } from './ServerConfigsRepositoryInterface';
 import type * as t from '~/mcp/types';
 import {
@@ -28,7 +28,7 @@ const CONFIG_SERVER_INIT_TIMEOUT_MS = (() => {
 
 /**
  * Central registry for managing MCP server configurations.
- * Authoritative source of truth for all MCP servers provided by LibreChat.
+ * Authoritative source of truth for all MCP servers provided by AgentChat.
  *
  * Uses a three-layer architecture:
  * - YAML Cache (cacheConfigsRepo): Operator-defined configs loaded at startup (in-memory or Redis)

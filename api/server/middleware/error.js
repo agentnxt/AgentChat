@@ -1,7 +1,7 @@
 const crypto = require('crypto');
-const { logger } = require('@librechat/data-schemas');
-const { parseConvo } = require('librechat-data-provider');
-const { sendEvent, handleError, sanitizeMessageForTransmit } = require('@librechat/api');
+const { logger } = require('data-schemas');
+const { parseConvo } = require('agentchat-data-provider');
+const { sendEvent, handleError, sanitizeMessageForTransmit } = require('api');
 const { saveMessage, getMessages, getConvo } = require('~/models');
 
 /**

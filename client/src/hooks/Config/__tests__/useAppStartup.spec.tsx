@@ -1,8 +1,8 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { renderHook } from '@testing-library/react';
-import { PermissionTypes, Permissions } from 'librechat-data-provider';
-import type { TUser } from 'librechat-data-provider';
+import { PermissionTypes, Permissions } from 'agentchat-data-provider';
+import type { TUser } from 'agentchat-data-provider';
 
 const mockUseHasAccess = jest.fn();
 const mockUseMCPServersQuery = jest.fn();

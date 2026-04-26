@@ -1,9 +1,9 @@
-import { TokenExchangeMethodEnum } from 'librechat-data-provider';
-import type { MCPOptions } from 'librechat-data-provider';
+import { TokenExchangeMethodEnum } from 'agentchat-data-provider';
+import type { MCPOptions } from 'agentchat-data-provider';
 import type { AuthorizationServerMetadata } from '@modelcontextprotocol/sdk/shared/auth.js';
 import { MCPOAuthFlowMetadata, MCPOAuthHandler, MCPOAuthTokens } from '~/mcp/oauth';
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     debug: jest.fn(),
     info: jest.fn(),

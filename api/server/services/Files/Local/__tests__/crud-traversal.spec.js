@@ -1,5 +1,5 @@
-jest.mock('@librechat/api', () => ({ deleteRagFile: jest.fn() }));
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('api', () => ({ deleteRagFile: jest.fn() }));
+jest.mock('data-schemas', () => ({
   logger: { warn: jest.fn(), error: jest.fn() },
 }));
 

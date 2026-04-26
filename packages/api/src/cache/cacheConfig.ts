@@ -1,6 +1,6 @@
 import { readFileSync, existsSync } from 'fs';
-import { logger } from '@librechat/data-schemas';
-import { CacheKeys } from 'librechat-data-provider';
+import { logger } from 'data-schemas';
+import { CacheKeys } from 'agentchat-data-provider';
 import { math, isEnabled } from '~/utils';
 
 // To ensure that different deployments do not interfere with each other's cache, we use a prefix for the Redis keys.

@@ -1,4 +1,4 @@
-import { AnthropicEffort, ThinkingDisplay } from 'librechat-data-provider';
+import { AnthropicEffort, ThinkingDisplay } from 'agentchat-data-provider';
 import type * as t from '~/types';
 import { getLLMConfig } from './llm';
 

@@ -1,5 +1,5 @@
-import { logger } from '@librechat/data-schemas';
-import type { AppConfig } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
+import type { AppConfig } from 'data-schemas';
 import {
   Tools,
   Constants,
@@ -7,8 +7,8 @@ import {
   isEphemeralAgentId,
   appendAgentIdSuffix,
   encodeEphemeralAgentId,
-} from 'librechat-data-provider';
-import type { Agent, TConversation } from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type { Agent, TConversation } from 'agentchat-data-provider';
 import { getCustomEndpointConfig } from '~/app/config';
 
 const { mcp_all, mcp_delimiter } = Constants;
