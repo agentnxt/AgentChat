@@ -1,14 +1,14 @@
 import React from 'react';
 import { Share2Icon } from 'lucide-react';
-import { Button, TooltipAnchor } from '@librechat/client';
+import { Button, TooltipAnchor } from 'client';
 import {
   SystemRoles,
   Permissions,
   ResourceType,
   PermissionBits,
   PermissionTypes,
-} from 'librechat-data-provider';
-import type { TPromptGroup } from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type { TPromptGroup } from 'agentchat-data-provider';
 import { useAuthContext, useHasAccess, useLocalize, useResourcePermissions } from '~/hooks';
 import { GenericGrantAccessDialog } from '~/components/Sharing';
 

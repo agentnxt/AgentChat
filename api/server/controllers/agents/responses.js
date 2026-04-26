@@ -1,13 +1,13 @@
 const { nanoid } = require('nanoid');
 const { v4: uuidv4 } = require('uuid');
-const { logger } = require('@librechat/data-schemas');
-const { Callback, ToolEndHandler, formatAgentMessages } = require('@librechat/agents');
+const { logger } = require('data-schemas');
+const { Callback, ToolEndHandler, formatAgentMessages } = require('agents');
 const {
   EModelEndpoint,
   ResourceType,
   PermissionBits,
   hasPermissions,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const {
   createRun,
   buildToolSet,
@@ -36,7 +36,7 @@ const {
   sendResponsesErrorResponse,
   createResponsesEventHandlers,
   createAggregatorEventHandlers,
-} = require('@librechat/api');
+} = require('api');
 const {
   createResponsesToolEndCallback,
   buildSummarizationHandlers,
@@ -89,7 +89,7 @@ function createToolLoader(signal, definitionsOnly = true) {
 
 /**
  * Convert Open Responses input items to internal messages
- * @param {import('@librechat/api').InputItem[]} input
+ * @param {import('api').InputItem[]} input
  * @returns {Array} Internal messages
  */
 function convertToInternalMessages(input) {
@@ -169,7 +169,7 @@ async function saveInputMessages(req, conversationId, inputMessages, agentId) {
  * @param {import('express').Request} req
  * @param {string} conversationId
  * @param {string} responseId
- * @param {import('@librechat/api').Response} response
+ * @param {import('api').Response} response
  * @param {string} agentId
  * @returns {Promise<void>}
  */
@@ -386,7 +386,7 @@ const createResponse = async (req, res) => {
      * correct toolRegistry / userMCPAuthMap / tool_resources.
      * @type {Map<string, {
      *   agent: object,
-     *   toolRegistry?: import('@librechat/agents').LCToolRegistry,
+     *   toolRegistry?: import('agents').LCToolRegistry,
      *   userMCPAuthMap?: Record<string, Record<string, string>>,
      *   tool_resources?: object,
      *   actionsEnabled?: boolean,
@@ -518,9 +518,9 @@ const createResponse = async (req, res) => {
       const collectedUsage = [];
 
       // Artifact promises for processing tool outputs
-      /** @type {Promise<import('librechat-data-provider').TAttachment | null>[]} */
+      /** @type {Promise<import('agentchat-data-provider').TAttachment | null>[]} */
       const artifactPromises = [];
-      // Use Responses API-specific callback that emits librechat:attachment events
+      // Use Responses API-specific callback that emits agentchat:attachment events
       const toolEndCallback = createResponsesToolEndCallback({
         req,
         res,
@@ -693,7 +693,7 @@ const createResponse = async (req, res) => {
       // Collect usage for balance tracking
       const collectedUsage = [];
 
-      /** @type {Promise<import('librechat-data-provider').TAttachment | null>[]} */
+      /** @type {Promise<import('agentchat-data-provider').TAttachment | null>[]} */
       const artifactPromises = [];
       const toolEndCallback = createToolEndCallback({ req, res, artifactPromises, streamId: null });
 
@@ -908,7 +908,7 @@ const listModels = async (req, res) => {
       id: agent.id,
       object: 'model',
       created: Math.floor(new Date(agent.createdAt).getTime() / 1000),
-      owned_by: agent.author ?? 'librechat',
+      owned_by: agent.author ?? 'agentchat',
       // Additional metadata
       name: agent.name,
       description: agent.description,
@@ -934,7 +934,7 @@ const listModels = async (req, res) => {
  * Get Response - GET /v1/responses/:id
  *
  * Retrieves a stored response by its ID.
- * The response ID maps to a conversationId in LibreChat's storage.
+ * The response ID maps to a conversationId in AgentChat's storage.
  *
  * @param {import('express').Request} req
  * @param {import('express').Response} res

@@ -2,11 +2,11 @@
  * Tests for AgentClient.recordCollectedUsage
  *
  * This is a critical function that handles token spending for agent LLM calls.
- * The client now delegates to the TS recordCollectedUsage from @librechat/api,
+ * The client now delegates to the TS recordCollectedUsage from api,
  * passing pricing and bulkWriteOps deps.
  */
 
-const { EModelEndpoint } = require('librechat-data-provider');
+const { EModelEndpoint } = require('agentchat-data-provider');
 
 const mockSpendTokens = jest.fn().mockResolvedValue();
 const mockSpendStructuredTokens = jest.fn().mockResolvedValue();
@@ -39,16 +39,16 @@ jest.mock('~/config', () => ({
   })),
 }));
 
-jest.mock('@librechat/agents', () => ({
-  ...jest.requireActual('@librechat/agents'),
+jest.mock('agents', () => ({
+  ...jest.requireActual('agents'),
   createMetadataAggregator: () => ({
     handleLLMEnd: jest.fn(),
     collected: [],
   }),
 }));
 
-jest.mock('@librechat/api', () => {
-  const actual = jest.requireActual('@librechat/api');
+jest.mock('api', () => {
+  const actual = jest.requireActual('api');
   return {
     ...actual,
     recordCollectedUsage: (...args) => mockRecordCollectedUsage(...args),

@@ -1,12 +1,12 @@
 import { Dispatcher, ProxyAgent } from 'undici';
-import { logger } from '@librechat/data-schemas';
-import { AnthropicClientOptions } from '@librechat/agents';
+import { logger } from 'data-schemas';
+import { AnthropicClientOptions } from 'agents';
 import {
   anthropicSettings,
   removeNullishValues,
   ThinkingDisplay,
   AuthKeys,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type {
   AnthropicLLMConfigResult,
   AnthropicConfigOptions,

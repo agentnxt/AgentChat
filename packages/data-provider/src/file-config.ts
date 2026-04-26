@@ -509,7 +509,7 @@ export const isPermissiveMimeConfig = (types?: RegExp[]): boolean => {
   if (!types || types.length === 0) {
     return false;
   }
-  return types.some((regex) => regex.test('x-librechat/x-probe'));
+  return types.some((regex) => regex.test('x-agentchat/x-probe'));
 };
 
 /**

@@ -2,8 +2,8 @@ const express = require('express');
 const request = require('supertest');
 const mongoose = require('mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');
-const { createModels, createMethods } = require('@librechat/data-schemas');
-const { PrincipalType, SystemRoles } = require('librechat-data-provider');
+const { createModels, createMethods } = require('data-schemas');
+const { PrincipalType, SystemRoles } = require('agentchat-data-provider');
 
 /**
  * Integration test for the admin grants routes.
@@ -52,7 +52,7 @@ afterEach(async () => {
 });
 
 function createApp(user) {
-  const { createAdminGrantsHandlers, getCachedPrincipals } = require('@librechat/api');
+  const { createAdminGrantsHandlers, getCachedPrincipals } = require('api');
 
   const handlers = createAdminGrantsHandlers({
     listGrants: db.listGrants,

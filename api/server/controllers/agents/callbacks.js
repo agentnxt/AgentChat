@@ -1,19 +1,19 @@
 const { nanoid } = require('nanoid');
-const { logger } = require('@librechat/data-schemas');
-const { Tools, StepTypes, FileContext, ErrorTypes } = require('librechat-data-provider');
+const { logger } = require('data-schemas');
+const { Tools, StepTypes, FileContext, ErrorTypes } = require('agentchat-data-provider');
 const {
   EnvVar,
   Constants,
   GraphEvents,
   GraphNodeKeys,
   ToolEndHandler,
-} = require('@librechat/agents');
+} = require('agents');
 const {
   sendEvent,
   GenerationJobManager,
   writeAttachmentEvent,
   createToolExecuteHandler,
-} = require('@librechat/api');
+} = require('api');
 const { processFileCitations } = require('~/server/services/Files/Citations');
 const { processCodeOutput } = require('~/server/services/Files/Code/process');
 const { loadAuthValues } = require('~/server/services/Tools/credentials');
@@ -491,7 +491,7 @@ function createToolEndCallback({ req, res, artifactPromises, streamId = null }) 
 }
 
 /**
- * Helper to write attachment events in Open Responses format (librechat:attachment)
+ * Helper to write attachment events in Open Responses format (agentchat:attachment)
  * @param {ServerResponse} res - The server response object
  * @param {Object} tracker - The response tracker with sequence number
  * @param {Object} attachment - The attachment data
@@ -507,7 +507,7 @@ function writeResponsesAttachment(res, tracker, attachment, metadata) {
 
 /**
  * Creates a tool end callback specifically for the Responses API.
- * Emits attachments as `librechat:attachment` events per the Open Responses extension spec.
+ * Emits attachments as `agentchat:attachment` events per the Open Responses extension spec.
  *
  * @param {Object} params
  * @param {ServerRequest} params.req

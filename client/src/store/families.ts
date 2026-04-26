@@ -10,14 +10,14 @@ import {
   useSetRecoilState,
   useRecoilCallback,
 } from 'recoil';
-import { LocalStorageKeys, isEphemeralAgentId, Constants } from 'librechat-data-provider';
+import { LocalStorageKeys, isEphemeralAgentId, Constants } from 'agentchat-data-provider';
 import type {
   EModelEndpoint,
   TConversation,
   TSubmission,
   TMessage,
   TPreset,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type { TOptionSettings, ExtendedFile } from '~/common';
 import {
   clearModelForNonEphemeralAgent,

@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
-import { FileSources, LocalStorageKeys } from 'librechat-data-provider';
+import { FileSources, LocalStorageKeys } from 'agentchat-data-provider';
 import type { ExtendedFile } from '~/common';
 import DragDropWrapper from '~/components/Chat/Input/Files/DragDropWrapper';
 import { EditorProvider, ArtifactsProvider } from '~/Providers';

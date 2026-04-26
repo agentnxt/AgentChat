@@ -4,12 +4,12 @@ import {
   PermissionTypes,
   EModelEndpoint,
   EndpointURLs,
-} from 'librechat-data-provider';
-import type { IRole, IUser } from '@librechat/data-schemas';
+} from 'agentchat-data-provider';
+import type { IRole, IUser } from 'data-schemas';
 import { checkAccess, generateCheckAccess, skipAgentCheck } from './access';
 
 // Mock logger
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     warn: jest.fn(),
     error: jest.fn(),

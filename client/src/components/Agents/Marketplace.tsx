@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { useMediaQuery } from '@librechat/client';
-import { PermissionTypes, Permissions } from 'librechat-data-provider';
+import { useMediaQuery } from 'client';
+import { PermissionTypes, Permissions } from 'agentchat-data-provider';
 import { useSearchParams, useParams, useNavigate } from 'react-router-dom';
-import type t from 'librechat-data-provider';
+import type t from 'agentchat-data-provider';
 import { useDocumentTitle, useHasAccess, useLocalize, TranslationKeys } from '~/hooks';
 import { useGetEndpointsQuery, useGetAgentCategoriesQuery } from '~/data-provider';
 import MarketplaceAdminSettings from './MarketplaceAdminSettings';
@@ -47,7 +47,7 @@ const AgentMarketplace: React.FC<AgentMarketplaceProps> = ({ className = '' }) =
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Set page title
-  useDocumentTitle(`${localize('com_agents_marketplace')} | LibreChat`);
+  useDocumentTitle(`${localize('com_agents_marketplace')} | AgentChat`);
 
   // Ensure endpoints config is loaded first (required for agent queries)
   useGetEndpointsQuery();

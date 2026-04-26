@@ -1,10 +1,10 @@
-{{- if .Values.librechat.configYamlContent }}
+{{- if .Values.agentchat.configYamlContent }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "librechat.fullname" $ }}-config
+  name: {{ include "agentchat.fullname" $ }}-config
 data:
-  librechat.yaml: |
-{{ .Values.librechat.configYamlContent | toYaml | indent 4 }}
+  agentchat.yaml: |
+{{ .Values.agentchat.configYamlContent | toYaml | indent 4 }}
 
 {{- end }}

@@ -6,8 +6,8 @@ import {
   ToolCallTypes,
   imageGenTools,
   isImageVisionTool,
-} from 'librechat-data-provider';
-import type { TMessageContentParts, TAttachment } from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type { TMessageContentParts, TAttachment } from 'agentchat-data-provider';
 import { ImageGen, ExecuteCode, AgentUpdate, EmptyText, Reasoning, Summary, Text } from './Parts';
 import { ErrorMessage } from './MessageContent';
 import RetrievalCall from './RetrievalCall';

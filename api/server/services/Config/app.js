@@ -1,6 +1,6 @@
-const { CacheKeys } = require('librechat-data-provider');
-const { AppService, logger } = require('@librechat/data-schemas');
-const { createAppConfigService, clearMcpConfigCache } = require('@librechat/api');
+const { CacheKeys } = require('agentchat-data-provider');
+const { AppService, logger } = require('data-schemas');
+const { createAppConfigService, clearMcpConfigCache } = require('api');
 const { setCachedTools, invalidateCachedTools } = require('./getCachedTools');
 const { loadAndFormatTools } = require('~/server/services/start/tools');
 const loadCustomConfig = require('./loadCustomConfig');

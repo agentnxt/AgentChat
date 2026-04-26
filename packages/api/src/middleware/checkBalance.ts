@@ -1,6 +1,6 @@
-import { logger } from '@librechat/data-schemas';
-import { ViolationTypes } from 'librechat-data-provider';
-import type { BalanceConfig, IBalanceUpdate } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
+import { ViolationTypes } from 'agentchat-data-provider';
+import type { BalanceConfig, IBalanceUpdate } from 'data-schemas';
 import type { Response } from 'express';
 import type { ServerRequest } from '~/types/http';
 

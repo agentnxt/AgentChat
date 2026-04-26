@@ -1,5 +1,5 @@
 import logger from '../config/winston';
-import { EToolResources, FileContext } from 'librechat-data-provider';
+import { EToolResources, FileContext } from 'agentchat-data-provider';
 import type { FilterQuery, SortOrder, Model } from 'mongoose';
 import type { IMongoFile } from '~/types/file';
 import { tenantSafeBulkWrite } from '~/utils/tenantBulkWrite';

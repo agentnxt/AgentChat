@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { ViolationTypes, ErrorTypes } from 'librechat-data-provider';
-import type { Agent, TModelsConfig } from 'librechat-data-provider';
+import { ViolationTypes, ErrorTypes } from 'agentchat-data-provider';
+import type { Agent, TModelsConfig } from 'agentchat-data-provider';
 import type { Request, Response } from 'express';
 
 /**

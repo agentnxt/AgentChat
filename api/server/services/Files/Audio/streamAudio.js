@@ -1,11 +1,11 @@
-const { scopedCacheKey } = require('@librechat/data-schemas');
+const { scopedCacheKey } = require('data-schemas');
 const {
   Time,
   CacheKeys,
   SEPARATORS,
   parseTextParts,
   findLastSeparatorIndex,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { getLogStores } = require('~/cache');
 const { getMessage } = require('~/models');
 

@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions, QueryObserverResult } from '@tanstack/react-query';
-import { QueryKeys, dataService } from 'librechat-data-provider';
-import type * as t from 'librechat-data-provider';
+import { QueryKeys, dataService } from 'agentchat-data-provider';
+import type * as t from 'agentchat-data-provider';
 
 /**
  * Hook for fetching all accessible MCP servers with permission metadata

@@ -1,4 +1,4 @@
-import type { SearchCategories } from 'librechat-data-provider';
+import type { SearchCategories } from 'agentchat-data-provider';
 
 export type TWebSearchKeys =
   | 'serperApiKey'

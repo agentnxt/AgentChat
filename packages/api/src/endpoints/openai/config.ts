@@ -1,6 +1,6 @@
 import { ProxyAgent } from 'undici';
-import { Providers } from '@librechat/agents';
-import { KnownEndpoints, EModelEndpoint } from 'librechat-data-provider';
+import { Providers } from 'agents';
+import { KnownEndpoints, EModelEndpoint } from 'agentchat-data-provider';
 import type * as t from '~/types';
 import { getLLMConfig as getAnthropicLLMConfig } from '~/endpoints/anthropic/llm';
 import { getOpenAILLMConfig, extractDefaultParams } from './llm';
@@ -125,9 +125,9 @@ export function getOpenAIConfig(
   if (useOpenRouter || isVercel) {
     configOptions.defaultHeaders = Object.assign(
       {
-        'HTTP-Referer': 'https://librechat.ai',
-        'X-Title': 'LibreChat',
-        'X-OpenRouter-Title': 'LibreChat',
+        'HTTP-Referer': 'https://agentchat.ai',
+        'X-Title': 'AgentChat',
+        'X-OpenRouter-Title': 'AgentChat',
         'X-OpenRouter-Categories': 'general-chat,personal-agent',
       },
       headers,

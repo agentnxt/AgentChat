@@ -8,7 +8,7 @@ import {
   PrincipalModel,
   PermissionBits,
   EToolResources,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type {
   UpdateWithAggregationPipeline,
   RootFilterQuery,

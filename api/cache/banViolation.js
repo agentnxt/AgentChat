@@ -1,6 +1,6 @@
-const { logger } = require('@librechat/data-schemas');
-const { ViolationTypes } = require('librechat-data-provider');
-const { isEnabled, math, removePorts } = require('@librechat/api');
+const { logger } = require('data-schemas');
+const { ViolationTypes } = require('agentchat-data-provider');
+const { isEnabled, math, removePorts } = require('api');
 const { deleteAllUserSessions } = require('~/models');
 const getLogStores = require('./getLogStores');
 

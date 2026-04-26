@@ -5,9 +5,9 @@
  * @module packages/api/src/tools/definitions
  */
 
-import { Constants, isActionTool } from 'librechat-data-provider';
-import type { AgentToolOptions } from 'librechat-data-provider';
-import type { LCToolRegistry, JsonSchemaType, LCTool, GenericTool } from '@librechat/agents';
+import { Constants, isActionTool } from 'agentchat-data-provider';
+import type { AgentToolOptions } from 'agentchat-data-provider';
+import type { LCToolRegistry, JsonSchemaType, LCTool, GenericTool } from 'agents';
 import type { ToolDefinition } from './classification';
 import { resolveJsonSchemaRefs, normalizeJsonSchema } from '~/mcp/zod';
 import { buildToolClassification } from './classification';

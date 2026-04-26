@@ -1,4 +1,4 @@
-import { FileSources } from 'librechat-data-provider';
+import { FileSources } from 'agentchat-data-provider';
 import ImagePreview from './ImagePreview';
 import RemoveFile from './RemoveFile';
 

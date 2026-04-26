@@ -48,115 +48,115 @@
 
 /**
  * @exports Graph
- * @typedef {import('@librechat/agents').Graph} Graph
+ * @typedef {import('agents').Graph} Graph
  * @memberof typedefs
  */
 
 /**
  * @exports StandardGraph
- * @typedef {import('@librechat/agents').StandardGraph} StandardGraph
+ * @typedef {import('agents').StandardGraph} StandardGraph
  * @memberof typedefs
  */
 
 /**
  * @exports MessageContentComplex
- * @typedef {import('@librechat/agents').MessageContentComplex} MessageContentComplex
+ * @typedef {import('agents').MessageContentComplex} MessageContentComplex
  * @memberof typedefs
  */
 
 /**
  * @exports EventHandler
- * @typedef {import('@librechat/agents').EventHandler} EventHandler
+ * @typedef {import('agents').EventHandler} EventHandler
  * @memberof typedefs
  */
 
 /**
  * @exports ModelEndData
- * @typedef {import('@librechat/agents').ModelEndData} ModelEndData
+ * @typedef {import('agents').ModelEndData} ModelEndData
  * @memberof typedefs
  */
 
 /**
  * @exports ToolEndData
- * @typedef {import('@librechat/agents').ToolEndData} ToolEndData
+ * @typedef {import('agents').ToolEndData} ToolEndData
  * @memberof typedefs
  */
 
 /**
  * @exports ToolEndCallback
- * @typedef {import('@librechat/agents').ToolEndCallback} ToolEndCallback
+ * @typedef {import('agents').ToolEndCallback} ToolEndCallback
  * @memberof typedefs
  */
 
 /**
  * @exports ChatModelStreamHandler
- * @typedef {import('@librechat/agents').ChatModelStreamHandler} ChatModelStreamHandler
+ * @typedef {import('agents').ChatModelStreamHandler} ChatModelStreamHandler
  * @memberof typedefs
  */
 
 /**
  * @exports ContentAggregator
- * @typedef {import('@librechat/agents').ContentAggregatorResult['aggregateContent']} ContentAggregator
+ * @typedef {import('agents').ContentAggregatorResult['aggregateContent']} ContentAggregator
  * @memberof typedefs
  */
 
 /**
  * @exports GraphEvents
- * @typedef {import('@librechat/agents').GraphEvents} GraphEvents
+ * @typedef {import('agents').GraphEvents} GraphEvents
  * @memberof typedefs
  */
 
 /**
  * @exports AgentRun
- * @typedef {import('@librechat/agents').Run} AgentRun
+ * @typedef {import('agents').Run} AgentRun
  * @memberof typedefs
  */
 
 /**
  * @exports IState
- * @typedef {import('@librechat/agents').IState} IState
+ * @typedef {import('agents').IState} IState
  * @memberof typedefs
  */
 
 /**
  * @exports ClientCallbacks
- * @typedef {import('@librechat/agents').ClientCallbacks} ClientCallbacks
+ * @typedef {import('agents').ClientCallbacks} ClientCallbacks
  * @memberof typedefs
  */
 
 /**
  * @exports OpenAIClientOptions
- * @typedef {import('@librechat/agents').OpenAIClientOptions} OpenAIClientOptions
+ * @typedef {import('agents').OpenAIClientOptions} OpenAIClientOptions
  * @memberof typedefs
  */
 
 /**
  * @exports AnthropicClientOptions
- * @typedef {import('@librechat/agents').AnthropicClientOptions} AnthropicClientOptions
+ * @typedef {import('agents').AnthropicClientOptions} AnthropicClientOptions
  * @memberof typedefs
  */
 
 /**
  * @exports BedrockClientOptions
- * @typedef {import('@librechat/agents').BedrockConverseClientOptions} BedrockClientOptions
+ * @typedef {import('agents').BedrockConverseClientOptions} BedrockClientOptions
  * @memberof typedefs
  */
 
 /**
  * @exports VertexAIClientOptions
- * @typedef {import('@librechat/agents').VertexAIClientOptions} VertexAIClientOptions
+ * @typedef {import('agents').VertexAIClientOptions} VertexAIClientOptions
  * @memberof typedefs
  */
 
 /**
  * @exports GoogleClientOptions
- * @typedef {import('@librechat/agents').GoogleClientOptions} GoogleClientOptions
+ * @typedef {import('agents').GoogleClientOptions} GoogleClientOptions
  * @memberof typedefs
  */
 
 /**
  * @exports StreamEventData
- * @typedef {import('@librechat/agents').StreamEventData} StreamEventData
+ * @typedef {import('agents').StreamEventData} StreamEventData
  * @memberof typedefs
  */
 
@@ -469,19 +469,19 @@
 
 /**
  * @exports AgentToolCallDelta
- * @typedef {import('librechat-data-provider').Agents.ToolCallDelta} AgentToolCallDelta
+ * @typedef {import('agentchat-data-provider').Agents.ToolCallDelta} AgentToolCallDelta
  * @memberof typedefs
  */
 
 /**
  * @exports ToolCallChunk
- * @typedef {import('librechat-data-provider').Agents.ToolCallChunk} ToolCallChunk
+ * @typedef {import('agentchat-data-provider').Agents.ToolCallChunk} ToolCallChunk
  * @memberof typedefs
  */
 
 /**
  * @exports MessageContentImageUrl
- * @typedef {import('librechat-data-provider').Agents.MessageContentImageUrl} MessageContentImageUrl
+ * @typedef {import('agentchat-data-provider').Agents.MessageContentImageUrl} MessageContentImageUrl
  * @memberof typedefs
  */
 
@@ -489,102 +489,102 @@
 
 /**
  * @exports SearchResult
- * @typedef {import('@librechat/agents').SearchResult} SearchResult
+ * @typedef {import('agents').SearchResult} SearchResult
  * @memberof typedefs
  */
 
 /**
  * @exports SearchResultData
- * @typedef {import('@librechat/agents').SearchResultData} SearchResultData
+ * @typedef {import('agents').SearchResultData} SearchResultData
  * @memberof typedefs
  */
 
 /**
  * @exports ValidSource
- * @typedef {import('librechat-data-provider').ValidSource} ValidSource
+ * @typedef {import('agentchat-data-provider').ValidSource} ValidSource
  * @memberof typedefs
  */
 
 /** Prompts */
 /**
  * @exports TPrompt
- * @typedef {import('librechat-data-provider').TPrompt} TPrompt
+ * @typedef {import('agentchat-data-provider').TPrompt} TPrompt
  * @memberof typedefs
  */
 
 /**
  * @exports TPromptGroup
- * @typedef {import('librechat-data-provider').TPromptGroup} TPromptGroup
+ * @typedef {import('agentchat-data-provider').TPromptGroup} TPromptGroup
  * @memberof typedefs
  */
 
 /**
  * @exports TCreatePrompt
- * @typedef {import('librechat-data-provider').TCreatePrompt} TCreatePrompt
+ * @typedef {import('agentchat-data-provider').TCreatePrompt} TCreatePrompt
  * @memberof typedefs
  */
 
 /**
  * @exports TCreatePromptRecord
- * @typedef {import('librechat-data-provider').TCreatePromptRecord} TCreatePromptRecord
+ * @typedef {import('agentchat-data-provider').TCreatePromptRecord} TCreatePromptRecord
  * @memberof typedefs
  */
 /**
  * @exports TCreatePromptResponse
- * @typedef {import('librechat-data-provider').TCreatePromptResponse} TCreatePromptResponse
+ * @typedef {import('agentchat-data-provider').TCreatePromptResponse} TCreatePromptResponse
  * @memberof typedefs
  */
 /**
  * @exports TUpdatePromptGroupResponse
- * @typedef {import('librechat-data-provider').TUpdatePromptGroupResponse} TUpdatePromptGroupResponse
+ * @typedef {import('agentchat-data-provider').TUpdatePromptGroupResponse} TUpdatePromptGroupResponse
  * @memberof typedefs
  */
 
 /**
  * @exports TPromptGroupsWithFilterRequest
- * @typedef {import('librechat-data-provider').TPromptGroupsWithFilterRequest } TPromptGroupsWithFilterRequest
+ * @typedef {import('agentchat-data-provider').TPromptGroupsWithFilterRequest } TPromptGroupsWithFilterRequest
  * @memberof typedefs
  */
 
 /**
  * @exports PromptGroupListResponse
- * @typedef {import('librechat-data-provider').PromptGroupListResponse } PromptGroupListResponse
+ * @typedef {import('agentchat-data-provider').PromptGroupListResponse } PromptGroupListResponse
  * @memberof typedefs
  */
 
 /**
  * @exports TGetCategoriesResponse
- * @typedef {import('librechat-data-provider').TGetCategoriesResponse } TGetCategoriesResponse
+ * @typedef {import('agentchat-data-provider').TGetCategoriesResponse } TGetCategoriesResponse
  * @memberof typedefs
  */
 
 /**
  * @exports TGetRandomPromptsResponse
- * @typedef {import('librechat-data-provider').TGetRandomPromptsResponse } TGetRandomPromptsResponse
+ * @typedef {import('agentchat-data-provider').TGetRandomPromptsResponse } TGetRandomPromptsResponse
  * @memberof typedefs
  */
 
 /**
  * @exports TGetRandomPromptsRequest
- * @typedef {import('librechat-data-provider').TGetRandomPromptsRequest } TGetRandomPromptsRequest
+ * @typedef {import('agentchat-data-provider').TGetRandomPromptsRequest } TGetRandomPromptsRequest
  * @memberof typedefs
  */
 
 /**
  * @exports TUpdatePromptGroupPayload
- * @typedef {import('librechat-data-provider').TUpdatePromptGroupPayload } TUpdatePromptGroupPayload
+ * @typedef {import('agentchat-data-provider').TUpdatePromptGroupPayload } TUpdatePromptGroupPayload
  * @memberof typedefs
  */
 
 /**
  * @exports TDeletePromptVariables
- * @typedef {import('librechat-data-provider').TDeletePromptVariables } TDeletePromptVariables
+ * @typedef {import('agentchat-data-provider').TDeletePromptVariables } TDeletePromptVariables
  * @memberof typedefs
  */
 
 /**
  * @exports TDeletePromptResponse
- * @typedef {import('librechat-data-provider').TDeletePromptResponse } TDeletePromptResponse
+ * @typedef {import('agentchat-data-provider').TDeletePromptResponse } TDeletePromptResponse
  * @memberof typedefs
  */
 
@@ -592,235 +592,235 @@
 
 /**
  * @exports TRole
- * @typedef {import('librechat-data-provider').TRole } TRole
+ * @typedef {import('agentchat-data-provider').TRole } TRole
  * @memberof typedefs
  */
 
 /**
  * @exports PermissionTypes
- * @typedef {import('librechat-data-provider').PermissionTypes } PermissionTypes
+ * @typedef {import('agentchat-data-provider').PermissionTypes } PermissionTypes
  * @memberof typedefs
  */
 
 /**
  * @exports Permissions
- * @typedef {import('librechat-data-provider').Permissions } Permissions
+ * @typedef {import('agentchat-data-provider').Permissions } Permissions
  * @memberof typedefs
  */
 
 /** Assistants */
 /**
  * @exports Assistant
- * @typedef {import('librechat-data-provider').Assistant} Assistant
+ * @typedef {import('agentchat-data-provider').Assistant} Assistant
  * @memberof typedefs
  */
 
 /**
  * @exports AssistantDocument
- * @typedef {import('librechat-data-provider').AssistantDocument} AssistantDocument
+ * @typedef {import('agentchat-data-provider').AssistantDocument} AssistantDocument
  * @memberof typedefs
  */
 
 /**
  * @exports OpenAIFile
- * @typedef {import('librechat-data-provider').File} OpenAIFile
+ * @typedef {import('agentchat-data-provider').File} OpenAIFile
  * @memberof typedefs
  */
 
 /**
  * @exports TConfig
- * @typedef {import('librechat-data-provider').TConfig} TConfig
+ * @typedef {import('agentchat-data-provider').TConfig} TConfig
  * @memberof typedefs
  */
 
 /**
  * @exports TPayload
- * @typedef {import('librechat-data-provider').TPayload} TPayload
+ * @typedef {import('agentchat-data-provider').TPayload} TPayload
  * @memberof typedefs
  */
 
 /**
  * @exports TAzureModelConfig
- * @typedef {import('librechat-data-provider').TAzureModelConfig} TAzureModelConfig
+ * @typedef {import('agentchat-data-provider').TAzureModelConfig} TAzureModelConfig
  * @memberof typedefs
  */
 
 /**
  * @exports TAzureGroup
- * @typedef {import('librechat-data-provider').TAzureGroup} TAzureGroup
+ * @typedef {import('agentchat-data-provider').TAzureGroup} TAzureGroup
  * @memberof typedefs
  */
 
 /**
  * @exports TAzureGroups
- * @typedef {import('librechat-data-provider').TAzureGroups} TAzureGroups
+ * @typedef {import('agentchat-data-provider').TAzureGroups} TAzureGroups
  * @memberof typedefs
  */
 
 /**
  * @exports TAzureModelGroupMap
- * @typedef {import('librechat-data-provider').TAzureModelGroupMap} TAzureModelGroupMap
+ * @typedef {import('agentchat-data-provider').TAzureModelGroupMap} TAzureModelGroupMap
  * @memberof typedefs
  */
 /**
  * @exports TAzureGroupMap
- * @typedef {import('librechat-data-provider').TAzureGroupMap} TAzureGroupMap
+ * @typedef {import('agentchat-data-provider').TAzureGroupMap} TAzureGroupMap
  * @memberof typedefs
  */
 
 /**
  * @exports TAzureConfig
- * @typedef {import('librechat-data-provider').TAzureConfig} TAzureConfig
+ * @typedef {import('agentchat-data-provider').TAzureConfig} TAzureConfig
  * @memberof typedefs
  */
 
 /**
  * @exports TModelsConfig
- * @typedef {import('librechat-data-provider').TModelsConfig} TModelsConfig
+ * @typedef {import('agentchat-data-provider').TModelsConfig} TModelsConfig
  * @memberof typedefs
  */
 
 /**
  * @exports TStartupConfig
- * @typedef {import('librechat-data-provider').TStartupConfig} TStartupConfig
+ * @typedef {import('agentchat-data-provider').TStartupConfig} TStartupConfig
  * @memberof typedefs
  */
 
 /**
  * @exports TConfigDefaults
- * @typedef {import('librechat-data-provider').TConfigDefaults} TConfigDefaults
+ * @typedef {import('agentchat-data-provider').TConfigDefaults} TConfigDefaults
  * @memberof typedefs
  */
 
 /**
  * @exports TPlugin
- * @typedef {import('librechat-data-provider').TPlugin} TPlugin
+ * @typedef {import('agentchat-data-provider').TPlugin} TPlugin
  * @memberof typedefs
  */
 
 /**
  * @exports TAzureConfigValidationResult
- * @typedef {import('librechat-data-provider').TAzureConfigValidationResult} TAzureConfigValidationResult
+ * @typedef {import('agentchat-data-provider').TAzureConfigValidationResult} TAzureConfigValidationResult
  * @memberof typedefs
  */
 
 /**
  * @exports EImageOutputType
- * @typedef {import('librechat-data-provider').EImageOutputType} EImageOutputType
+ * @typedef {import('agentchat-data-provider').EImageOutputType} EImageOutputType
  * @memberof typedefs
  */
 
 /**
  * @exports TCustomConfig
- * @typedef {import('librechat-data-provider').TCustomConfig} TCustomConfig
+ * @typedef {import('agentchat-data-provider').TCustomConfig} TCustomConfig
  * @memberof typedefs
  */
 
 /**
  * @exports TProviderSchema
- * @typedef {import('librechat-data-provider').TProviderSchema} TProviderSchema
+ * @typedef {import('agentchat-data-provider').TProviderSchema} TProviderSchema
  * @memberof typedefs
  */
 
 /**
  * @exports TBaseEndpoint
- * @typedef {import('librechat-data-provider').TBaseEndpoint} TBaseEndpoint
+ * @typedef {import('agentchat-data-provider').TBaseEndpoint} TBaseEndpoint
  * @memberof typedefs
  */
 
 /**
  * @exports TEndpoint
- * @typedef {import('librechat-data-provider').TEndpoint} TEndpoint
+ * @typedef {import('agentchat-data-provider').TEndpoint} TEndpoint
  * @memberof typedefs
  */
 
 /**
  * @exports TEndpointsConfig
- * @typedef {import('librechat-data-provider').TEndpointsConfig} TEndpointsConfig
+ * @typedef {import('agentchat-data-provider').TEndpointsConfig} TEndpointsConfig
  * @memberof typedefs
  */
 
 /**
  * @exports TMessage
- * @typedef {import('librechat-data-provider').TMessage} TMessage
+ * @typedef {import('agentchat-data-provider').TMessage} TMessage
  * @memberof typedefs
  */
 
 /**
  * @exports TConversation
- * @typedef {import('librechat-data-provider').TConversation} TConversation
+ * @typedef {import('agentchat-data-provider').TConversation} TConversation
  * @memberof typedefs
  */
 
 /**
  * @exports TModelSpec
- * @typedef {import('librechat-data-provider').TModelSpec} TModelSpec
+ * @typedef {import('agentchat-data-provider').TModelSpec} TModelSpec
  * @memberof typedefs
  */
 
 /**
  * @exports TPlugin
- * @typedef {import('librechat-data-provider').TPlugin} TPlugin
+ * @typedef {import('agentchat-data-provider').TPlugin} TPlugin
  * @memberof typedefs
  */
 
 /**
  * @exports FileSources
- * @typedef {import('librechat-data-provider').FileSources} FileSources
+ * @typedef {import('agentchat-data-provider').FileSources} FileSources
  * @memberof typedefs
  */
 
 /**
  * @exports TMessage
- * @typedef {import('librechat-data-provider').TMessage} TMessage
+ * @typedef {import('agentchat-data-provider').TMessage} TMessage
  * @memberof typedefs
  */
 
 /**
  * @exports ImageFile
- * @typedef {import('librechat-data-provider').ImageFile} ImageFile
+ * @typedef {import('agentchat-data-provider').ImageFile} ImageFile
  * @memberof typedefs
  */
 
 /**
  * @exports TMessageContentParts
- * @typedef {import('librechat-data-provider').TMessageContentParts} TMessageContentParts
+ * @typedef {import('agentchat-data-provider').TMessageContentParts} TMessageContentParts
  * @memberof typedefs
  */
 
 /**
  * @exports StreamContentData
- * @typedef {import('librechat-data-provider').StreamContentData} StreamContentData
+ * @typedef {import('agentchat-data-provider').StreamContentData} StreamContentData
  * @memberof typedefs
  */
 
 /**
  * @exports ActionRequest
- * @typedef {import('librechat-data-provider').ActionRequest} ActionRequest
+ * @typedef {import('agentchat-data-provider').ActionRequest} ActionRequest
  * @memberof typedefs
  */
 
 /**
  * @exports Action
- * @typedef {import('librechat-data-provider').Action} Action
+ * @typedef {import('agentchat-data-provider').Action} Action
  * @memberof typedefs
  */
 
 /**
  * @exports ActionMetadata
- * @typedef {import('librechat-data-provider').ActionMetadata} ActionMetadata
+ * @typedef {import('agentchat-data-provider').ActionMetadata} ActionMetadata
  * @memberof typedefs
  */
 
 /**
  * @exports ActionAuth
- * @typedef {import('librechat-data-provider').ActionAuth} ActionAuth
+ * @typedef {import('agentchat-data-provider').ActionAuth} ActionAuth
  * @memberof typedefs
  */
 
 /**
  * @exports DeleteFilesBody
- * @typedef {import('librechat-data-provider').DeleteFilesBody} DeleteFilesBody
+ * @typedef {import('agentchat-data-provider').DeleteFilesBody} DeleteFilesBody
  * @memberof typedefs
  */
 
@@ -864,37 +864,37 @@
 
 /**
  * @exports MongoFile
- * @typedef {import('@librechat/data-schemas').IMongoFile} MongoFile
+ * @typedef {import('data-schemas').IMongoFile} MongoFile
  * @memberof typedefs
  */
 
 /**
  * @exports ISession
- * @typedef {import('@librechat/data-schemas').ISession} ISession
+ * @typedef {import('data-schemas').ISession} ISession
  * @memberof typedefs
  */
 
 /**
  * @exports IBalance
- * @typedef {import('@librechat/data-schemas').IBalance} IBalance
+ * @typedef {import('data-schemas').IBalance} IBalance
  * @memberof typedefs
  */
 
 /**
  * @exports IUser
- * @typedef {import('@librechat/data-schemas').IUser} IUser
+ * @typedef {import('data-schemas').IUser} IUser
  * @memberof typedefs
  */
 
 /**
  * @exports IPluginAuth
- * @typedef {import('@librechat/data-schemas').IPluginAuth} IPluginAuth
+ * @typedef {import('data-schemas').IPluginAuth} IPluginAuth
  * @memberof typedefs
  */
 
 /**
  * @exports IRole
- * @typedef {import('@librechat/data-schemas').IRole} IRole
+ * @typedef {import('data-schemas').IRole} IRole
  * @memberof typedefs
  */
 
@@ -940,73 +940,73 @@
 
 /**
  * @exports EModelEndpoint
- * @typedef {import('librechat-data-provider').EModelEndpoint} EModelEndpoint
+ * @typedef {import('agentchat-data-provider').EModelEndpoint} EModelEndpoint
  * @memberof typedefs
  */
 
 /**
  * @exports TEndpointOption
- * @typedef {import('librechat-data-provider').TEndpointOption} TEndpointOption
+ * @typedef {import('agentchat-data-provider').TEndpointOption} TEndpointOption
  * @memberof typedefs
  */
 
 /**
  * @exports TAttachment
- * @typedef {import('librechat-data-provider').TAttachment} TAttachment
+ * @typedef {import('agentchat-data-provider').TAttachment} TAttachment
  * @memberof typedefs
  */
 
 /**
  * @exports AssistantCreateParams
- * @typedef {import('librechat-data-provider').AssistantCreateParams} AssistantCreateParams
+ * @typedef {import('agentchat-data-provider').AssistantCreateParams} AssistantCreateParams
  * @memberof typedefs
  */
 
 /**
  * @exports AssistantUpdateParams
- * @typedef {import('librechat-data-provider').AssistantUpdateParams} AssistantUpdateParams
+ * @typedef {import('agentchat-data-provider').AssistantUpdateParams} AssistantUpdateParams
  * @memberof typedefs
  */
 
 /**
  * @exports AssistantListParams
- * @typedef {import('librechat-data-provider').AssistantListParams} AssistantListParams
+ * @typedef {import('agentchat-data-provider').AssistantListParams} AssistantListParams
  * @memberof typedefs
  */
 
 /**
  * @exports AssistantListResponse
- * @typedef {import('librechat-data-provider').AssistantListResponse} AssistantListResponse
+ * @typedef {import('agentchat-data-provider').AssistantListResponse} AssistantListResponse
  * @memberof typedefs
  */
 
 /**
  * @exports ContentPart
- * @typedef {import('librechat-data-provider').ContentPart} ContentPart
+ * @typedef {import('agentchat-data-provider').ContentPart} ContentPart
  * @memberof typedefs
  */
 
 /**
  * @exports StepTypes
- * @typedef {import('librechat-data-provider').StepTypes} StepTypes
+ * @typedef {import('agentchat-data-provider').StepTypes} StepTypes
  * @memberof typedefs
  */
 
 /**
  * @exports TContentData
- * @typedef {import('librechat-data-provider').TContentData} TContentData
+ * @typedef {import('agentchat-data-provider').TContentData} TContentData
  * @memberof typedefs
  */
 
 /**
  * @exports ContentPart
- * @typedef {import('librechat-data-provider').ContentPart} ContentPart
+ * @typedef {import('agentchat-data-provider').ContentPart} ContentPart
  * @memberof typedefs
  */
 
 /**
  * @exports PartMetadata
- * @typedef {import('librechat-data-provider').PartMetadata} PartMetadata
+ * @typedef {import('agentchat-data-provider').PartMetadata} PartMetadata
  * @memberof typedefs
  */
 
@@ -1024,92 +1024,92 @@
 
 /**
  * @exports TAssistantEndpoint
- * @typedef {import('librechat-data-provider').TAssistantEndpoint} TAssistantEndpoint
+ * @typedef {import('agentchat-data-provider').TAssistantEndpoint} TAssistantEndpoint
  * @memberof typedefs
  */
 
 /**
  * @exports TAgentsEndpoint
- * @typedef {import('librechat-data-provider').TAgentsEndpoint} TAgentsEndpoint
+ * @typedef {import('agentchat-data-provider').TAgentsEndpoint} TAgentsEndpoint
  * @memberof typedefs
  */
 
 /**
  * @exports Agent
- * @typedef {import('librechat-data-provider').Agent} Agent
+ * @typedef {import('agentchat-data-provider').Agent} Agent
  * @memberof typedefs
  */
 
 /**
  * @exports TEphemeralAgent
- * @typedef {import('librechat-data-provider').TEphemeralAgent} TEphemeralAgent
+ * @typedef {import('agentchat-data-provider').TEphemeralAgent} TEphemeralAgent
  * @memberof typedefs
  */
 
 /**
  * @exports TWebSearchKeys
- * @typedef {import('@librechat/data-schemas').TWebSearchKeys} TWebSearchKeys
+ * @typedef {import('data-schemas').TWebSearchKeys} TWebSearchKeys
  * @memberof typedefs
  */
 
 /**
  * @exports AgentToolResources
- * @typedef {import('librechat-data-provider').AgentToolResources} AgentToolResources
+ * @typedef {import('agentchat-data-provider').AgentToolResources} AgentToolResources
  * @memberof typedefs
  */
 
 /**
  * @exports AgentCreateParams
- * @typedef {import('librechat-data-provider').AgentCreateParams} AgentCreateParams
+ * @typedef {import('agentchat-data-provider').AgentCreateParams} AgentCreateParams
  * @memberof typedefs
  */
 
 /**
  * @exports AgentUpdateParams
- * @typedef {import('librechat-data-provider').AgentUpdateParams} AgentUpdateParams
+ * @typedef {import('agentchat-data-provider').AgentUpdateParams} AgentUpdateParams
  * @memberof typedefs
  */
 
 /**
  * @exports AgentListParams
- * @typedef {import('librechat-data-provider').AgentListParams} AgentListParams
+ * @typedef {import('agentchat-data-provider').AgentListParams} AgentListParams
  * @memberof typedefs
  */
 
 /**
  * @exports AgentListResponse
- * @typedef {import('librechat-data-provider').AgentListResponse} AgentListResponse
+ * @typedef {import('agentchat-data-provider').AgentListResponse} AgentListResponse
  * @memberof typedefs
  */
 
 /** Permissions */
 /**
  * @exports TUpdateResourcePermissionsRequest
- * @typedef {import('librechat-data-provider').TUpdateResourcePermissionsRequest} TUpdateResourcePermissionsRequest
+ * @typedef {import('agentchat-data-provider').TUpdateResourcePermissionsRequest} TUpdateResourcePermissionsRequest
  * @memberof typedefs
  */
 
 /**
  * @exports TUpdateResourcePermissionsResponse
- * @typedef {import('librechat-data-provider').TUpdateResourcePermissionsResponse} TUpdateResourcePermissionsResponse
+ * @typedef {import('agentchat-data-provider').TUpdateResourcePermissionsResponse} TUpdateResourcePermissionsResponse
  * @memberof typedefs
  */
 
 /**
  * @exports AppConfig
- * @typedef {import('@librechat/data-schemas').AppConfig} AppConfig
+ * @typedef {import('data-schemas').AppConfig} AppConfig
  * @memberof typedefs
  */
 
 /**
  * @exports JsonSchemaType
- * @typedef {import('@librechat/data-schemas').JsonSchemaType} JsonSchemaType
+ * @typedef {import('data-schemas').JsonSchemaType} JsonSchemaType
  * @memberof typedefs
  */
 
 /**
  * @exports MCPServers
- * @typedef {import('@librechat/api').MCPServers} MCPServers
+ * @typedef {import('api').MCPServers} MCPServers
  * @memberof typedefs
  */
 
@@ -1121,43 +1121,43 @@
 
 /**
  * @exports MCPManager
- * @typedef {import('@librechat/api').MCPManager} MCPManager
+ * @typedef {import('api').MCPManager} MCPManager
  * @memberof typedefs
  */
 
 /**
  * @exports MCPConnection
- * @typedef {import('@librechat/api').MCPConnection} MCPConnection
+ * @typedef {import('api').MCPConnection} MCPConnection
  * @memberof typedefs
  */
 
 /**
  * @exports LCFunctionTool
- * @typedef {import('@librechat/api').LCFunctionTool} LCFunctionTool
+ * @typedef {import('api').LCFunctionTool} LCFunctionTool
  * @memberof typedefs
  */
 
 /**
  * @exports FlowStateManager
- * @typedef {import('@librechat/api').FlowStateManager} FlowStateManager
+ * @typedef {import('api').FlowStateManager} FlowStateManager
  * @memberof typedefs
  */
 
 /**
  * @exports LCAvailableTools
- * @typedef {import('@librechat/api').LCAvailableTools} LCAvailableTools
+ * @typedef {import('api').LCAvailableTools} LCAvailableTools
  * @memberof typedefs
  */
 
 /**
  * @exports LCTool
- * @typedef {import('@librechat/api').LCTool} LCTool
+ * @typedef {import('api').LCTool} LCTool
  * @memberof typedefs
  */
 
 /**
  * @exports FormattedContent
- * @typedef {import('@librechat/api').FormattedContent} FormattedContent
+ * @typedef {import('api').FormattedContent} FormattedContent
  * @memberof typedefs
  */
 
@@ -1359,7 +1359,7 @@
 
 /**
  * @exports FunctionTool
- * @typedef {import('@librechat/data-schemas').FunctionTool} FunctionTool
+ * @typedef {import('data-schemas').FunctionTool} FunctionTool
  * @memberof typedefs
  */
 
@@ -1627,7 +1627,7 @@
  * @typedef {Object} ResponseMessage
  * @property {string} conversationId - The ID of the conversation.
  * @property {string} thread_id - The ID of the thread.
- * @property {string} messageId - The ID of the message (from LibreChat).
+ * @property {string} messageId - The ID of the message (from AgentChat).
  * @property {string} parentMessageId - The ID of the parent message.
  * @property {string} user - The ID of the user.
  * @property {string} assistant_id - The ID of the assistant.
@@ -1920,13 +1920,13 @@
 
 /**
  * @exports TForkConvoResponse
- * @typedef {import('librechat-data-provider').TForkConvoResponse} TForkConvoResponse
+ * @typedef {import('agentchat-data-provider').TForkConvoResponse} TForkConvoResponse
  * @memberof typedefs
  */
 
 /**
  * @exports TForkConvoRequest
- * @typedef {import('librechat-data-provider').TForkConvoRequest} TForkConvoRequest
+ * @typedef {import('agentchat-data-provider').TForkConvoRequest} TForkConvoRequest
  * @memberof typedefs
  */
 

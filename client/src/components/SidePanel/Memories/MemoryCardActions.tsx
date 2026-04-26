@@ -10,8 +10,8 @@ import {
   OGDialogTrigger,
   OGDialogTemplate,
   useToastContext,
-} from '@librechat/client';
-import type { TUserMemory } from 'librechat-data-provider';
+} from 'client';
+import type { TUserMemory } from 'agentchat-data-provider';
 import { useDeleteMemoryMutation } from '~/data-provider';
 import MemoryEditDialog from './MemoryEditDialog';
 import { useLocalize } from '~/hooks';

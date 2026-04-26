@@ -1,4 +1,4 @@
-const { FileSources } = require('librechat-data-provider');
+const { FileSources } = require('agentchat-data-provider');
 const {
   getS3URL,
   saveURLToS3,
@@ -11,7 +11,7 @@ const {
   uploadMistralOCR,
   uploadAzureMistralOCR,
   uploadGoogleVertexMistralOCR,
-} = require('@librechat/api');
+} = require('api');
 const {
   getFirebaseURL,
   prepareImageURL,

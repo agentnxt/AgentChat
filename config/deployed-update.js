@@ -40,8 +40,8 @@ const shouldRebase = process.argv.includes('--rebase');
   console.orange(downCommand);
   execSync(downCommand, { stdio: 'inherit' });
 
-  console.purple('Removing all tags for LibreChat `deployed` images...');
-  const repositories = ['registry.librechat.ai/danny-avila/librechat-dev-api', 'librechat-client'];
+  console.purple('Removing all tags for AgentChat `deployed` images...');
+  const repositories = ['registry.agentchat.ai/danny-avila/agentchat-dev-api', 'agentchat-client'];
   repositories.forEach((repo) => {
     const imageRefs = execSync(`sudo docker images ${repo} --format "{{.Repository}}:{{.Tag}}"`, {
       encoding: 'utf8',
@@ -56,16 +56,16 @@ const shouldRebase = process.argv.includes('--rebase');
     });
   });
 
-  console.purple('Pulling latest LibreChat images...');
+  console.purple('Pulling latest AgentChat images...');
   const pullCommand = 'sudo docker compose -f ./deploy-compose.yml pull api';
   console.orange(pullCommand);
   execSync(pullCommand, { stdio: 'inherit' });
 
   const startCommand = 'sudo docker compose -f ./deploy-compose.yml up -d';
-  console.green('Your LibreChat app is now up to date! Start the app with the following command:');
+  console.green('Your AgentChat app is now up to date! Start the app with the following command:');
   console.purple(startCommand);
   console.orange(
-    "Note: it's also recommended to clear your browser cookies and localStorage for LibreChat to assure a fully clean installation.",
+    "Note: it's also recommended to clear your browser cookies and localStorage for AgentChat to assure a fully clean installation.",
   );
   console.orange("Also: Don't worry, your data is safe :)");
 })().catch((err) => {

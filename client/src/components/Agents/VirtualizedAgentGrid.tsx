@@ -1,9 +1,9 @@
 import React, { useMemo, useEffect, useCallback, useRef } from 'react';
 import { AutoSizer, List as VirtualList, WindowScroller } from 'react-virtualized';
 import { throttle } from 'lodash';
-import { Spinner } from '@librechat/client';
-import { PermissionBits } from 'librechat-data-provider';
-import type t from 'librechat-data-provider';
+import { Spinner } from 'client';
+import { PermissionBits } from 'agentchat-data-provider';
+import type t from 'agentchat-data-provider';
 import { useMarketplaceAgentsInfiniteQuery } from '~/data-provider/Agents';
 import { useAgentCategories, useLocalize } from '~/hooks';
 import { useHasData } from './SmartLoader';

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { Tools, Constants, LocalStorageKeys, AgentCapabilities } from 'librechat-data-provider';
-import type { TAgentsEndpoint } from 'librechat-data-provider';
+import { Tools, Constants, LocalStorageKeys, AgentCapabilities } from 'agentchat-data-provider';
+import type { TAgentsEndpoint } from 'agentchat-data-provider';
 import {
   useMCPServerManager,
   useSearchApiKeyForm,

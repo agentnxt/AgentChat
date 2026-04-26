@@ -1,14 +1,14 @@
-const { fetchModels } = require('@librechat/api');
+const { fetchModels } = require('api');
 const loadConfigModels = require('./loadConfigModels');
 const { getAppConfig } = require('./app');
 
-jest.mock('@librechat/api', () => ({
-  ...jest.requireActual('@librechat/api'),
+jest.mock('api', () => ({
+  ...jest.requireActual('api'),
   fetchModels: jest.fn(),
 }));
 jest.mock('./app');
-jest.mock('@librechat/data-schemas', () => ({
-  ...jest.requireActual('@librechat/data-schemas'),
+jest.mock('data-schemas', () => ({
+  ...jest.requireActual('data-schemas'),
   logger: { debug: jest.fn(), error: jest.fn(), warn: jest.fn() },
 }));
 jest.mock('~/models', () => ({
@@ -402,7 +402,7 @@ describe('loadConfigModels', () => {
 
     it('falls back to defaults and logs warn when getUserKeyValues throws infra error', async () => {
       const { getUserKeyValues } = require('~/models');
-      const { logger } = require('@librechat/data-schemas');
+      const { logger } = require('data-schemas');
       getUserKeyValues.mockRejectedValueOnce(new Error('DB connection timeout'));
       getAppConfig.mockResolvedValue({
         endpoints: {
@@ -431,7 +431,7 @@ describe('loadConfigModels', () => {
 
     it('logs debug (not warn) for NO_USER_KEY errors', async () => {
       const { getUserKeyValues } = require('~/models');
-      const { logger } = require('@librechat/data-schemas');
+      const { logger } = require('data-schemas');
       getUserKeyValues.mockRejectedValueOnce(new Error(JSON.stringify({ type: 'no_user_key' })));
       getAppConfig.mockResolvedValue({
         endpoints: {

@@ -1,5 +1,5 @@
-import { FileSources } from 'librechat-data-provider';
-import type { TFile } from 'librechat-data-provider';
+import { FileSources } from 'agentchat-data-provider';
+import type { TFile } from 'agentchat-data-provider';
 
 export const files: TFile[] = [
   {

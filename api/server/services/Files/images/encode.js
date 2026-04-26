@@ -1,6 +1,6 @@
 const axios = require('axios');
-const { logger } = require('@librechat/data-schemas');
-const { logAxiosError, validateImage } = require('@librechat/api');
+const { logger } = require('data-schemas');
+const { logAxiosError, validateImage } = require('api');
 const {
   FileSources,
   VisionModes,
@@ -9,7 +9,7 @@ const {
   EModelEndpoint,
   mergeFileConfig,
   getEndpointFileConfig,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { getStrategyFunctions } = require('~/server/services/Files/strategies');
 
 /**

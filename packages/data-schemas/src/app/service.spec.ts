@@ -1,4 +1,4 @@
-import type { DeepPartial, TCustomConfig } from 'librechat-data-provider';
+import type { DeepPartial, TCustomConfig } from 'agentchat-data-provider';
 import { loadSummarizationConfig } from './service';
 import logger from '~/config/winston';
 

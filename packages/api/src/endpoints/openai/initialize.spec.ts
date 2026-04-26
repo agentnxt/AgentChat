@@ -1,4 +1,4 @@
-import { AuthType, EModelEndpoint } from 'librechat-data-provider';
+import { AuthType, EModelEndpoint } from 'agentchat-data-provider';
 import type { BaseInitializeParams } from '~/types';
 
 const mockValidateEndpointURL = jest.fn();

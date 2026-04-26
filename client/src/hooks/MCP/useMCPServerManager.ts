@@ -1,6 +1,6 @@
 import { useCallback, useState, useMemo, useRef, useEffect } from 'react';
 import { useAtom } from 'jotai';
-import { useToastContext } from '@librechat/client';
+import { useToastContext } from 'client';
 import { useQueryClient } from '@tanstack/react-query';
 import {
   Constants,
@@ -9,14 +9,14 @@ import {
   Permissions,
   ResourceType,
   PermissionTypes,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import {
   useCancelMCPOAuthMutation,
   useUpdateUserPluginsMutation,
   useReinitializeMCPServerMutation,
   useGetAllEffectivePermissionsQuery,
-} from 'librechat-data-provider/react-query';
-import type { TUpdateUserPlugins, TPlugin, MCPServersResponse } from 'librechat-data-provider';
+} from 'agentchat-data-provider/react-query';
+import type { TUpdateUserPlugins, TPlugin, MCPServersResponse } from 'agentchat-data-provider';
 import type { MCPServerInitState } from '~/store/mcp';
 import type { ConfigFieldDetail } from '~/common';
 import { useLocalize, useHasAccess, useMCPSelect, useMCPConnectionStatus } from '~/hooks';

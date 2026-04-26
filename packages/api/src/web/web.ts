@@ -3,16 +3,16 @@ import {
   SafeSearchTypes,
   SearchCategories,
   extractVariableName,
-} from 'librechat-data-provider';
-import { webSearchAuth } from '@librechat/data-schemas';
+} from 'agentchat-data-provider';
+import { webSearchAuth } from 'data-schemas';
 import type {
   RerankerTypes,
   TCustomConfig,
   SearchProviders,
   ScraperProviders,
   TWebSearchConfig,
-} from 'librechat-data-provider';
-import type { TWebSearchKeys, TWebSearchCategories } from '@librechat/data-schemas';
+} from 'agentchat-data-provider';
+import type { TWebSearchKeys, TWebSearchCategories } from 'data-schemas';
 import { isSSRFTarget, resolveHostnameSSRF } from '../auth';
 
 /**

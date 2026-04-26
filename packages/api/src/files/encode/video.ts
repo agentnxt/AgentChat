@@ -1,6 +1,6 @@
-import { Providers } from '@librechat/agents';
-import { isDocumentSupportedProvider } from 'librechat-data-provider';
-import type { IMongoFile } from '@librechat/data-schemas';
+import { Providers } from 'agents';
+import { isDocumentSupportedProvider } from 'agentchat-data-provider';
+import type { IMongoFile } from 'data-schemas';
 import type { ServerRequest, StrategyFunctions, VideoResult } from '~/types';
 import { getFileStream, getConfiguredFileSizeLimit } from './utils';
 import { validateVideo } from '~/files/validation';

@@ -1,6 +1,6 @@
 import { useMemo, memo } from 'react';
-import { getEndpointField } from 'librechat-data-provider';
-import type { Assistant, Agent } from 'librechat-data-provider';
+import { getEndpointField } from 'agentchat-data-provider';
+import type { Assistant, Agent } from 'agentchat-data-provider';
 import type { TMessageIcon } from '~/common';
 import ConvoIconURL from '~/components/Endpoints/ConvoIconURL';
 import { useGetEndpointsQuery } from '~/data-provider';

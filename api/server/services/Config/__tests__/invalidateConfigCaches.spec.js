@@ -13,8 +13,8 @@ jest.mock('~/server/services/start/tools', () => ({
 
 jest.mock('../loadCustomConfig', () => jest.fn().mockResolvedValue({}));
 
-jest.mock('@librechat/data-schemas', () => {
-  const actual = jest.requireActual('@librechat/data-schemas');
+jest.mock('data-schemas', () => {
+  const actual = jest.requireActual('data-schemas');
   return { ...actual, AppService: jest.fn(() => ({ availableTools: {} })) };
 });
 
@@ -30,7 +30,7 @@ jest.mock('../getCachedTools', () => ({
 }));
 
 const mockClearMcpConfigCache = jest.fn().mockResolvedValue(undefined);
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   createAppConfigService: jest.fn(() => ({
     getAppConfig: jest.fn().mockResolvedValue({ availableTools: {} }),
     clearAppConfigCache: mockClearAppConfigCache,

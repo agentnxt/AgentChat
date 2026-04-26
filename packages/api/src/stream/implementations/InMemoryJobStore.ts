@@ -1,6 +1,6 @@
-import { logger } from '@librechat/data-schemas';
-import type { StandardGraph } from '@librechat/agents';
-import type { Agents } from 'librechat-data-provider';
+import { logger } from 'data-schemas';
+import type { StandardGraph } from 'agents';
+import type { Agents } from 'agentchat-data-provider';
 import type {
   SerializableJobData,
   UsageMetadata,

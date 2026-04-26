@@ -1,5 +1,5 @@
 import type { Document, Types } from 'mongoose';
-import type { TUserFavorite } from 'librechat-data-provider';
+import type { TUserFavorite } from 'agentchat-data-provider';
 import { CursorPaginationParams } from '~/common';
 
 export interface IUser extends Document {

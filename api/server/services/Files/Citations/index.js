@@ -1,13 +1,13 @@
 const { nanoid } = require('nanoid');
-const { checkAccess } = require('@librechat/api');
-const { logger } = require('@librechat/data-schemas');
+const { checkAccess } = require('api');
+const { logger } = require('data-schemas');
 const {
   Tools,
   Permissions,
   FileSources,
   EModelEndpoint,
   PermissionTypes,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { getRoleByName, getFiles } = require('~/models');
 
 /**

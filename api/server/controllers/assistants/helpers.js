@@ -2,8 +2,8 @@ const {
   EModelEndpoint,
   defaultOrderQuery,
   defaultAssistantsVersion,
-} = require('librechat-data-provider');
-const { logger, SystemCapabilities } = require('@librechat/data-schemas');
+} = require('agentchat-data-provider');
+const { logger, SystemCapabilities } = require('data-schemas');
 const {
   initializeClient: initAzureClient,
 } = require('~/server/services/Endpoints/azureAssistants');

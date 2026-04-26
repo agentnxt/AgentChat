@@ -1,9 +1,9 @@
 import crypto from 'crypto';
 import { Keyv } from 'keyv';
-import type { IUser } from '@librechat/data-schemas';
+import type { IUser } from 'data-schemas';
 
 jest.mock(
-  '@librechat/data-schemas',
+  'data-schemas',
   () => ({
     logger: {
       info: jest.fn(),

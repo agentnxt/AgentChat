@@ -1,6 +1,6 @@
 import { Types, ClientSession, DeleteResult } from 'mongoose';
-import { AllMethods, IAclEntry, createMethods, logger } from '@librechat/data-schemas';
-import { AccessRoleIds, PrincipalType, ResourceType } from 'librechat-data-provider';
+import { AllMethods, IAclEntry, createMethods, logger } from 'data-schemas';
+import { AccessRoleIds, PrincipalType, ResourceType } from 'agentchat-data-provider';
 
 export class AccessControlService {
   private _dbMethods: AllMethods;

@@ -18,7 +18,7 @@ import type { Socket } from 'net';
 import { MCPConnection } from '~/mcp/connection';
 import { resolveHostnameSSRF } from '~/auth';
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     info: jest.fn(),
     warn: jest.fn(),

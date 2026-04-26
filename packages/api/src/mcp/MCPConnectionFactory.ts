@@ -1,7 +1,7 @@
-import { logger, getTenantId } from '@librechat/data-schemas';
+import { logger, getTenantId } from 'data-schemas';
 import type { OAuthClientInformation } from '@modelcontextprotocol/sdk/shared/auth.js';
 import type { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { TokenMethods } from '@librechat/data-schemas';
+import type { TokenMethods } from 'data-schemas';
 import type { MCPOAuthTokens, OAuthMetadata, MCPOAuthFlowMetadata } from '~/mcp/oauth';
 import type { FlowStateManager } from '~/flow/manager';
 import type * as t from './types';

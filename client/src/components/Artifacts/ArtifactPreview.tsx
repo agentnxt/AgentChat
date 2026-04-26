@@ -4,7 +4,7 @@ import type {
   SandpackProviderProps,
   SandpackPreviewRef,
 } from '@codesandbox/sandpack-react/unstyled';
-import type { TStartupConfig } from 'librechat-data-provider';
+import type { TStartupConfig } from 'agentchat-data-provider';
 import type { ArtifactFiles } from '~/common';
 import { sharedFiles, buildSandpackOptions } from '~/utils/artifacts';
 

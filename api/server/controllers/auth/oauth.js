@@ -1,11 +1,11 @@
-const { CacheKeys } = require('librechat-data-provider');
-const { logger, DEFAULT_SESSION_EXPIRY } = require('@librechat/data-schemas');
+const { CacheKeys } = require('agentchat-data-provider');
+const { logger, DEFAULT_SESSION_EXPIRY } = require('data-schemas');
 const {
   isEnabled,
   getAdminPanelUrl,
   isAdminPanelRedirect,
   generateAdminExchangeCode,
-} = require('@librechat/api');
+} = require('api');
 const { syncUserEntraGroupMemberships } = require('~/server/services/PermissionService');
 const { setAuthTokens, setOpenIDAuthTokens } = require('~/server/services/AuthService');
 const getLogStores = require('~/cache/getLogStores');

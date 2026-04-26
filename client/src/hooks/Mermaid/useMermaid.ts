@@ -2,7 +2,7 @@ import { useContext, useMemo, useState } from 'react';
 import useSWR from 'swr';
 import { Md5 } from 'ts-md5';
 import DOMPurify from 'dompurify';
-import { ThemeContext, isDark } from '@librechat/client';
+import { ThemeContext, isDark } from 'client';
 import type { MermaidConfig } from 'mermaid';
 import { inlineFlowchartConfig } from '~/utils/mermaid';
 

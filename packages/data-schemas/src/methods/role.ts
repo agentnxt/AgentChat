@@ -4,7 +4,7 @@ import {
   roleDefaults,
   permissionsSchema,
   removeNullishValues,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type { Model } from 'mongoose';
 import type { IRole, IUser } from '~/types';
 import logger from '~/config/winston';

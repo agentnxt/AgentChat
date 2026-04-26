@@ -5,11 +5,11 @@ const { Readable } = require('stream');
 const mockAxios = jest.fn();
 mockAxios.post = jest.fn();
 
-jest.mock('@librechat/agents', () => ({
+jest.mock('agents', () => ({
   getCodeBaseURL: jest.fn(() => 'https://code-api.example.com'),
 }));
 
-jest.mock('@librechat/api', () => {
+jest.mock('api', () => {
   const http = require('http');
   const https = require('https');
   return {
@@ -20,7 +20,7 @@ jest.mock('@librechat/api', () => {
   };
 });
 
-const { codeServerHttpAgent, codeServerHttpsAgent } = require('@librechat/api');
+const { codeServerHttpAgent, codeServerHttpsAgent } = require('api');
 const { getCodeOutputDownloadStream, uploadCodeEnvFile } = require('./crud');
 
 describe('Code CRUD', () => {

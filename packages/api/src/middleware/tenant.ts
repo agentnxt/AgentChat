@@ -1,5 +1,5 @@
 import { isMainThread } from 'worker_threads';
-import { tenantStorage, logger } from '@librechat/data-schemas';
+import { tenantStorage, logger } from 'data-schemas';
 import type { Response, NextFunction } from 'express';
 import type { ServerRequest } from '~/types/http';
 

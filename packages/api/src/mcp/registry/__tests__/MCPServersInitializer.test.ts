@@ -1,4 +1,4 @@
-import { logger } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
 import * as t from '~/mcp/types';
 import { registryStatusCache } from '~/mcp/registry/cache/RegistryStatusCache';
 import { MCPServersInitializer } from '~/mcp/registry/MCPServersInitializer';
@@ -21,7 +21,7 @@ jest.mock('../../registry/MCPServerInspector');
 jest.mock('~/cluster', () => ({
   isLeader: jest.fn().mockResolvedValue(true),
 }));
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     info: jest.fn(),
     warn: jest.fn(),

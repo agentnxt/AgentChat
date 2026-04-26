@@ -1,14 +1,14 @@
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: { info: jest.fn(), warn: jest.fn(), debug: jest.fn(), error: jest.fn() },
   DEFAULT_SESSION_EXPIRY: 900000,
   DEFAULT_REFRESH_TOKEN_EXPIRY: 604800000,
 }));
-jest.mock('librechat-data-provider', () => ({
+jest.mock('agentchat-data-provider', () => ({
   ErrorTypes: {},
   SystemRoles: { USER: 'USER', ADMIN: 'ADMIN' },
   errorsToString: jest.fn(),
 }));
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   isEnabled: jest.fn((val) => val === 'true' || val === true),
   checkEmailConfig: jest.fn(),
   isEmailDomainAllowed: jest.fn(),
@@ -40,7 +40,7 @@ const {
   shouldUseSecureCookie,
   isEmailDomainAllowed,
   resolveAppConfigForUser,
-} = require('@librechat/api');
+} = require('api');
 const { findUser } = require('~/models');
 const { getAppConfig } = require('~/server/services/Config');
 const { setOpenIDAuthTokens, requestPasswordReset } = require('./AuthService');

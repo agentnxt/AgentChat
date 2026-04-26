@@ -49,14 +49,14 @@ describe('buildLoginRedirectUrl', () => {
     expect(result).toBe('/login');
   });
 
-  it('returns plain /login for basename-prefixed /login (e.g. /librechat/login)', () => {
-    window.history.replaceState({}, '', '/librechat/login?redirect_to=%2Fc%2Fabc');
+  it('returns plain /login for basename-prefixed /login (e.g. /agentchat/login)', () => {
+    window.history.replaceState({}, '', '/agentchat/login?redirect_to=%2Fc%2Fabc');
     const result = buildLoginRedirectUrl();
     expect(result).toBe('/login');
   });
 
   it('returns plain /login for basename-prefixed /login sub-paths', () => {
-    const result = buildLoginRedirectUrl('/librechat/login/2fa', '', '');
+    const result = buildLoginRedirectUrl('/agentchat/login/2fa', '', '');
     expect(result).toBe('/login');
   });
 

@@ -1,7 +1,7 @@
 const { z } = require('zod');
 const fs = require('fs').promises;
 const { nanoid } = require('nanoid');
-const { logger } = require('@librechat/data-schemas');
+const { logger } = require('data-schemas');
 const {
   refreshS3Url,
   agentCreateSchema,
@@ -13,7 +13,7 @@ const {
   collectToolResourceFileIds,
   convertOcrToContextInPlace,
   stripFileIdsFromToolResources,
-} = require('@librechat/api');
+} = require('api');
 const {
   Time,
   Tools,
@@ -27,7 +27,7 @@ const {
   PermissionBits,
   actionDelimiter,
   removeNullishValues,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const {
   findPubliclyAccessibleResources,
   getResourcePermissionsMap,
@@ -58,7 +58,7 @@ const escapeRegex = (str = '') => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
  * Validates that the requesting user has VIEW access to every agent referenced in edges.
  * Agents that do not exist in the database are skipped — at create time, the `from` field
  * often references the agent being built, which has no DB record yet.
- * @param {import('librechat-data-provider').GraphEdge[]} edges
+ * @param {import('agentchat-data-provider').GraphEdge[]} edges
  * @param {string} userId
  * @param {string} userRole - Used for group/role principal resolution
  * @returns {Promise<string[]>} Agent IDs the user cannot VIEW (empty if all accessible)

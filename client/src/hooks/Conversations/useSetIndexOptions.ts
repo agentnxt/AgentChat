@@ -3,7 +3,7 @@ import {
   TConversation,
   EModelEndpoint,
   tConvoUpdateSchema,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import type { TSetExample, TSetOption, TSetOptionsPayload } from '~/common';
 import usePresetIndexOptions from './usePresetIndexOptions';
 import { useChatContext } from '~/Providers/ChatContext';

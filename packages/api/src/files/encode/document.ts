@@ -1,11 +1,11 @@
-import { Providers } from '@librechat/agents';
+import { Providers } from 'agents';
 import {
   isOpenAILikeProvider,
   isBedrockDocumentType,
   bedrockDocumentFormats,
   isDocumentSupportedProvider,
-} from 'librechat-data-provider';
-import type { IMongoFile } from '@librechat/data-schemas';
+} from 'agentchat-data-provider';
+import type { IMongoFile } from 'data-schemas';
 import type {
   DocumentBlock,
   AnthropicDocumentBlock,

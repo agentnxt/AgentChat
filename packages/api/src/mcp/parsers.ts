@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
-import { Tools } from 'librechat-data-provider';
-import type { UIResource } from 'librechat-data-provider';
+import { Tools } from 'agentchat-data-provider';
+import type { UIResource } from 'agentchat-data-provider';
 import type * as t from './types';
 
 function generateResourceId(text: string): string {

@@ -1,7 +1,7 @@
 import { Types } from 'mongoose';
-import { PrincipalType, PrincipalModel } from 'librechat-data-provider';
+import { PrincipalType, PrincipalModel } from 'agentchat-data-provider';
 import { BASE_CONFIG_PRINCIPAL_ID } from '~/admin/capabilities';
-import type { TCustomConfig } from 'librechat-data-provider';
+import type { TCustomConfig } from 'agentchat-data-provider';
 import type { Model, ClientSession } from 'mongoose';
 import type { IConfig } from '~/types';
 

@@ -1,15 +1,15 @@
 const express = require('express');
 const passport = require('passport');
 const crypto = require('node:crypto');
-const { CacheKeys } = require('librechat-data-provider');
-const { logger, SystemCapabilities } = require('@librechat/data-schemas');
+const { CacheKeys } = require('agentchat-data-provider');
+const { logger, SystemCapabilities } = require('data-schemas');
 const {
   getAdminPanelUrl,
   exchangeAdminCode,
   createSetBalanceConfig,
   storeAndStripChallenge,
   tenantContextMiddleware,
-} = require('@librechat/api');
+} = require('api');
 const { loginController } = require('~/server/controllers/auth/LoginController');
 const { requireCapability } = require('~/server/middleware/roles/capabilities');
 const { createOAuthHandler } = require('~/server/controllers/auth/oauth');

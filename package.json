@@ -1,7 +1,7 @@
 {
-  "name": "LibreChat",
+  "name": "@agnxxt/agentchat",
   "version": "v0.8.5",
-  "description": "",
+  "description": "AgentChat - the AI chat platform",
   "packageManager": "npm@11.10.0",
   "workspaces": [
     "api",
@@ -100,14 +100,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danny-avila/LibreChat.git"
+    "url": "git+https://github.com/agentnxt/agentchat.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danny-avila/LibreChat/issues"
+    "url": "https://github.com/agentnxt/agentchat/issues"
   },
-  "homepage": "https://librechat.ai/",
+  "homepage": "https://agentchat.ai/",
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
     "@eslint/compat": "^1.2.6",
@@ -141,7 +141,7 @@
   "overrides": {
     "@anthropic-ai/sdk": "0.73.0",
     "@xmldom/xmldom": "^0.8.13",
-    "@librechat/agents": {
+    "agents": {
       "@langchain/anthropic": {
         "@anthropic-ai/sdk": "0.73.0",
         "fast-xml-parser": "5.6.0"

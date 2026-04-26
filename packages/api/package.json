@@ -1,8 +1,8 @@
 {
-  "name": "@librechat/api",
+  "name": "@agnxxt/agentchat-api-pkg",
   "version": "1.7.29",
   "type": "commonjs",
-  "description": "MCP services for LibreChat",
+  "description": "MCP services for AgentChat",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "./dist/types/index.d.ts",
@@ -37,14 +37,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danny-avila/LibreChat.git"
+    "url": "git+https://github.com/danny-avila/AgentChat.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danny-avila/LibreChat/issues"
+    "url": "https://github.com/danny-avila/AgentChat/issues"
   },
-  "homepage": "https://librechat.ai",
+  "homepage": "https://agentchat.ai",
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
@@ -70,7 +70,7 @@
     "jest": "^30.2.0",
     "jest-junit": "^16.0.0",
     "jszip": "^3.10.1",
-    "librechat-data-provider": "*",
+    "@agnxxt/agentchat-data-provider": "*",
     "mammoth": "^1.11.0",
     "mongodb": "^6.14.2",
     "pdfjs-dist": "^5.4.624",
@@ -95,8 +95,8 @@
     "@google/genai": "^1.19.0",
     "@keyv/redis": "^4.3.3",
     "@langchain/core": "^0.3.80",
-    "@librechat/agents": "^3.1.68",
-    "@librechat/data-schemas": "*",
+    "agents": "^3.1.68",
+    "@agnxxt/agentchat-data-schemas": "*",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "@smithy/node-http-handler": "^4.4.5",
     "ai-tokenizer": "^1.0.6",
@@ -114,7 +114,7 @@
     "jsonwebtoken": "^9.0.0",
     "keyv": "^5.3.2",
     "keyv-file": "^5.1.2",
-    "librechat-data-provider": "*",
+    "@agnxxt/agentchat-data-provider": "*",
     "mammoth": "^1.11.0",
     "mathjs": "^15.2.0",
     "memorystore": "^1.6.7",

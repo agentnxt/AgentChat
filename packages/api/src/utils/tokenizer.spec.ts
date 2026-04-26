@@ -1,6 +1,6 @@
 import Tokenizer from './tokenizer';
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     error: jest.fn(),
   },

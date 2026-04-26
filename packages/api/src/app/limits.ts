@@ -1,5 +1,5 @@
-import { RateLimitPrefix } from 'librechat-data-provider';
-import type { TCustomConfig } from 'librechat-data-provider';
+import { RateLimitPrefix } from 'agentchat-data-provider';
+import type { TCustomConfig } from 'agentchat-data-provider';
 
 /**
  *

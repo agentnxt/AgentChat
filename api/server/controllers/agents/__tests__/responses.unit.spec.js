@@ -19,7 +19,7 @@ jest.mock('uuid', () => ({
   v4: jest.fn(() => 'mock-uuid-456'),
 }));
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     debug: jest.fn(),
     error: jest.fn(),
@@ -27,7 +27,7 @@ jest.mock('@librechat/data-schemas', () => ({
   },
 }));
 
-jest.mock('@librechat/agents', () => ({
+jest.mock('agents', () => ({
   Callback: { TOOL_ERROR: 'TOOL_ERROR' },
   ToolEndHandler: jest.fn(),
   formatAgentMessages: jest.fn().mockReturnValue({
@@ -36,7 +36,7 @@ jest.mock('@librechat/agents', () => ({
   }),
 }));
 
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   createRun: jest.fn().mockResolvedValue({
     processStream: jest.fn().mockResolvedValue(undefined),
   }),
@@ -212,7 +212,7 @@ describe('createResponse controller', () => {
     });
 
     it('should return 400 when previous_response_id is not a string', async () => {
-      const { validateResponseRequest, sendResponsesErrorResponse } = require('@librechat/api');
+      const { validateResponseRequest, sendResponsesErrorResponse } = require('api');
       validateResponseRequest.mockReturnValueOnce({
         request: {
           model: 'agent-123',
@@ -232,7 +232,7 @@ describe('createResponse controller', () => {
     });
 
     it('should return 404 when conversation is not owned by user', async () => {
-      const { validateResponseRequest, sendResponsesErrorResponse } = require('@librechat/api');
+      const { validateResponseRequest, sendResponsesErrorResponse } = require('api');
       const { getConvo } = require('~/models');
       validateResponseRequest.mockReturnValueOnce({
         request: {
@@ -255,7 +255,7 @@ describe('createResponse controller', () => {
     });
 
     it('should proceed when conversation is owned by user', async () => {
-      const { validateResponseRequest, sendResponsesErrorResponse } = require('@librechat/api');
+      const { validateResponseRequest, sendResponsesErrorResponse } = require('api');
       const { getConvo } = require('~/models');
       validateResponseRequest.mockReturnValueOnce({
         request: {
@@ -278,7 +278,7 @@ describe('createResponse controller', () => {
     });
 
     it('should return 500 when getConvo throws a DB error', async () => {
-      const { validateResponseRequest, sendResponsesErrorResponse } = require('@librechat/api');
+      const { validateResponseRequest, sendResponsesErrorResponse } = require('api');
       const { getConvo } = require('~/models');
       validateResponseRequest.mockReturnValueOnce({
         request: {
@@ -369,7 +369,7 @@ describe('createResponse controller', () => {
     beforeEach(() => {
       req.body.stream = true;
 
-      const api = require('@librechat/api');
+      const api = require('api');
       api.validateResponseRequest.mockReturnValue({
         request: { model: 'agent-123', input: 'Hello', stream: true },
       });
@@ -399,7 +399,7 @@ describe('createResponse controller', () => {
 
   describe('collectedUsage population', () => {
     it('should collect usage from on_chat_model_end events', async () => {
-      const api = require('@librechat/api');
+      const api = require('api');
 
       api.createRun.mockImplementation(async ({ customHandlers }) => {
         return {

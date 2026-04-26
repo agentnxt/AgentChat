@@ -1,4 +1,4 @@
-import { getTenantId } from '@librechat/data-schemas';
+import { getTenantId } from 'data-schemas';
 import type { Response, NextFunction } from 'express';
 import type { ServerRequest } from '~/types/http';
 // Import directly from source file — _resetTenantMiddlewareStrictCache is intentionally

@@ -1,6 +1,6 @@
 const express = require('express');
 const { ObjectId } = require('mongodb');
-const { logger, isValidObjectIdString } = require('@librechat/data-schemas');
+const { logger, isValidObjectIdString } = require('data-schemas');
 const {
   generateCheckAccess,
   markPublicPromptGroups,
@@ -9,7 +9,7 @@ const {
   safeValidatePromptGroupUpdate,
   createEmptyPromptGroupsResponse,
   filterAccessibleIdsBySharedLogic,
-} = require('@librechat/api');
+} = require('api');
 const {
   Permissions,
   ResourceType,
@@ -17,8 +17,8 @@ const {
   PrincipalType,
   PermissionBits,
   PermissionTypes,
-} = require('librechat-data-provider');
-const { SystemCapabilities } = require('@librechat/data-schemas');
+} = require('agentchat-data-provider');
+const { SystemCapabilities } = require('data-schemas');
 const {
   getListPromptGroupsByAccess,
   getOwnedPromptGroupIds,

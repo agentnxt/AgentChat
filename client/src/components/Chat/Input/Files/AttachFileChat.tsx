@@ -7,8 +7,8 @@ import {
   resolveEndpointType,
   isAssistantsEndpoint,
   getEndpointFileConfig,
-} from 'librechat-data-provider';
-import type { TConversation } from 'librechat-data-provider';
+} from 'agentchat-data-provider';
+import type { TConversation } from 'agentchat-data-provider';
 import type { ExtendedFile, FileSetter } from '~/common';
 import { useGetFileConfig, useGetEndpointsQuery, useGetAgentByIdQuery } from '~/data-provider';
 import { useAgentsMapContext } from '~/Providers';

@@ -1,4 +1,4 @@
-import { TokenExchangeMethodEnum } from 'librechat-data-provider';
+import { TokenExchangeMethodEnum } from 'agentchat-data-provider';
 import {
   getForcedTokenEndpointAuthMethod,
   resolveTokenEndpointAuthMethod,

@@ -1,4 +1,4 @@
-import { Constants, isActionTool } from 'librechat-data-provider';
+import { Constants, isActionTool } from 'agentchat-data-provider';
 import { Terminal, Globe, ImageIcon, ArrowRightLeft, FileSearch, Zap, Wrench } from 'lucide-react';
 import { cn } from '~/utils';
 

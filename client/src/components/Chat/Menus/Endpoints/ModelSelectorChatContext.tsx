@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useContext, useMemo, useRef } from 'react';
 import { useRecoilValue } from 'recoil';
-import type { EModelEndpoint, TConversation } from 'librechat-data-provider';
+import type { EModelEndpoint, TConversation } from 'agentchat-data-provider';
 import type { ConvoGenerator } from '~/common';
 import { useGetConversation, useNewConvo } from '~/hooks';
 import store from '~/store';

@@ -1,12 +1,12 @@
-import { webSearchAuth } from '@librechat/data-schemas';
-import { SafeSearchTypes, AuthType } from 'librechat-data-provider';
+import { webSearchAuth } from 'data-schemas';
+import { SafeSearchTypes, AuthType } from 'agentchat-data-provider';
 import type {
   ScraperProviders,
   TWebSearchConfig,
   SearchProviders,
   TCustomConfig,
   RerankerTypes,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import { loadWebSearchAuth, extractWebSearchEnvVars } from './web';
 
 // Mock the extractVariableName function

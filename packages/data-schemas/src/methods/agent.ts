@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
-import { Constants, EToolResources, ResourceType, actionDelimiter } from 'librechat-data-provider';
-import type { AgentToolResources } from 'librechat-data-provider';
+import { Constants, EToolResources, ResourceType, actionDelimiter } from 'agentchat-data-provider';
+import type { AgentToolResources } from 'agentchat-data-provider';
 import type { FilterQuery, Model, Types } from 'mongoose';
 import type { IAgent, IAclEntry } from '~/types';
 import logger from '~/config/winston';
@@ -8,7 +8,7 @@ import logger from '~/config/winston';
 const { mcp_delimiter } = Constants;
 
 /**
- * Mirrors `TOOL_RESOURCE_KEYS` in `@librechat/api` — the subset of
+ * Mirrors `TOOL_RESOURCE_KEYS` in `api` — the subset of
  * `EToolResources` that actually carries `file_ids` on an agent document.
  * `code_interpreter` is excluded (it belongs to the Assistants API, not
  * `AgentToolResources`) to avoid emitting dead MongoDB clauses.

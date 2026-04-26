@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { EModelEndpoint } from 'librechat-data-provider';
-import type { Agent } from 'librechat-data-provider';
+import { EModelEndpoint } from 'agentchat-data-provider';
+import type { Agent } from 'agentchat-data-provider';
 import type { TMessageIcon } from '~/common';
 
-jest.mock('librechat-data-provider', () => ({
-  ...jest.requireActual('librechat-data-provider'),
+jest.mock('agentchat-data-provider', () => ({
+  ...jest.requireActual('agentchat-data-provider'),
   getEndpointField: jest.fn(() => ''),
 }));
 jest.mock('~/data-provider', () => ({

@@ -1,5 +1,5 @@
-import { ErrorTypes } from 'librechat-data-provider';
-// Note: checkUserKeyExpiry moved to @librechat/api (utils/key.ts) as it's a pure validation utility
+import { ErrorTypes } from 'agentchat-data-provider';
+// Note: checkUserKeyExpiry moved to api (utils/key.ts) as it's a pure validation utility
 import { encrypt, decrypt } from '~/crypto';
 import logger from '~/config/winston';
 

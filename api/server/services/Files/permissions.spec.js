@@ -1,4 +1,4 @@
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: { error: jest.fn() },
 }));
 
@@ -10,8 +10,8 @@ jest.mock('~/models', () => ({
   getAgent: jest.fn(),
 }));
 
-const { logger } = require('@librechat/data-schemas');
-const { Constants, PermissionBits, ResourceType } = require('librechat-data-provider');
+const { logger } = require('data-schemas');
+const { Constants, PermissionBits, ResourceType } = require('agentchat-data-provider');
 const { checkPermission } = require('~/server/services/PermissionService');
 const { getAgent } = require('~/models');
 const { filterFilesByAgentAccess, hasAccessToFilesViaAgent } = require('./permissions');

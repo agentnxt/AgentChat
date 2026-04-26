@@ -2,14 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
 const passport = require('passport');
-const { ErrorTypes } = require('librechat-data-provider');
-const { hashToken, logger } = require('@librechat/data-schemas');
+const { ErrorTypes } = require('agentchat-data-provider');
+const { hashToken, logger } = require('data-schemas');
 const { Strategy: SamlStrategy } = require('@node-saml/passport-saml');
 const {
   getBalanceConfig,
   isEmailDomainAllowed,
   resolveAppConfigForUser,
-} = require('@librechat/api');
+} = require('api');
 const { getStrategyFunctions } = require('~/server/services/Files/strategies');
 const { findUser, createUser, updateUser } = require('~/models');
 const { getAppConfig } = require('~/server/services/Config');

@@ -1,4 +1,4 @@
-import { logger } from '@librechat/data-schemas';
+import { logger } from 'data-schemas';
 import type * as t from '~/mcp/types';
 import { registryStatusCache as statusCache } from './cache/RegistryStatusCache';
 import { MCPServersRegistry } from './MCPServersRegistry';

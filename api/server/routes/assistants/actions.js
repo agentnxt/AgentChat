@@ -1,8 +1,8 @@
 const express = require('express');
 const { nanoid } = require('nanoid');
-const { logger } = require('@librechat/data-schemas');
-const { isActionDomainAllowed } = require('@librechat/api');
-const { actionDelimiter, EModelEndpoint, removeNullishValues } = require('librechat-data-provider');
+const { logger } = require('data-schemas');
+const { isActionDomainAllowed } = require('api');
+const { actionDelimiter, EModelEndpoint, removeNullishValues } = require('agentchat-data-provider');
 const {
   legacyDomainEncode,
   encryptMetadata,

@@ -1,8 +1,8 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import { useRecoilValue } from 'recoil';
 import { ChevronDown } from 'lucide-react';
-import { ContentTypes, ToolCallTypes } from 'librechat-data-provider';
-import type { TMessageContentParts, Agents, FunctionToolCall } from 'librechat-data-provider';
+import { ContentTypes, ToolCallTypes } from 'agentchat-data-provider';
+import type { TMessageContentParts, Agents, FunctionToolCall } from 'agentchat-data-provider';
 import type { PartWithIndex } from './ParallelContent';
 import type { TranslationKeys } from '~/hooks';
 import { StackedToolIcons, getMCPServerName } from './ToolOutput';

@@ -3,7 +3,7 @@ const express = require('express');
 const request = require('supertest');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-const { getBasePath } = require('@librechat/api');
+const { getBasePath } = require('api');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
 function generateTestCsrfToken(flowId) {
@@ -24,8 +24,8 @@ const mockRegistryInstance = {
   removeServer: jest.fn(),
 };
 
-jest.mock('@librechat/api', () => {
-  const actual = jest.requireActual('@librechat/api');
+jest.mock('api', () => {
+  const actual = jest.requireActual('api');
   return {
     ...actual,
     MCPOAuthHandler: {
@@ -48,7 +48,7 @@ jest.mock('@librechat/api', () => {
     MCPServersRegistry: {
       getInstance: () => mockRegistryInstance,
     },
-    // Error handling utilities (from @librechat/api mcp/errors)
+    // Error handling utilities (from api mcp/errors)
     isMCPDomainNotAllowedError: (error) => error?.code === 'MCP_DOMAIN_NOT_ALLOWED',
     isMCPInspectionFailedError: (error) => error?.code === 'MCP_INSPECTION_FAILED',
     MCPErrorCodes: {
@@ -58,7 +58,7 @@ jest.mock('@librechat/api', () => {
   };
 });
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   getTenantId: jest.fn(),
   tenantStorage: {
     run: jest.fn((store, fn) => fn()),
@@ -172,7 +172,7 @@ describe('MCP Routes', () => {
   });
 
   describe('GET /:serverName/oauth/initiate', () => {
-    const { MCPOAuthHandler } = require('@librechat/api');
+    const { MCPOAuthHandler } = require('api');
     const { getLogStores } = require('~/cache');
 
     it('should initiate OAuth flow successfully', async () => {
@@ -300,7 +300,7 @@ describe('MCP Routes', () => {
   });
 
   describe('GET /:serverName/oauth/callback', () => {
-    const { MCPOAuthHandler, MCPTokenStorage } = require('@librechat/api');
+    const { MCPOAuthHandler, MCPTokenStorage } = require('api');
     const { getLogStores } = require('~/cache');
 
     it('should redirect to error page when OAuth error is received', async () => {
@@ -619,7 +619,7 @@ describe('MCP Routes', () => {
       require('~/config').getMCPManager.mockReturnValue(mockMcpManager);
 
       const { getCachedTools, setCachedTools } = require('~/server/services/Config');
-      const { Constants } = require('librechat-data-provider');
+      const { Constants } = require('agentchat-data-provider');
       getCachedTools.mockResolvedValue({
         [`existing-tool${Constants.mcp_delimiter}test-server`]: { type: 'function' },
         [`other-tool${Constants.mcp_delimiter}other-server`]: { type: 'function' },
@@ -1208,7 +1208,7 @@ describe('MCP Routes', () => {
   });
 
   describe('POST /oauth/cancel/:serverName', () => {
-    const { MCPOAuthHandler } = require('@librechat/api');
+    const { MCPOAuthHandler } = require('api');
     const { getLogStores } = require('~/cache');
 
     it('should cancel OAuth flow successfully', async () => {
@@ -1468,7 +1468,7 @@ describe('MCP Routes', () => {
       require('~/config').getMCPManager.mockReturnValue(mockMcpManager);
       require('~/config').getFlowStateManager.mockReturnValue({});
       require('~/cache').getLogStores.mockReturnValue({});
-      require('@librechat/api').getUserMCPAuthMap.mockResolvedValue({
+      require('api').getUserMCPAuthMap.mockResolvedValue({
         'mcp:test-server': {
           API_KEY: 'api-key-value',
         },
@@ -1495,7 +1495,7 @@ describe('MCP Routes', () => {
 
       expect(response.status).toBe(200);
       expect(response.body.success).toBe(true);
-      expect(require('@librechat/api').getUserMCPAuthMap).toHaveBeenCalledWith({
+      expect(require('api').getUserMCPAuthMap).toHaveBeenCalledWith({
         userId: 'test-user-id',
         servers: ['test-server'],
         findPluginAuthsByKeys: require('~/models').findPluginAuthsByKeys,
@@ -1763,7 +1763,7 @@ describe('MCP Routes', () => {
 
   describe('GET /:serverName/oauth/callback - Edge Cases', () => {
     it('should handle OAuth callback without toolFlowId (falsy toolFlowId)', async () => {
-      const { MCPOAuthHandler, MCPTokenStorage } = require('@librechat/api');
+      const { MCPOAuthHandler, MCPTokenStorage } = require('api');
       const mockTokens = {
         access_token: 'edge-access-token',
         refresh_token: 'edge-refresh-token',
@@ -1814,7 +1814,7 @@ describe('MCP Routes', () => {
     it('should handle null cached tools in OAuth callback (triggers || {} fallback)', async () => {
       const { getCachedTools } = require('~/server/services/Config');
       getCachedTools.mockResolvedValue(null);
-      const { MCPOAuthHandler, MCPTokenStorage } = require('@librechat/api');
+      const { MCPOAuthHandler, MCPTokenStorage } = require('api');
       const mockTokens = {
         access_token: 'edge-access-token',
         refresh_token: 'edge-refresh-token',
@@ -1867,8 +1867,8 @@ describe('MCP Routes', () => {
 
   describe('GET /:serverName/oauth/callback - Tenant Context', () => {
     beforeEach(() => {
-      const { getTenantId, tenantStorage } = require('@librechat/data-schemas');
-      const { MCPOAuthHandler, MCPTokenStorage } = require('@librechat/api');
+      const { getTenantId, tenantStorage } = require('data-schemas');
+      const { MCPOAuthHandler, MCPTokenStorage } = require('api');
       getTenantId.mockReset();
       tenantStorage.run.mockReset();
       tenantStorage.run.mockImplementation((store, fn) => fn());
@@ -1879,8 +1879,8 @@ describe('MCP Routes', () => {
     });
 
     it('should wrap callback body in tenantStorage.run when flowState has tenantId and no current context', async () => {
-      const { getTenantId, tenantStorage } = require('@librechat/data-schemas');
-      const { MCPOAuthHandler, MCPTokenStorage } = require('@librechat/api');
+      const { getTenantId, tenantStorage } = require('data-schemas');
+      const { MCPOAuthHandler, MCPTokenStorage } = require('api');
       const flowId = 'user123:test-server';
       const csrfToken = generateTestCsrfToken(flowId);
 
@@ -1917,8 +1917,8 @@ describe('MCP Routes', () => {
     });
 
     it('should not call tenantStorage.run when flowState has no tenantId', async () => {
-      const { getTenantId, tenantStorage } = require('@librechat/data-schemas');
-      const { MCPOAuthHandler, MCPTokenStorage } = require('@librechat/api');
+      const { getTenantId, tenantStorage } = require('data-schemas');
+      const { MCPOAuthHandler, MCPTokenStorage } = require('api');
       const flowId = 'user123:test-server';
       const csrfToken = generateTestCsrfToken(flowId);
 

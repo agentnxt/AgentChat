@@ -1,6 +1,6 @@
-import type { AppConfig } from '@librechat/data-schemas';
-import type { SummarizationConfig, TEndpoint } from 'librechat-data-provider';
-import { EModelEndpoint, FileSources } from 'librechat-data-provider';
+import type { AppConfig } from 'data-schemas';
+import type { SummarizationConfig, TEndpoint } from 'agentchat-data-provider';
+import { EModelEndpoint, FileSources } from 'agentchat-data-provider';
 import { createRun } from '~/agents/run';
 
 // Mock winston logger
@@ -22,8 +22,8 @@ jest.mock('~/utils/env', () => ({
 }));
 
 // Mock Run.create to capture the graphConfig it receives
-jest.mock('@librechat/agents', () => {
-  const actual = jest.requireActual('@librechat/agents');
+jest.mock('agents', () => {
+  const actual = jest.requireActual('agents');
   return {
     ...actual,
     Run: {
@@ -34,7 +34,7 @@ jest.mock('@librechat/agents', () => {
   };
 });
 
-import { Run } from '@librechat/agents';
+import { Run } from 'agents';
 
 /** Minimal RunAgent factory */
 function makeAgent(
@@ -89,7 +89,7 @@ type TestCustomEndpoint = Partial<TEndpoint> & {
 };
 
 /**
- * Shape of summarization parameters used in tests. The LibreChat config
+ * Shape of summarization parameters used in tests. The AgentChat config
  * schema restricts yaml `parameters` to primitive values, but the SDK
  * passes any record through as-is — tests need the wider shape to exercise
  * cross-endpoint `configuration` merging.

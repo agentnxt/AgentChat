@@ -1,5 +1,5 @@
-import { logger } from '@librechat/data-schemas';
-import { AnthropicClientOptions } from '@librechat/agents';
+import { logger } from 'data-schemas';
+import { AnthropicClientOptions } from 'agents';
 import {
   EModelEndpoint,
   ThinkingDisplay,
@@ -8,7 +8,7 @@ import {
   supportsContext1m,
   resolveThinkingDisplay,
   supportsAdaptiveThinking,
-} from 'librechat-data-provider';
+} from 'agentchat-data-provider';
 import { matchModelName } from '~/utils/tokens';
 
 /**
@@ -86,7 +86,7 @@ function configureReasoning(
     /**
      * For Opus 4.7+, Anthropic omits thinking content from responses by
      * default. Resolver returns `'summarized'` for those models (so the
-     * LibreChat "Thoughts" UI keeps working) and leaves the field off for
+     * AgentChat "Thoughts" UI keeps working) and leaves the field off for
      * older adaptive models, while honoring an explicit user choice.
      *
      * https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7#thinking-content-omitted-by-default
@@ -96,7 +96,7 @@ function configureReasoning(
       ? { type: 'adaptive' as const, display }
       : { type: 'adaptive' as const };
     /**
-     * TODO: Remove the cast once `@librechat/agents` updates its
+     * TODO: Remove the cast once `agents` updates its
      * `ChatAnthropicMessages['thinking']` type to include the `display` field
      * added with Claude Opus 4.7. The cast is required because the installed
      * agents SDK still uses the pre-4.7 `ThinkingConfigAdaptive` shape.

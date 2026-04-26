@@ -1,5 +1,5 @@
-import { logger } from '@librechat/data-schemas';
-import { GraphEvents, Constants } from '@librechat/agents';
+import { logger } from 'data-schemas';
+import { GraphEvents, Constants } from 'agents';
 import type {
   LCTool,
   EventHandler,
@@ -7,7 +7,7 @@ import type {
   ToolCallRequest,
   ToolExecuteResult,
   ToolExecuteBatchRequest,
-} from '@librechat/agents';
+} from 'agents';
 import type { StructuredToolInterface } from '@langchain/core/tools';
 import { runOutsideTracing } from '~/utils';
 

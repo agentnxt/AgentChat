@@ -1,9 +1,9 @@
 // Configurable file size limit for tests - use a getter so it can be changed per test
 const fileSizeLimitConfig = { value: 20 * 1024 * 1024 }; // Default 20MB
 
-// Mock librechat-data-provider with configurable file size limit
-jest.mock('librechat-data-provider', () => {
-  const actual = jest.requireActual('librechat-data-provider');
+// Mock agentchat-data-provider with configurable file size limit
+jest.mock('agentchat-data-provider', () => {
+  const actual = jest.requireActual('agentchat-data-provider');
   return {
     ...actual,
     mergeFileConfig: jest.fn((config) => {
@@ -29,19 +29,19 @@ jest.mock('librechat-data-provider', () => {
   };
 });
 
-const { FileContext } = require('librechat-data-provider');
+const { FileContext } = require('agentchat-data-provider');
 
 // Mock uuid
 jest.mock('uuid', () => ({
   v4: jest.fn(() => 'mock-uuid-1234'),
 }));
 
-// Mock axios — process.js now uses createAxiosInstance() from @librechat/api
+// Mock axios — process.js now uses createAxiosInstance() from api
 const mockAxios = jest.fn();
 mockAxios.post = jest.fn();
 mockAxios.isAxiosError = jest.fn(() => false);
 
-jest.mock('@librechat/api', () => {
+jest.mock('api', () => {
   const http = require('http');
   const https = require('https');
   return {
@@ -54,7 +54,7 @@ jest.mock('@librechat/api', () => {
   };
 });
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     warn: jest.fn(),
     debug: jest.fn(),
@@ -62,7 +62,7 @@ jest.mock('@librechat/data-schemas', () => ({
   },
 }));
 
-jest.mock('@librechat/agents', () => ({
+jest.mock('agents', () => ({
   getCodeBaseURL: jest.fn(() => 'https://code-api.example.com'),
 }));
 
@@ -101,8 +101,8 @@ const { createFile, getFiles } = require('~/models');
 const { getStrategyFunctions } = require('~/server/services/Files/strategies');
 const { convertImage } = require('~/server/services/Files/images/convert');
 const { determineFileType } = require('~/server/utils');
-const { logger } = require('@librechat/data-schemas');
-const { codeServerHttpAgent, codeServerHttpsAgent } = require('@librechat/api');
+const { logger } = require('data-schemas');
+const { codeServerHttpAgent, codeServerHttpsAgent } = require('api');
 
 const { processCodeOutput, getSessionInfo } = require('./process');
 

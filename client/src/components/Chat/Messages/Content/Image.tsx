@@ -1,6 +1,6 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react';
-import { Skeleton } from '@librechat/client';
-import { apiBaseUrl } from 'librechat-data-provider';
+import { Skeleton } from 'client';
+import { apiBaseUrl } from 'agentchat-data-provider';
 import DialogImage from './DialogImage';
 import { cn } from '~/utils';
 

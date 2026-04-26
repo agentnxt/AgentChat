@@ -15,8 +15,8 @@ jest.mock('~/server/middleware/roles/capabilities', () => ({
 }));
 
 const mockGetTenantId = jest.fn(() => undefined);
-jest.mock('@librechat/data-schemas', () => ({
-  ...jest.requireActual('@librechat/data-schemas'),
+jest.mock('data-schemas', () => ({
+  ...jest.requireActual('data-schemas'),
   getTenantId: (...args) => mockGetTenantId(...args),
 }));
 

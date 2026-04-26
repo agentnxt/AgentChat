@@ -1,10 +1,10 @@
-import { EModelEndpoint } from 'librechat-data-provider';
-import type { Agent, GraphEdge } from 'librechat-data-provider';
+import { EModelEndpoint } from 'agentchat-data-provider';
+import type { Agent, GraphEdge } from 'agentchat-data-provider';
 import type { Response } from 'express';
 import type { ServerRequest } from '~/types';
 import type { InitializedAgent } from './initialize';
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: {
     debug: jest.fn(),
     info: jest.fn(),

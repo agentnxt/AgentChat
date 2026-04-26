@@ -1,12 +1,12 @@
 const fs = require('fs').promises;
 const express = require('express');
-const { EnvVar } = require('@librechat/agents');
-const { logger, SystemCapabilities } = require('@librechat/data-schemas');
+const { EnvVar } = require('agents');
+const { logger, SystemCapabilities } = require('data-schemas');
 const {
   refreshS3FileUrls,
   resolveUploadErrorMessage,
   verifyAgentUploadPermission,
-} = require('@librechat/api');
+} = require('api');
 const {
   Time,
   isUUID,
@@ -17,7 +17,7 @@ const {
   PermissionBits,
   checkOpenAIStorage,
   isAssistantsEndpoint,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const {
   filterFile,
   processFileUpload,

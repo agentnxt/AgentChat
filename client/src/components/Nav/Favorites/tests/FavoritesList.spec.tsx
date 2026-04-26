@@ -6,8 +6,8 @@ import { RecoilRoot } from 'recoil';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { BrowserRouter } from 'react-router-dom';
-import { dataService } from 'librechat-data-provider';
-import type { Agent } from 'librechat-data-provider';
+import { dataService } from 'agentchat-data-provider';
+import type { Agent } from 'agentchat-data-provider';
 
 // Mock store before importing FavoritesList
 jest.mock('~/store', () => {
@@ -37,8 +37,8 @@ type FavoriteItem = {
 };
 
 // Mock dataService
-jest.mock('librechat-data-provider', () => ({
-  ...jest.requireActual('librechat-data-provider'),
+jest.mock('agentchat-data-provider', () => ({
+  ...jest.requireActual('agentchat-data-provider'),
   dataService: {
     getAgentById: jest.fn(),
   },

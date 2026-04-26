@@ -1,21 +1,21 @@
 jest.mock('uuid', () => ({ v4: jest.fn(() => 'mock-uuid') }));
 
-jest.mock('@librechat/data-schemas', () => ({
+jest.mock('data-schemas', () => ({
   logger: { warn: jest.fn(), debug: jest.fn(), error: jest.fn() },
 }));
 
-jest.mock('@librechat/agents', () => ({
+jest.mock('agents', () => ({
   EnvVar: { CODE_API_KEY: 'CODE_API_KEY' },
 }));
 
-jest.mock('@librechat/api', () => ({
+jest.mock('api', () => ({
   sanitizeFilename: jest.fn((n) => n),
   parseText: jest.fn().mockResolvedValue({ text: '', bytes: 0 }),
   processAudioFile: jest.fn(),
 }));
 
-jest.mock('librechat-data-provider', () => ({
-  ...jest.requireActual('librechat-data-provider'),
+jest.mock('agentchat-data-provider', () => ({
+  ...jest.requireActual('agentchat-data-provider'),
   mergeFileConfig: jest.fn(),
 }));
 
@@ -70,8 +70,8 @@ jest.mock('~/server/services/Files/Audio/STTService', () => ({
   STTService: { getInstance: jest.fn() },
 }));
 
-const { EToolResources, FileSources, AgentCapabilities } = require('librechat-data-provider');
-const { mergeFileConfig } = require('librechat-data-provider');
+const { EToolResources, FileSources, AgentCapabilities } = require('agentchat-data-provider');
+const { mergeFileConfig } = require('agentchat-data-provider');
 const { checkCapability } = require('~/server/services/Config');
 const { getStrategyFunctions } = require('~/server/services/Files/strategies');
 const { processAgentFileUpload } = require('./process');
@@ -255,7 +255,7 @@ describe('processAgentFileUpload', () => {
         handleFileUpload: jest.fn().mockRejectedValue(new Error('No text found in document')),
       });
       const req = makeReq({ mimetype: PDF_MIME, ocrConfig: null });
-      const { parseText } = require('@librechat/api');
+      const { parseText } = require('api');
 
       await expect(
         processAgentFileUpload({ req, res: mockRes, metadata: makeMetadata() }),
@@ -295,7 +295,7 @@ describe('processAgentFileUpload', () => {
         mimetype: PDF_MIME,
         ocrConfig: { strategy: FileSources.mistral_ocr },
       });
-      const { parseText } = require('@librechat/api');
+      const { parseText } = require('api');
 
       await expect(
         processAgentFileUpload({ req, res: mockRes, metadata: makeMetadata() }),

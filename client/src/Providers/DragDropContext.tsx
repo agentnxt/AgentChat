@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useMemo } from 'react';
-import { isAgentsEndpoint, resolveEndpointType } from 'librechat-data-provider';
-import type { EModelEndpoint } from 'librechat-data-provider';
+import { isAgentsEndpoint, resolveEndpointType } from 'agentchat-data-provider';
+import type { EModelEndpoint } from 'agentchat-data-provider';
 import { useGetEndpointsQuery, useGetAgentByIdQuery } from '~/data-provider';
 import { useAgentsMapContext } from './AgentsMapContext';
 import { useChatContext } from './ChatContext';

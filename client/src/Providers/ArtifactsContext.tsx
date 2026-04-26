@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
-import type { TMessage } from 'librechat-data-provider';
+import type { TMessage } from 'agentchat-data-provider';
 import { getLatestText } from '~/utils';
 import store from '~/store';
 

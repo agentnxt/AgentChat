@@ -1,7 +1,7 @@
 const path = require('path');
 const { v4 } = require('uuid');
-const { logger } = require('@librechat/data-schemas');
-const { getCodeBaseURL } = require('@librechat/agents');
+const { logger } = require('data-schemas');
+const { getCodeBaseURL } = require('agents');
 const {
   getBasePath,
   logAxiosError,
@@ -9,7 +9,7 @@ const {
   createAxiosInstance,
   codeServerHttpAgent,
   codeServerHttpsAgent,
-} = require('@librechat/api');
+} = require('api');
 const {
   Tools,
   megabyte,
@@ -22,7 +22,7 @@ const {
   EModelEndpoint,
   mergeFileConfig,
   getEndpointFileConfig,
-} = require('librechat-data-provider');
+} = require('agentchat-data-provider');
 const { filterFilesByAgentAccess } = require('~/server/services/Files/permissions');
 const { createFile, getFiles, updateFile, claimCodeFile } = require('~/models');
 const { getStrategyFunctions } = require('~/server/services/Files/strategies');
@@ -107,7 +107,7 @@ const processCodeOutput = async ({
       url: `${baseURL}/download/${session_id}/${id}`,
       responseType: 'arraybuffer',
       headers: {
-        'User-Agent': 'LibreChat/1.0',
+        'User-Agent': 'AgentChat/1.0',
         'X-API-Key': apiKey,
       },
       httpAgent: codeServerHttpAgent,
@@ -307,7 +307,7 @@ async function getSessionInfo(fileIdentifier, apiKey) {
         ...queryParams,
       },
       headers: {
-        'User-Agent': 'LibreChat/1.0',
+        'User-Agent': 'AgentChat/1.0',
         'X-API-Key': apiKey,
       },
       httpAgent: codeServerHttpAgent,

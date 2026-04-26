@@ -5,23 +5,23 @@
  * @module packages/api/src/tools/classification
  */
 
-import { logger } from '@librechat/data-schemas';
-import { Constants } from 'librechat-data-provider';
+import { logger } from 'data-schemas';
+import { Constants } from 'agentchat-data-provider';
 import {
   EnvVar,
   createToolSearch,
   ToolSearchToolDefinition,
   createProgrammaticToolCallingTool,
   ProgrammaticToolCallingDefinition,
-} from '@librechat/agents';
-import type { AgentToolOptions } from 'librechat-data-provider';
+} from 'agents';
+import type { AgentToolOptions } from 'agentchat-data-provider';
 import type {
   LCToolRegistry,
   JsonSchemaType,
   AllowedCaller,
   GenericTool,
   LCTool,
-} from '@librechat/agents';
+} from 'agents';
 
 export type { LCTool, LCToolRegistry, AllowedCaller, JsonSchemaType };
 

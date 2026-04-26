@@ -3,9 +3,9 @@ const OpenAI = require('openai');
 const { v4: uuidv4 } = require('uuid');
 const { ProxyAgent, fetch } = require('undici');
 const { Tool } = require('@langchain/core/tools');
-const { logger } = require('@librechat/data-schemas');
-const { getImageBasename, extractBaseURL } = require('@librechat/api');
-const { FileContext, ContentTypes } = require('librechat-data-provider');
+const { logger } = require('data-schemas');
+const { getImageBasename, extractBaseURL } = require('api');
+const { FileContext, ContentTypes } = require('agentchat-data-provider');
 
 const dalle3JsonSchema = {
   type: 'object',

@@ -1,6 +1,6 @@
-import { OptionTypes } from 'librechat-data-provider';
-import { Label, TextareaAutosize, HoverCard, HoverCardTrigger } from '@librechat/client';
-import type { DynamicSettingProps } from 'librechat-data-provider';
+import { OptionTypes } from 'agentchat-data-provider';
+import { Label, TextareaAutosize, HoverCard, HoverCardTrigger } from 'client';
+import type { DynamicSettingProps } from 'agentchat-data-provider';
 import { useLocalize, useDebouncedInput, useParameterEffects, TranslationKeys } from '~/hooks';
 import { useChatContext } from '~/Providers';
 import OptionHover from './OptionHover';

@@ -1,14 +1,14 @@
 import { Types } from 'mongoose';
-import { PrincipalType } from 'librechat-data-provider';
-import { SystemCapabilities, expandImplications } from '@librechat/data-schemas';
-import type { ISystemGrant } from '@librechat/data-schemas';
+import { PrincipalType } from 'agentchat-data-provider';
+import { SystemCapabilities, expandImplications } from 'data-schemas';
+import type { ISystemGrant } from 'data-schemas';
 import type { Response } from 'express';
 import type { ServerRequest } from '~/types/http';
 import type { AdminGrantsDeps } from './grants';
 import { createAdminGrantsHandlers } from './grants';
 
-jest.mock('@librechat/data-schemas', () => ({
-  ...jest.requireActual('@librechat/data-schemas'),
+jest.mock('data-schemas', () => ({
+  ...jest.requireActual('data-schemas'),
   logger: { error: jest.fn(), warn: jest.fn(), info: jest.fn(), debug: jest.fn() },
 }));
 

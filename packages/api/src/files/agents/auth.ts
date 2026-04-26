@@ -1,8 +1,8 @@
-import type { IUser } from '@librechat/data-schemas';
+import type { IUser } from 'data-schemas';
 import type { Response } from 'express';
 import type { Types } from 'mongoose';
-import { logger } from '@librechat/data-schemas';
-import { SystemRoles, ResourceType, PermissionBits } from 'librechat-data-provider';
+import { logger } from 'data-schemas';
+import { SystemRoles, ResourceType, PermissionBits } from 'agentchat-data-provider';
 import type { ServerRequest } from '~/types';
 
 export type AgentUploadAuthResult =
